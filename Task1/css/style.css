@@ -2,7 +2,7 @@ body{
   color: white;
   width: 80%;
   background-repeat: no-repeat;
-  background-image: url(Back.jpg);
+  background-image: url("../img/Back.jpg");
   background-size: 80% 120%;
 }
 
@@ -29,13 +29,18 @@ a{
   font-size: 15px;
 }
 
-.section_1, .section_2, .section_3{
+.section_1,
+.section_2,
+.section_3{
   border-bottom-color: white;
   border-bottom-style: groove;
   border-bottom-width: thin;
 }
 
-.University, .section_2, .section_3 ,.section_4{
+.University,
+.section_2,
+.section_3 ,
+.section_4{
   text-align: left;
 }
 
