@@ -29,9 +29,7 @@ ul {
 .Menu_Bar {
   background-image: url("../img/panel.png");
   color: white;
-  font-family: sans-serif;
-  font-weight: lighter;
-  border: 1px groove;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Menu_Bar li {
@@ -51,7 +49,7 @@ ul {
   border-right: 1px solid #919D9C;
   background-image: url("../img/Linked.png");
   cursor: pointer;
-  transition: 0.5s;
+  transition: .3s;
 }
 
 .Menu_Bar li:first-child:hover {
@@ -63,11 +61,10 @@ ul {
 /*       SIDE BAR       */
 
 .Side_Bar {
-  float: left;
   margin: 40px 0;
   width: 240px;
   border: 1px solid #BAC8C7;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #407876;
   font-weight: lighter;
 }
@@ -87,7 +84,7 @@ ul {
   background-color: #F9F9F9;
   color: #0A0C12;
   cursor: pointer;
-  transition: 0.2s;
+  transition: .2s;
 }
 
 /*       FRONT IMAGE       */
