@@ -1,32 +1,27 @@
 body{
-  color: white;
-  width: 80%;
-  background-repeat: no-repeat;
-  background-image: url("../img/Back.jpg");
-  background-size: 80% 120%;
+  height: 1000px;
+  background-image: url("../img/white_wall.png");
 }
 
 h6{
   margin-bottom: 30px;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 27px;
   font-family: sans-serif;
 }
 
-a{
-  color: orange;
-}
-
 .MyImg{
-  border-style: groove;
+  border: 1px solid black;
 }
 
 .Main_Sect{
-  font-family: serif;
+  font-size: 15px;
+  line-height: 20px;
   text-align: center;
   margin-left: 33%;
   margin-right: 30%;
-  font-size: 15px;
+  font-family: 'Calibri', sans-serif;
+
 }
 
 .section_1,
@@ -44,15 +39,14 @@ a{
   text-align: left;
 }
 
+.section_4{
+}
+
 .University{
-  font-family: sans-serif;
-  color: #D3D3D3;
+  font-family: 'Arial';
+  color: #1D3836;
 }
 
-.otstyp{
+.indent{
   text-indent: 30px;
-}
-
-.invisio{
-  margin-top: 230px;
 }
