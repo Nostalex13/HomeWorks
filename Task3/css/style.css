@@ -7,8 +7,6 @@ body {
 }
 
 .wrapper {
-    display: inline-block;
-    align-self: center;
     height: 1000px;
     margin: auto 150px;
     padding: 0 40px;
