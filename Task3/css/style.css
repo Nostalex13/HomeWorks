@@ -54,7 +54,7 @@ ul {
     transition: .3s;
     border-right: 1px solid #919d9c;
     border-left: 1px solid #919d9c;
-    background-image: url('../img/linked.png');
+    background: linear-gradient(to bottom, #595656 0%, #292727 100%);
     cursor: pointer;
 }
 
