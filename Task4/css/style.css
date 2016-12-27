@@ -1,0 +1,215 @@
+/*             PAGE PROPERTIES          */
+
+body {
+    background-image: url('../img/background.png');
+    background-repeat: repeat-x;
+    max-width: 1366px;
+}
+
+.wrapper {
+    width: 80%;
+    height: 950px;
+    background-color: #fff;
+    margin-left: 10%;
+    box-shadow: 0px 10px 10px 1px rgba(119,23,83,0.7);
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/*             LOGO             */
+
+.logo {
+    position: absolute;
+    padding: 10px 0 0 30px;
+}
+
+/*             CONTACTS             */
+
+.contacts-list {
+    float: right;
+    color: #7bb3c4;
+    font-size: 13px;
+    line-height: 17px;
+    padding: 10px 30px;
+}
+
+.contacts li:first-child {
+    font-weight: bold;
+    padding-bottom: 5px;
+
+}
+
+/*             COUNTRIES MENU             */
+
+.countries-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.countries-list li{
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 45px 0 6px 0;
+    width: 60px;
+    background-size: 67%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.india {
+    background-image: url('../img/i_flag.png');
+}
+
+.nepal {
+    background-image: url('../img/n_flag.png');
+}
+
+.tibet {
+    background-image: url('../img/t_flag.png');
+}
+
+.bhutan {
+    background-image: url('../img/b_flag.png');
+}
+
+.shri-lanka {
+    background-image: url('../img/s_flag.png');
+}
+
+.maldives {
+    background-image: url('../img/m_flag.png');
+}
+
+/*            HEADER PHOTO             */
+
+.photo {
+    width: 100%;
+    border-color: #36C8EB;
+    border-style: solid;
+    border-width: thin;
+    border-left: 0;
+    border-right: 0;
+}
+
+/*             MAIN MENU             */
+
+.main-menu {
+    /*  Так и не понял почему делается отступ между карниткой и главным меню.
+    Заюзал top -3 */
+    top: -3px;
+    position: relative;
+    background-color: #333;
+    height: 30px;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.75);
+    border-bottom: 1px solid black;
+}
+
+.main-menu-list {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+ul.main-menu-list > li {
+    padding: 8px;
+    display: block;
+    position: relative;
+}
+
+ul.main-menu-list > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+ul.submenu {
+    display: none;
+    position: absolute;
+    width: 100px;
+    left: 0;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.75);
+}
+
+ul.submenu > li > a {
+    display: block;
+    padding: 5px;
+    color: white;
+    background-color: #323232;
+    text-decoration: none;
+}
+
+ul.submenu > li > a:hover {
+    background-color: #474444;
+    transition: .3s;
+}
+
+ul.main-menu-list > li:hover > ul.submenu {
+    display: block;
+    /* Выпадающее меню схлопывается при top = 31 и не схлопывается при top = 30 (несчастный пиксель все испортил) */
+    top: 30px;
+    border-top: 1px solid black;
+}
+
+/*             COLUMNS             */
+
+.columns {
+    width: 100%;
+    height: 100%;
+    background: url('../img/content_back.png') repeat-y;
+}
+
+.news-section {
+    padding: 0 40px 5px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.info-section {
+    padding: 0 20px 5px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.info-column {
+    padding: 10px 0 15px 25px;
+    float: left;
+    color: #424c43;
+    width: 180px;
+    line-height: 25px;
+}
+.news-column {
+    padding: 10px 0 0 45px;
+    float: left;
+    color: #424c43;
+    width: 180px;
+    line-height: 25px;
+}
+
+.content-column {
+    padding-top: 15px;
+    padding-left: 15px;
+    width: 630px;
+    float: left;
+}
+
+/*             COPYRIGHT             */
+
+.copy {
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
