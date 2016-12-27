@@ -11,7 +11,7 @@ body {
     height: 950px;
     background-color: #fff;
     margin-left: 10%;
-    box-shadow: 0px 10px 10px 1px rgba(119,23,83,0.7);
+    box-shadow: 0 10px 10px 1px rgba(119, 23, 83, .7);
     font-family: sans-serif;
     overflow: hidden;
 }
@@ -54,12 +54,12 @@ body {
     padding-right: 20px;
 }
 
-.countries-list li{
+.countries-list li {
     font-family: sans-serif;
     font-size: 11px;
     text-align: center;
     margin-top: 20px;
-    padding: 45px 0 6px 0;
+    padding: 45px 0 6px;
     width: 60px;
     background-size: 67%;
     background-position: top;
@@ -94,7 +94,7 @@ body {
 
 .photo {
     width: 100%;
-    border-color: #36C8EB;
+    border-color: #36c8bb;
     border-style: solid;
     border-width: thin;
     border-left: 0;
@@ -112,8 +112,8 @@ body {
     height: 30px;
     color: #fff;
     font-size: 14px;
-    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.75);
-    border-bottom: 1px solid black;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .75);
+    border-bottom: 1px solid #000;
 }
 
 .main-menu-list {
@@ -123,43 +123,43 @@ body {
     list-style: none;
 }
 
-ul.main-menu-list > li {
+.main-menu-list > li {
     padding: 8px;
     display: block;
     position: relative;
 }
 
-ul.main-menu-list > li > a {
-    color: white;
+.main-menu-list > li > a {
+    color: #fff;
     text-decoration: none;
 }
 
-ul.submenu {
+ul .submenu {
     display: none;
     position: absolute;
     width: 100px;
     left: 0;
-    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .75);
 }
 
-ul.submenu > li > a {
+.submenu > li > a {
     display: block;
     padding: 5px;
-    color: white;
+    color: #fff;
     background-color: #323232;
     text-decoration: none;
 }
 
-ul.submenu > li > a:hover {
+.submenu > li > a:hover {
     background-color: #474444;
     transition: .3s;
 }
 
-ul.main-menu-list > li:hover > ul.submenu {
+.main-menu-list > li:hover > .submenu {
     display: block;
     /* Выпадающее меню схлопывается при top = 31 и не схлопывается при top = 30 (несчастный пиксель все испортил) */
     top: 30px;
-    border-top: 1px solid black;
+    border-top: 1px solid #000;
 }
 
 /*             COLUMNS             */
@@ -189,6 +189,7 @@ ul.main-menu-list > li:hover > ul.submenu {
     width: 180px;
     line-height: 25px;
 }
+
 .news-column {
     padding: 10px 0 0 45px;
     float: left;
