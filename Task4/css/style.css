@@ -22,6 +22,10 @@ body {
     clear: both;
 }
 
+.arrow {
+    font-size: 8px;
+}
+
 /*             LOGO             */
 
 .logo {
@@ -183,7 +187,7 @@ ul .submenu {
 }
 
 .info-column {
-    padding: 10px 0 15px 25px;
+    padding: 10px 0 15px 20px;
     float: left;
     color: #424c43;
     width: 180px;
