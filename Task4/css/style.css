@@ -3,15 +3,14 @@
 body {
     background-image: url('../img/background.png');
     background-repeat: repeat-x;
-    max-width: 1366px;
 }
 
 .wrapper {
-    width: 80%;
+    width: 1075px;
     height: 950px;
     background-color: #fff;
-    margin-left: 10%;
-    box-shadow: 0 10px 10px 1px rgba(119, 23, 83, .7);
+    margin: 0 auto;
+    box-shadow: 0 10px 10px 1px rgba(0, 0, 0, .7);
     font-family: sans-serif;
     overflow: hidden;
 }
