@@ -3,10 +3,7 @@
 .wrapper {
     display: block;
     width: 920px;
-    /*margin: 0 auto;*/
-
-    margin-left: 12px;
-
+    margin: 0 auto;
     font-family: 'ArialRegular', sans-serif;
     padding: 15px 0 0 30px;
 }
@@ -606,11 +603,6 @@ ul li:nth-child(3) .price {
     float: left;
 }
 
-.brand-menu a {
-    text-decoration: none;
-    color: #465961;
-}
-
 .brand-submenu {
     margin: 14px 0 0 13px;
 }
@@ -662,33 +654,36 @@ ul li:nth-child(3) .price {
 .brand-bus-menu {
     font-family: 'Lucida-Sans-Unicode-Regular', sans-serif;
     list-style: none;
-    padding: 2px 0 0 20px;
+    padding: 3px 0 0 20px;
     font-size: 12.73px;
+    color: #465961;
 }
 
-.brand-bus-menu a li {
-    line-height: 24px;
-    margin-top: 1px;
+.brand-bus-menu li {
+    line-height: 25px;
 }
 
-.brand-menu ol li::before {
-    content: url('../img/square-icon.png');
+label input {
+    display: none;
+}
+
+.custom-span::before {
+    content: url("../img/square-icon.png");
     position: relative;
+    right: 9px;
     top: 1px;
-    right: 8px;
 }
 
-.brand-menu ol li:hover {
-    text-decoration: underline;
-    font-family: 'ArialBold', sans-serif;
-    font-size: 14px;
-    font-style: italic;
+label input:checked + .custom-span::before{
+    content: url("../img/square-icon-checked.png");
+    text-align: center;
 }
 
 /*             BRAND DISKS SUBMENU            */
 
 .brand-disks {
-    margin: 9px 0 0 1px;
+    width: 135px;
+    margin: 8px 0 0 1px;
 }
 
 .brand-disks figure {
@@ -704,9 +699,10 @@ ul li:nth-child(3) .price {
     list-style: none;
     padding: 4px 0 0 20px;
     font-size: 12.73px;
+    color: #465961;
 }
 
-.brand-disks-menu a li {
+.brand-disks-menu li {
     line-height: 24px;
     margin-top: 1px;
 }
