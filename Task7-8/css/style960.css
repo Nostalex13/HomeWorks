@@ -1,0 +1,36 @@
+@media (min-width: 769px) and (max-width: 959px) {
+
+    /*             NAVIGATION MENU             */
+
+    .nav__menu .menu__item {
+        margin-right: 1.2%;
+    }
+
+    /*             BUTTONS             */
+
+    .buttons__about1 {
+        left: 7.45%;
+    }
+
+    .buttons__about3 {
+        left: 26%;
+    }
+
+    /*             RECENT UPDATES             */
+
+    .updates {
+        width: 350px;
+    }
+
+    .item-content {
+        width: 260px;
+        height: 16px;
+        overflow: hidden;
+    }
+
+    /*             BOTTOM INFO             */
+
+    .bottom-info__comments {
+        margin-left: 3.48%;
+    }
+}
