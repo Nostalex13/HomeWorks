@@ -8,11 +8,11 @@
         height: 206px;
     }
 
-    .slider-wrapper {
+    .wrapper--slider {
         text-align: left;
     }
 
-    .slider__Iphone {
+    .slider__iphone {
         display: none;
     }
 
@@ -33,12 +33,12 @@
     /*             BUTTONS             */
 
     .buttons {
-        margin-top: 67px;
+        margin-top: 66px;
         padding-top: 43px;
         height: 555px;
     }
 
-    .buttons__wrapper {
+    .wrapper--buttons {
         margin-left: 32px;
     }
 
@@ -61,7 +61,7 @@
     /*             COMMENT-SLIDER             */
 
     .comment-slider {
-        margin-left: 85px;
+        margin-left: 0;
     }
 
     .comment-slider__comment {
@@ -85,52 +85,44 @@
         width: 80%;
     }
 
-    .comment-wrapper {
-        margin-left: 60px;
-    }
-
-    .item-content {
-        width: 215px;
+    .slider-comment {
+        margin-left: 102px;
     }
 
     /*             UPDATES             */
 
     .updates {
-        margin: 44px 0 0 78px;
+        margin: 44px 0 0;
     }
 
-    .updates__content {
+    .updates__list {
         margin: 18px 0 0 67px;
     }
 
-    .updates__content::after {
-        right: 85px;
+    .updates__list::after {
+        right: 7px;
         bottom: 4px;
         letter-spacing: -.5px;
     }
 
-    .content__item::before {
+    .updates__item::before {
         left: -66px;
         top: -3px;
     }
 
-    .content__item:nth-child(1) {
+    .updates__item:nth-child(1) {
         margin-bottom: 24px;
     }
 
-    .content__item:nth-child(2) {
+    .updates__item:nth-child(2) {
         margin-bottom: 30px;
     }
 
-    .item-header {
+    .updates__header2 {
         width: 160px;
         height: 19px;
         line-height: 18px;
         overflow: hidden;
-    }
-
-    .item-content {
-        margin-top: 6px;
     }
 
     /*             BRANDS             */
@@ -139,6 +131,10 @@
         height: 421px;
         margin-top: 61px;
         border-bottom: 0;
+    }
+
+    .wrapper--brands {
+        text-align: left;
     }
 
     .brands__menu {

@@ -11,17 +11,17 @@
     }
 
     nav {
-        margin-top: 82px;
+        margin-top: 86px;
     }
 
-    .mini-nav__menu {
+    .nav-menu--mini {
         width: 51%;
         height: 40px;
         border-radius: 10px;
         overflow: hidden;
     }
 
-    .mini-nav__menu:hover {
+    .nav-menu--mini:hover {
         height: auto;
         background-color: rgba(54, 41, 62, .9);
         border-radius: 10px;
@@ -29,40 +29,40 @@
         box-shadow: inset 0 1px 1px 0 rgba(109, 80, 122, 1);
     }
 
-    .mini__item {
+    .nav-menu__item--mini {
         box-sizing: border-box;
     }
 
-    .mini__item:hover {
+    .nav-menu__item--mini:hover {
         border-bottom: 2px solid #edbfff;
     }
 
-    .mini__item:nth-child(1) {
+    .nav-menu__item--mini:nth-child(1) {
         padding: 9px 0 7px;
         height: 47px;
     }
 
-    .mini__item:nth-child(2) {
+    .nav-menu__item--mini:nth-child(2) {
         padding: 3px 0 6px;
         height: 40px;
     }
 
-    .mini__item:nth-child(3) {
+    .nav-menu__item--mini:nth-child(3) {
         padding: 4px 0 6px;
         height: 43px;
     }
 
-    .mini__item:nth-child(4) {
+    .nav-menu__item--mini:nth-child(4) {
         padding: 4px 0 6px;
         height: 42px;
     }
 
-    .mini__item:nth-child(5) {
+    .nav-menu__item--mini:nth-child(5) {
         padding: 4px 0 8px;
         height: 44px;
     }
 
-    .mini__item:nth-child(6) {
+    .nav-menu__item--mini:nth-child(6) {
         padding: 2px 0 8px;
         height: 41px;
     }
@@ -71,7 +71,7 @@
 
     .slider {
         height: 246px;
-        margin-top: 71px;
+        margin-top: 37px;
     }
 
     .slider__text {
@@ -89,19 +89,23 @@
         bottom: -3px;
     }
 
-    .slider__Iphone {
+    .slider__iphone {
         right: 31px;
         bottom: 103px;
     }
 
     .slider-buttons {
-        margin: 21px -4px 0 0;
+        margin: 21px 0 0 0; /* right -4px */
+    }
+
+    .wrapper--slider-buttons {
+        margin-top: 22px;
     }
 
     /*             BUTTONS             */
 
     .buttons {
-        margin-top: 59px;
+        margin-top: 58px;
         height: 548px;
     }
 
@@ -120,7 +124,7 @@
         left: -51px;
     }
 
-    .read1 {
+    .read-wrapper--read1 {
         margin: 18px -5px 0 0;
     }
 
@@ -131,7 +135,7 @@
         letter-spacing: -.2px;
     }
 
-    .read2 {
+    .read-wrapper--read2 {
         margin: 18px -5px 0 0;
     }
 
@@ -142,7 +146,7 @@
         letter-spacing: -.2px;
     }
 
-    .read3 {
+    .read-wrapper--read3 {
         margin: 18px -5px 0 0;
     }
 
@@ -155,14 +159,16 @@
     /*             COMMENT-SLIDER             */
 
     .comment-slider {
-        margin: 69px 0 0 85px;
+        margin: 69px 0 0 0; /* left 84px */
         display: block;
     }
 
     .comment-slider__comment {
+        float: right;
         width: 378px;
         height: 244px;
         padding-top: 28px;
+        margin-right: 20px;
     }
 
     .comment__head,
@@ -180,8 +186,9 @@
         height: 172px;
     }
 
-    .comment-wrapper {
-        margin-left: 84px;
+    .slider-comment {
+        float: left;
+        margin-left: 126px;
     }
 
     /*             UPDATES             */
@@ -190,7 +197,7 @@
         margin: 44px 0 0 45px;
     }
 
-    .updates__content {
+    .updates__list {
         margin: 19px 0 0 67px;
     }
 
@@ -255,7 +262,7 @@
 
     /*             BOTTOM INFO             */
 
-    .bottom-info__wrapper {
+    .wrapper--bottom-info {
         display: block;
         padding: 62px 0 0 19px;
         height: 607px;
@@ -290,44 +297,44 @@
         top: 103px;
     }
 
-    .footer__nav-menu {
+    .nav-menu--footer {
         display: block;
     }
 
-    .footer__nav-menu > * {
+    .nav-menu--footer > .nav-menu__item--footer {
         display: inline-block;
     }
 
-    .footer__link {
+    .nav-menu__link--footer {
         font-size: 20px;
     }
 
-    .footer__item:nth-child(1) {
+    .nav-menu__item--footer:nth-child(1) {
         width: auto;
         margin-left: 22px;
     }
 
-    .footer__item:nth-child(2) {
+    .nav-menu__item--footer:nth-child(2) {
         width: auto;
         margin-left: 21px;
     }
 
-    .footer__item:nth-child(3) {
+    .nav-menu__item--footer:nth-child(3) {
         width: auto;
         margin-left: 22px;
     }
 
-    .footer__item:nth-child(4) {
+    .nav-menu__item--footer:nth-child(4) {
         width: auto;
         margin-left: 21px;
     }
 
-    .footer__item:nth-child(5) {
+    .nav-menu__item--footer:nth-child(5) {
         width: auto;
         margin-left: 22px;
     }
 
-    .footer__item:nth-child(6) {
+    .nav-menu__item--footer:nth-child(6) {
         width: auto;
         margin-left: 21px;
     }
@@ -343,11 +350,11 @@
         height: 206px;
     }
 
-    .slider-wrapper {
+    .wrapper--slider {
         text-align: center;
     }
 
-    .slider__Iphone {
+    .slider__iphone {
         display: none;
     }
 
@@ -375,41 +382,43 @@
     /*              UPDATES             */
 
     .updates {
-        margin: 44px 0 0 78px;
+        margin: 44px 0 0 16px;
+        width: auto;
     }
 
-    .updates__content {
+    .updates__list {
         margin: 18px 0 0 67px;
     }
 
-    .updates__content::after {
+    .updates__list::after {
         right: 85px;
         bottom: 4px;
         letter-spacing: -.5px;
     }
 
-    .content__item::before {
+    .updates__item::before {
         left: -66px;
         top: -3px;
     }
 
-    .content__item:nth-child(1) {
+    .updates__item:nth-child(1) {
         margin-bottom: 24px;
     }
 
-    .content__item:nth-child(2) {
+    .updates__item:nth-child(2) {
         margin-bottom: 30px;
     }
 
-    .item-header {
+    .updates__header2 {
         width: 160px;
         height: 19px;
         line-height: 18px;
         overflow: hidden;
     }
 
-    .item-content {
+    .updates__content {
         margin-top: 6px;
+        width: 215px;
     }
 
     /*             COMMENT-SLIDER             */
@@ -418,9 +427,6 @@
         max-width: 70.91%;
     }
 
-    .item-content {
-        width: 215px;
-    }
 
     /*             BRANDS             */
 
@@ -430,7 +436,7 @@
         border-bottom: 0;
     }
 
-    .brands__wrapper {
+    .wrapper--brands {
         text-align: center;
     }
 

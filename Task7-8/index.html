@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title> Document </title>
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style960.css">
@@ -15,19 +17,31 @@
 
     <!-- HEADER -->
 
-    <header class="wrapper header-wrapper">
+    <header class="wrapper wrapper--header">
         <figure class="logo">
-            <img src="img/Logo.png" alt="Logo" title="Pingbuller">
+            <img src="img/logo.png" alt="Logo" title="Pingbuller">
         </figure>
 
         <nav>
-            <ul class="nav__menu mini-nav__menu">
-                <li class="menu__item mini__item"><a class="menu__link mini__link" href=""> home </a></li>
-                <li class="menu__item mini__item"><a class="menu__link mini__link" href=""> about </a></li>
-                <li class="menu__item mini__item"><a class="menu__link mini__link" href=""> blog </a></li>
-                <li class="menu__item mini__item"><a class="menu__link mini__link" href=""> products </a></li>
-                <li class="menu__item mini__item"><a class="menu__link mini__link" href=""> lorem ipsum </a></li>
-                <li class="menu__item mini__item"><a class="menu__link mini__link" href=""> dolor sit amet </a></li>
+            <ul class="nav-menu nav-menu--mini">
+                <li class="nav-menu__item nav-menu__item--mini">
+                    <a class="nav-menu__link nav-menu__link" href=""> home </a>
+                </li>
+                <li class="nav-menu__item nav-menu__item--mini">
+                    <a class="nav-menu__link nav-menu__link--mini" href=""> about </a>
+                </li>
+                <li class="nav-menu__item nav-menu__item--mini">
+                    <a class="nav-menu__link nav-menu__link--mini" href=""> blog </a>
+                </li>
+                <li class="nav-menu__item nav-menu__item--mini">
+                    <a class="nav-menu__link nav-menu__link--mini" href=""> products </a>
+                </li>
+                <li class="nav-menu__item nav-menu__item--mini">
+                    <a class="nav-menu__link nav-menu__link--mini" href=""> lorem ipsum </a>
+                </li>
+                <li class="nav-menu__item nav-menu__item--mini">
+                    <a class="nav-menu__link nav-menu__link--mini" href=""> dolor sit amet </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -35,10 +49,10 @@
     <!-- SLIDER -->
 
     <section class="slider">
-        <section class="wrapper slider-wrapper">
+        <section class="wrapper wrapper--slider">
 
-            <figure class="slider__Iphone">
-                <img class="Iphone__img" src="img/Iphone.png" alt="Iphone" title="Iphone">
+            <figure class="slider__iphone">
+                <img class="iphone__img" src="img/iphone.png" alt="Iphone" title="Iphone">
             </figure>
 
             <section class="slider__text">
@@ -52,23 +66,36 @@
         </section>
     </section>
 
-    <section class="wrapper slider-buttons__wrapper">
-        <figure class="slider-buttons">
-            <img src="img/sliders.png" alt="">
-        </figure>
+    <section class="wrapper wrapper--slider-buttons">
+        <label>
+            <input class="slider-radio" type="radio" name="iphone-radio" value="">
+            <span class="custom-span"></span>
+        </label>
+        <label>
+            <input class="slider-radio" type="radio" name="iphone-radio" value="">
+            <span class="custom-span"></span>
+        </label>
+        <label>
+            <input class="slider-radio" type="radio" name="iphone-radio" value="">
+            <span class="custom-span"></span>
+        </label>
+        <label>
+            <input class="slider-radio" type="radio" name="iphone-radio" value="">
+            <span class="custom-span"></span>
+        </label>
     </section>
 
     <!-- BUTTONS -->
 
     <section class="buttons">
-        <section class="wrapper buttons__wrapper">
+        <section class="wrapper wrapper--buttons">
 
             <section class="buttons__about1">
                 <p class="about__header"> About our company </p>
                 <p class="about__content">
                     Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque urna risus, mattis pulvinar bibendum in, venenatis quis neque. Mauris nec metus ultricies erat consequat dignissim non eu nisl. Quisque libero tellus, pharetra et eleifend id, interdum elementum arcu. Suspendisse quis mauris non ligula rutrum faucibus eu quis odio. Phasellus eu lobortis odio. In hac habitasse platea dictumst. Proin vestibulum turpis at mauris aliquam non euismod lorem euismod. Aenean dapibus ultricies enim, eget vulputate leo feugiat non.
                 </p>
-                <div class="read-wrapper read1">
+                <div class="read-wrapper read-wrapper--read1">
                     <p class="readmore"> Read more </p>
                 </div>
             </section>
@@ -78,7 +105,7 @@
                 <p class="about__content">
                     Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque urna risus, mattis pulvinar bibendum in, venenatis quis neque. Mauris nec metus ultricies erat consequat dignissim non eu nisl. Quisque libero tellus, pharetra et eleifend id, interdum elementum arcu. Suspendisse quis mauris non ligula rutrum faucibus eu quis odio. Phasellus eu lobortis odio. In hac habitasse platea dictumst. Proin vestibulum turpis at mauris aliquam non euismod lorem euismod. Aenean dapibus ultricies enim, eget vulputate leo feugiat non.
                 </p>
-                <div class="read-wrapper read2">
+                <div class="read-wrapper read-wrapper--read2">
                     <p class="readmore"> Read more </p>
                 </div>
             </section>
@@ -88,7 +115,7 @@
                 <p class="about__content">
                     Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque urna risus, mattis pulvinar bibendum in, venenatis quis neque. Mauris nec metus ultricies erat consequat dignissim non eu nisl. Quisque libero tellus, pharetra et eleifend id, interdum elementum arcu. Suspendisse quis mauris non ligula rutrum faucibus eu quis odio. Phasellus eu lobortis odio. In hac habitasse platea dictumst. Proin vestibulum turpis at mauris aliquam non euismod lorem euismod. Aenean dapibus ultricies enim, eget vulputate leo feugiat non.
                 </p>
-                <div class="read-wrapper read3">
+                <div class="read-wrapper read-wrapper--read3">
                     <p class="readmore"> Read more </p>
                 </div>
             </section>
@@ -99,13 +126,13 @@
     <!-- MAIN -->
 
     <main>
-        <section class="wrapper main__wrapper">
+        <section class="wrapper wrapper--main">
 
             <!-- COMMENTS -->
 
             <section class="comment-slider">
 
-                <section class="comment-slider__comment">
+                <section class="comment-slider__comment clearfix">
                     <span class="comment__head"> Pingbuller </span>
                     <a class="comment__link" href="#"> Starts here </a>
                     <p class="comment__content">
@@ -113,34 +140,51 @@
                     </p>
                 </section>
 
-                <div class="comment-wrapper">
-                    <figure class="comment-slider__slider"></figure>
-                </div>
+                <section class="slider-comment">
+                    <div class="slider-comment__wrapper">
+                        <label>
+                            <input class="slider-radio slider-radio--comment" type="radio" name="comment-radio" value="">
+                            <span class="custom-span custom-span--comment"></span>
+                        </label>
+                        <label>
+                            <input class="slider-radio slider-radio--comment" type="radio" name="comment-radio" value="">
+                            <span class="custom-span custom-span--comment"></span>
+                        </label>
+                        <label>
+                            <input class="slider-radio slider-radio--comment" type="radio" name="comment-radio" value="">
+                            <span class="custom-span custom-span--comment"></span>
+                        </label>
+                        <label>
+                            <input class="slider-radio slider-radio--comment" type="radio" name="comment-radio" value="">
+                            <span class="custom-span custom-span--comment"></span>
+                        </label>
+                    </div>
+                </section>
 
             </section>
 
             <!-- UPDATES -->
 
             <section class="updates">
-                <p class="updates__header"> Recent updates </p>
+                <p class="updates__header1"> Recent updates </p>
 
-                <ul class="updates__content">
-                    <li class="content__item">
-                        <p class="item-header"> Nunc turpis neque feugiat eget </p>
-                        <p class="item-content"> Posted by Admin on March 13 2012 in Recent News </p>
+                <ul class="updates__list">
+                    <li class="updates__item">
+                        <p class="updates__header2"> Nunc turpis neque feugiat eget </p>
+                        <p class="updates__content"> Posted by Admin on March 13 2012 in Recent News </p>
                     </li>
-                    <li class="content__item">
-                        <p class="item-header"> Nunc turpis neque feugiat eget </p>
-                        <p class="item-content"> Posted by Admin on March 13 2012 in Category </p>
+                    <li class="updates__item">
+                        <p class="updates__header2"> Nunc turpis neque feugiat eget </p>
+                        <p class="updates__content"> Posted by Admin on March 13 2012 in Category </p>
                     </li>
-                    <li class="content__item">
-                        <p class="item-header"> Nunc turpis neque feugiat eget </p>
-                        <p class="item-content"> Posted by Admin on March 13 2012 in Blog Updates </p>
+                    <li class="updates__item">
+                        <p class="updates__header2"> Nunc turpis neque feugiat eget </p>
+                        <p class="updates__content"> Posted by Admin on March 13 2012 in Blog Updates </p>
                     </li>
                 </ul>
 
                 <div class="read-wrapper updates__read-wrapper">
-                    <a class="readmore readmore-here" href="#"> Read more here </a>
+                    <a class="readmore readmore--here" href="#"> Read more here </a>
                 </div>
             </section>
         </section>
@@ -148,37 +192,37 @@
         <!-- BRANDS -->
 
         <section class="brands clearfix">
-            <div class="wrapper brands__wrapper">
+            <div class="wrapper wrapper--brands">
 
                 <ul class="brands__menu">
                     <li class="brands__item">
                         <figure>
-                            <img src="img/BONG.png" alt="">
+                            <img src="img/bong.png" alt="">
                         </figure>
                     </li>
                     <li class="brands__item">
                         <figure>
-                            <img src="img/DC.png" alt="">
+                            <img src="img/dc.png" alt="">
                         </figure>
                     </li>
                     <li class="brands__item">
                         <figure>
-                            <img src="img/Tree.png" alt="">
+                            <img src="img/tree.png" alt="">
                         </figure>
                     </li>
                     <li class="brands__item">
                         <figure>
-                            <img src="img/RWSM.png" alt="">
+                            <img src="img/rwsm.png" alt="">
                         </figure>
                     </li>
                     <li class="brands__item">
                         <figure>
-                            <img src="img/RVCA.png" alt="">
+                            <img src="img/rvca.png" alt="">
                         </figure>
                     </li>
                     <li class="brands__item">
                         <figure>
-                            <img src="img/Vonzipper.png" alt="">
+                            <img src="img/vonzipper.png" alt="">
                         </figure>
                     </li>
                 </ul>
@@ -190,7 +234,7 @@
     <!-- CATEGORIES -->
 
     <section class="bottom-info">
-        <div class="wrapper bottom-info__wrapper">
+        <div class="wrapper wrapper--bottom-info">
 
             <section class="bottom-info__pigbuller">
                 <figure class="footer-logo">
@@ -230,24 +274,24 @@
             </section>
 
             <section class="footer-menu-wrapper">
-                <ul class="nav__menu footer__nav-menu">
-                    <li class="menu__item footer__item">
-                        <a class="menu__link  footer__link" href=""> home </a>
+                <ul class="nav-menu nav-menu--footer">
+                    <li class="nav-menu__item nav-menu__item--footer">
+                        <a class="nav-menu__link  nav-menu__link--footer" href=""> home </a>
                     </li>
-                    <li class="menu__item footer__item">
-                        <a class="menu__link  footer__link" href=""> about </a>
+                    <li class="nav-menu__item nav-menu__item--footer">
+                        <a class="nav-menu__link  nav-menu__link--footer" href=""> about </a>
                     </li>
-                    <li class="menu__item footer__item">
-                        <a class="menu__link  footer__link" href=""> blog </a>
+                    <li class="nav-menu__item nav-menu__item--footer">
+                        <a class="nav-menu__link  nav-menu__link--footer" href=""> blog </a>
                     </li>
-                    <li class="menu__item footer__item">
-                        <a class="menu__link  footer__link" href=""> products </a>
+                    <li class="nav-menu__item nav-menu__item--footer">
+                        <a class="nav-menu__link  nav-menu__link--footer" href=""> products </a>
                     </li>
-                    <li class="menu__item footer__item">
-                        <a class="menu__link  footer__link" href=""> lorem ipsum </a>
+                    <li class="nav-menu__item nav-menu__item--footer">
+                        <a class="nav-menu__link  nav-menu__link--footer" href=""> lorem ipsum </a>
                     </li>
-                    <li class="menu__item footer__item">
-                        <a class="menu__link  footer__link" href=""> dolor sit amet </a>
+                    <li class="nav-menu__item nav-menu__item--footer">
+                        <a class="nav-menu__link  nav-menu__link--footer" href=""> dolor sit amet </a>
                     </li>
                 </ul>
             </section>

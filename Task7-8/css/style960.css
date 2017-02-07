@@ -2,7 +2,7 @@
 
     /*             NAVIGATION MENU             */
 
-    .nav__menu .menu__item {
+    .nav-menu .nav-menu__item {
         margin-right: 1.2%;
     }
 
@@ -22,7 +22,7 @@
         width: 350px;
     }
 
-    .item-content {
+    .updates__content {
         width: 260px;
         height: 16px;
         overflow: hidden;
