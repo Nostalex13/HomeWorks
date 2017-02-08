@@ -31,6 +31,7 @@
 
     .nav-menu__item--mini {
         box-sizing: border-box;
+        text-align: center;
     }
 
     .nav-menu__item--mini:hover {
@@ -65,6 +66,13 @@
     .nav-menu__item--mini:nth-child(6) {
         padding: 2px 0 8px;
         height: 41px;
+    }
+
+    .nav-menu__item:first-child .nav-menu__link {
+        display: inline-block;
+        height: 25px;
+        width: 36px;
+        border-bottom: 2px solid #edbfff;
     }
 
     /*             SLIDER             */
