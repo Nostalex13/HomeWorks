@@ -1,0 +1,30 @@
+table {
+    margin: 60px;
+    width: 500px;
+}
+
+td {
+    width: 70px;
+    border: 5px solid black;
+}
+
+
+tr {
+    height: 60px;
+}
+
+.yellow {
+    background-color: #6FEC4A;
+}
+
+.light-black {
+    background-color: #1D221F;
+}
+
+.red {
+    background-color: #C92B2B;
+}
+
+.blue {
+    background-color: #401CA6;
+}
