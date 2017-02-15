@@ -1,48 +1,57 @@
-function pow(arr) {
-    var num;
-    var expo = [];
-    var result = 1;
+function verifyInput() {
+    var base;
+    var exponent;
 
-    num = parseInt(arr);
-    console.log('num:', num);
-    var temp = arr.replace(num, '');
-    var k = 0;
+    do {
+        base = prompt('Enter number', '');
 
-    for (var i=0; i<temp.length; i++) {
-        if ((temp[i] == ',') || (temp[i] == ' ') || (temp[i] == ';')) {
-
-        } else {
-            expo[k] = temp[i];
-            k++;
+        if ( base == null ) {
+            alert('Bye');
+            return false;
         }
-    }
 
-    expo = expo.join('');
-    expo = parseInt(expo);
-    console.log('expo:', expo);
+        base = parseInt(base);
 
-    if (isNaN(num) || isNaN(expo)) {
-        alert('Enter another values');
-        return false;
-    }
+    } while ( isNaN(base) || base == '' )
+
+    console.log('base:', base);
+
+    do {
+        exponent = prompt('Enter exponent', '');
+
+        if ( exponent == null ) {
+            alert('Bye');
+            return false;
+        }
+
+        exponent = parseInt(exponent);
+
+    } while ( isNaN(exponent) || exponent == '' )
+
+    console.log('exponent:', exponent);
+
+    pow(base, exponent);
+}
+
+function pow(base, expo) {
+    var result = 1;
 
     if (expo >= 0) {
         if (expo > 0) {
             for (var i=0; i<expo; i++) {
-                result = result*num;
+                result = result*base;
             }
         }
     } else {
         for (var i=expo; i<0; i++) {
-            result = result*num;
+            result = result*base;
         }
         result = 1/result;
     }
 
-    console.log('Your result :', result);
+    console.log('Your result:', result);
 
     return result;
 };
 
-var numbers = prompt('Enter number and exponent', '');
-pow(numbers);
+verifyInput();
