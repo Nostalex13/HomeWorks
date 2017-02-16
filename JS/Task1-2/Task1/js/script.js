@@ -38,12 +38,12 @@ function pow(base, expo) {
 
     if (expo >= 0) {
         if (expo > 0) {
-            for (var i=0; i<expo; i++) {
+            for (let i=0; i<expo; i++) {
                 result = result*base;
             }
         }
     } else {
-        for (var i=expo; i<0; i++) {
+        for (let i=expo; i<0; i++) {
             result = result*base;
         }
         result = 1/result;
