@@ -46,6 +46,14 @@ let page = {
         wrapperObj.classList.add('wrapper');
 
         let bodyObj = document.body;
+
+        // wrapperObj.style.width = '600px';
+        // wrapperObj.style.margin = '20px auto';
+        // wrapperObj.style.border = '1px solid black';
+        // wrapperObj.style.fontSize = '16px';
+        // wrapperObj.style.fontFamily = '"Tahoma", sans-serif';
+        // wrapperObj.style.textAlign = 'center';
+
         bodyObj.appendChild(wrapperObj);
     },
 
@@ -60,6 +68,8 @@ let page = {
 
     menuGen() {
         let menuObj = document.createElement('ol');
+
+        // menuObj.style.textAlign = 'left';
 
         let wrapperObj = document.querySelector('.wrapper');
         wrapperObj.appendChild(menuObj);
@@ -80,6 +90,8 @@ let page = {
         for (let i = 0; i < liObjs.length; i++) {
             let ulObj = document.createElement('ul');
 
+            // ulObj.style.padding = '5px 0';
+
             liObjs[i].appendChild(ulObj);
         }
 
@@ -91,7 +103,9 @@ let page = {
 
             for (let k = 0; k < 3; k++) {
                 let liObj = document.createElement('li');
-                // liObj.innerHTML = 'Вариант ответа №' + (k + 1);
+
+                // liObj.style.listStyle = 'none';
+                // liObj.style.fontSize = '14px';
 
                 let inputObj = document.createElement('input');
                 inputObj.setAttribute('type', 'checkbox');
@@ -113,6 +127,10 @@ let page = {
         let buttonObj = document.createElement('input');
         buttonObj.setAttribute('type', 'button');
         buttonObj.setAttribute('value', 'Проверить мои результаты');
+
+        // buttonObj.style.padding = '5px 25px';
+        // buttonObj.style.border = '2px solid grey';
+        // buttonObj.style.margin = '20px 0';
 
         let wrapperObj = document.querySelector('.wrapper');
         wrapperObj.appendChild(buttonObj);
