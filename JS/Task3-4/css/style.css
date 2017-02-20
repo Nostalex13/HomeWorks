@@ -1,0 +1,28 @@
+.wrapper {
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid black;
+
+    font-size: 16px;
+    font-family: 'Tahoma', sans-serif;
+    text-align: center;
+}
+
+ol {
+    text-align: left;
+}
+
+ul {
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+li li {
+    list-style: none;
+}
+
+[type=button] {
+    padding: 5px 25px;
+    border: 2px solid grey;
+    margin: 20px 0;
+}
