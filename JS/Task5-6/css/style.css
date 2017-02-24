@@ -1,0 +1,64 @@
+
+
+.container {
+    margin-top: 50px;
+    width: 500px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+/*             TIME BLOCK             */
+
+.well {
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.sec {
+    display: block;
+    height: 90px;
+    width: 100%;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+}
+
+.wrapper-msec {
+    text-align: right;
+    display: block;
+    padding-right: 47px;
+}
+
+.msec {
+    display: inline-block;
+    width: 38px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*             BUTTONS BLOCK             */
+
+.btn {
+    font-size: 40px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-start {
+    width: 150px;
+    background: rgba(150, 203, 51, 1);
+}
+
+.btn-start:hover {
+    background: rgba(150, 203, 51, .80);
+}
+
+.btn-clear {
+    width: 150px;
+    float: right;
+    background: rgba(227, 99, 99, 1);
+}
+
+.btn-clear:hover {
+    background: rgba(227, 99, 99, .80);
+}
