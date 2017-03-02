@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*             MAIN             */
+
+main {
+    width: 500px;
+    height: 300px;
+    margin: 50px auto;
+    border: 1px solid grey;
+    border-radius: 1px;
+    background-color: #DBBD64;
+    font-family: 'VT323', sans-serif;
+}
+
+/*             FORM             */
+
+form {
+    width: 450px;
+    height: 200px;
+    margin: 10px auto;
+    background-color: #E3DDCD;
+}
+
+.inputFields {
+    padding-left: 5px;
+    height: 200px;
+    border: 1px solid grey;
+    border-radius: 1px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, .5);
+}
+
+.inputFields > div {
+    margin-top: 5px;
+    height: 50px;
+}
+
+[type='text'] {
+    display: inline-block;
+    height: 20px;
+    margin: 10px;
+    border: 1px solid #365212;
+    border-radius: 2px;
+}
+
+div span {
+    font-size: 20px;
+    display: inline-block;
+    width: 70px;
+}
+
+.help {
+    width: 160px;
+    padding: 3px;
+    border: 1px solid black;
+    background-color: #fff;
+    vertical-align: bottom;
+    opacity: 0;
+}
+
+/*             BUTTON             */
+
+[type="button"] {
+    margin-top: 3px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, .5);
+    background: linear-gradient(to bottom, #d6b028 0%,#286b14 100%);
+    border: 1px solid #365212;
+    border-radius: 5px;
+    font-size: 25px;
+    font-family: 'VT323', sans-serif;
+    color: #1F2B0F;
+}
+
+[type='button']:active {
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, .5), inset 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
