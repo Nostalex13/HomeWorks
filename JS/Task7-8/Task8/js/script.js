@@ -1,32 +1,33 @@
-$(function() {
+$( function() {
 
-    $('[type=text]').each( function() {
+    $('.content').each( function() {
+
+        $(this).css('position', 'relative');
+        let $currTitle = $(this).attr('title');
+        $(this).parent().append(`<div class="tooltip tooltip-hidden"> ${$currTitle} </div>`);
+
+    });
+
+    $('.content').each( function() {
 
         $(this).on('mouseenter', function() {
-            let helpId = $(this).attr('id');
-
-            $(`[data-type=${helpId}]`).animate({ 'opacity': '1' }, 500, function() {
-                $(this).css('opacity', '1');
-            });
+            $(this).siblings('.tooltip').removeClass('tooltip-hidden');
+            $(this).removeAttr('title');
         });
 
         $(this).on('mouseleave', function() {
-            let helpId = $(this).attr('id');
+            $(this).siblings('.tooltip').addClass('tooltip-hidden');
 
-            $(`[data-type=${helpId}]`).animate({ 'opacity': '0' }, 500, function() {
-                $(this).css('opacity', '0');
-
-                let index = 0;
-                $('.help').each( function() {
-                    if( $(this).css('opacity') == 0 ) {
-                        index++;
-                    }
-                });
-
-                if( index == 3 ) {
-                    $('#helpBtn').attr('value', 'Show help');
+            let index = 0;
+            $('.tooltip').each( function() {
+                if( $(this).css('opacity') == 0 ) {
+                    index++;
                 }
             });
+
+            if( index == 3 ) {
+                $('#helpBtn').attr('value', 'Show help');
+            }
         });
     });
 
@@ -34,23 +35,17 @@ $(function() {
 
         if ( $(this).attr('value') == 'Show help' ) {
 
-            $('.help').animate({ 'opacity': '1' }, 500, function() {
-                $(this).css('opacity', '1');
-            });
-
+            $('.tooltip').removeClass('tooltip-hidden');
             $(this).attr('value', 'Hide help');
 
         } else {
-
             if ( $(this).attr('value') == 'Hide help' ) {
 
-                $('.help').animate({ 'opacity': '0' }, 500, function() {
-                    $(this).css('opacity', '0');
-                });
-
+                $('.tooltip').addClass('tooltip-hidden');
                 $(this).attr('value', 'Show help');
-            }
 
+            }
         }
     });
+
 });

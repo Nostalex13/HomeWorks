@@ -33,11 +33,12 @@ form {
 }
 
 .inputFields > div {
+    position: relative;
     margin-top: 5px;
     height: 50px;
 }
 
-[type='text'] {
+.content {
     display: inline-block;
     height: 20px;
     margin: 10px;
@@ -51,12 +52,21 @@ div span {
     width: 70px;
 }
 
-.help {
+/*             TOOLTIP             */
+
+.tooltip {
+    position: absolute;
+    display: inline-block;
     width: 160px;
     padding: 3px;
-    border: 1px solid black;
+    font-size: 20px;
+    font-family: 'VT323', sans-serif;
     background-color: #fff;
-    vertical-align: bottom;
+    color: #000;
+    border: 1px groove #6F0D0D;
+}
+
+.tooltip-hidden {
     opacity: 0;
 }
 

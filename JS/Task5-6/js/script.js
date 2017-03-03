@@ -109,7 +109,7 @@ function Stopwatch() {
 
 var stopW = new Stopwatch();
 
-document.querySelector('.btn-start').addEventListener('click', function() { stopW.btnStart() });
+document.querySelector('.btn-start').addEventListener('click', function() { stopW.btnStart(); });
 document.querySelector('.btn-clear').addEventListener('click', function() { stopW.btnClear() });
-$('.sec').prop('disabled', true);
-$('.msec').prop('disabled', true);
+$('.sec').attr('disabled', true);
+$('.msec').attr('disabled', true);
