@@ -674,7 +674,7 @@ label input {
     top: 1px;
 }
 
-label input:checked + .custom-span::before{
+input[type=checkbox]:checked + .custom-span::before{
     content: url("../img/square-icon-checked.png");
     text-align: center;
 }
