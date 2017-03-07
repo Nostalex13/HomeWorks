@@ -14,10 +14,11 @@ $(function() {
 
     $('.dropdown').hover(
         function() {
-            $(this).children('.submenu').slideDown(200);
+            // $(this).children('.submenu').slideDown(200);
+            $(this).children('.submenu').stop(true,false).slideDown(200);
         },
         function() {
-            $(this).children('.submenu').slideUp(200);
+            $(this).children('.submenu').stop(true,false).slideUp(200);
         }
     );
 
