@@ -2,3 +2,173 @@
     margin: 0;
     padding: 0;
 }
+
+.wrapper {
+    height: 1000px;
+}
+
+.j-wrapper {
+    margin: 40px auto;
+    position: relative;
+    border: 10px solid #598E89;
+    border-radius: 5px;
+    width: 600px;
+    height: 400px;
+}
+
+/*             SLIDER             */
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.jcarousel ul {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    float: left;
+}
+
+/*             CONTROLS             */
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 200px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #4E443C;
+    color: #fff;
+    text-decoration: none;
+    font: 24px Arial, sans-serif;
+    border-radius: 30px;
+}
+
+.jcarousel-control-prev {
+    left: -50px;
+}
+
+.jcarousel-control-next {
+    right: -50px;
+}
+
+.jcarousel-control-prev:hover span,
+.jcarousel-control-next:hover span {
+    display: block;
+}
+
+.jcarousel-control-prev.inactive,
+.jcarousel-control-next.inactive {
+    opacity: .5;
+    cursor: default;
+}
+
+/*             PAGINATION              */
+
+.jcarousel-pagination {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    opacity: 0;
+    transition: .4s;
+}
+
+.jcarousel-pagination-visible {
+    opacity: 1;
+    transition: .4s;
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 11px;
+    line-height: 14px;
+    min-width: 14px;
+
+    background: #fff;
+    color: #fff;
+    border: 1px solid #55A1A1;
+    border-radius: 14px;
+    text-align: center;
+
+    margin-right: 2px;
+
+    opacity: .65;
+}
+
+.jcarousel-pagination a.active {
+    background: #342920;
+    color: #342920;
+    opacity: 1;
+}
+
+
+/*                 *EASYDROP*                 */
+
+.selectWrapper {
+    width: 200px;
+    margin: 100px auto;
+}
+
+/*                 *CHECKBOXES*                 */
+
+.chbWrapper {
+    margin: 50px auto;
+    padding: 30px;
+    background: #7799D4;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.chbWrapper div {
+    margin: 5px;
+    display: block;
+}
+
+.custom {
+    position: relative;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    cursor: pointer;
+    background: url('../images/checkbox.png');
+}
+.custom input {
+    display: none;
+}
+
+/*                *CHECKBOX CSS*             */
+
+.custom-css input {
+    display: none;
+}
+
+/*.label-css:hover::after {
+    cursor: pointer;
+}*/
+
+.label-css:after {
+    content: url('../images/checkbox.png');
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+}
+
+.custom-css input:checked + .label-css:after {
+    content: url('../images/checkbox-checked.png');
+    text-align: center;
+}
+
+.custom-css input:disabled + .label-css:after {
+    content: url('../images/checkbox-checked.png');
+    opacity: .6;
+}

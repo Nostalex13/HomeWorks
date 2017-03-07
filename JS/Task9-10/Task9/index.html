@@ -6,11 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cusel.css">
+    <link rel="stylesheet" href="css/easydropdown.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery.jcarousel.min.js"></script>
+    <script src="js/jquery.easydropdown.js"></script>
 
     <script src="js/script.js"></script>
 </head>
 <body>
+
+    <div class="wrapper">
+        <div class="j-wrapper">
+            <div class="jcarousel">
+                <ul>
+                    <li><img src="images/slide1.png" width="600" height="400" alt=""></li>
+                    <li><img src="images/slide2.png" width="600" height="400" alt=""></li>
+                    <li><img src="images/slide3.png" width="600" height="400" alt=""></li>
+                </ul>
+            </div>
+
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+            <p class="jcarousel-pagination"></p>
+        </div>
+
+        <div class="selectWrapper">
+            <select class="dropdown">
+                <option value=""> Text 1 </option>
+                <option value=""> Text 2 </option>
+                <option value=""> Text 3 </option>
+                <option value=""> Text 4 </option>
+                <option value=""> Text 5 </option>
+                <option value=""> Text 6 </option>
+            </select>
+        </div>
+
+        <!-- JQUERY CHECKBOX -->
+        <h2> Jquery checkboxes </h2>
+
+        <div class="chbWrapper">
+            <div>
+                <label name="ch1"> label 1 </label>
+                <span class="custom"><input type="checkbox" name="ch1" /></span>
+            </div>
+            <div>
+                <label name="ch2"> label 2 </label>
+                <span class="custom"><input type="checkbox" name="ch2" /></span>
+            </div>
+            <div>
+                <label name="ch3"> label 3 </label>
+                <span class="custom"><input type="checkbox" name="ch3" /></span>
+            </div>
+        </div>
+
+        <!-- CSS CHECKBOX -->
+        <h2> Css checkboxes </h2>
+
+        <div class="chbWrapper">
+
+            <div class="custom-css">
+                <input type="checkbox" id="ch1-css" />
+                <label class="label-css" for="ch1-css"> label 1 </label>
+            </div>
+            <div class="custom-css">
+                <input type="checkbox" id="ch2-css"/>
+                <label class="label-css" for="ch2-css"> label 2 </label>
+            </div>
+            <div class="custom-css">
+                <input type="checkbox" id="ch3-css" disabled />
+                <label class="label-css" for="ch3-css"> label 3 </label>
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
