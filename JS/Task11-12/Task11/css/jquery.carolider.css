@@ -1,0 +1,60 @@
+.carolider * {
+    margin: 0;
+    padding: 0;
+}
+
+.carolider {
+    width: 700px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.carolider-slider {
+    float: left;
+    margin-top: 50px;
+    width: 600px;
+    overflow: hidden;
+}
+
+.carolider ul {
+    position: relative;
+    left: 0;
+    width: 2000px;
+    transition: .2s;
+}
+
+.carolider li {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    list-style: none;
+}
+
+.carolider p {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.carolider img {
+    width: 200px;
+    height: 100px;
+}
+
+/*             CONTROL BUTTONS             */
+
+.carolider-right-arr,
+.carolider-left-arr {
+    float: left;
+    margin: 90px 10px 0;
+    font-size: 15px;
+}
+
+.carolider-right-arr span:hover,
+.carolider-left-arr span:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+.arr-disabled {
+    visibility: hidden;
+}

@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.huaitle {
+    margin-bottom: 5px;
+}
