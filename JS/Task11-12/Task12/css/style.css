@@ -5,15 +5,68 @@
 
 .wrapper {
     width: 600px;
-    height: 400px;
     margin: 0 auto;
+    font-family: 'Calibri', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
 }
 
-.title {
-    font-size: 20px;
-    font-weight: bold;
+/*             STUDENT SECTION             */
+
+.studentInfo {
+    margin: 30px 0;
+    background: #aecbcf;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.huaitle {
-    margin-bottom: 5px;
+.studentInfo > div {
+    transition: .5s;
+}
+
+.student {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.myImg {
+    display: block;
+    margin: 10px auto;
+    border: 1px solid #415B57;
+    height: 200px;
+}
+
+.section_1 {
+    text-align: center;
+    transition: .2s;
+}
+
+.section_2 ul {
+    margin-left: 20px;
+}
+
+.section_1,
+.section_2,
+.section_3 {
+    border-bottom: 1px groove white;
+    margin-bottom: 15px;
+}
+
+.university,
+.section_2,
+.section_3 ,
+.section_4 {
+    text-align: left;
+}
+
+.university {
+    font-family: 'Arial';
+    color: #1D3836;
+}
+
+.indent {
+    text-indent: 30px;
 }

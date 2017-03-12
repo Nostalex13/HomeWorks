@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" data="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" data="ie=edge">
     <title>Document</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -16,12 +16,41 @@
 
     <div class="wrapper">
         <script type="text/html" id="temp">
-            <% for(let i = 0; i < ymnoeNazvanie.length; i++) { %>
-            <p class="title"><%= ymnoeNazvanie[i].gos %></p>
-            <p class="huaitle"><%= ymnoeNazvanie[i].huios %></p>
-            <% } %>
-        </script>
-    </div>
 
-</body>
-</html>
+            <% for(let i = 0; i < data.length; i++) { %>
+                <div class="studentInfo">
+
+                    <div class="section_1">
+                        <span class="student"><%= data[i].name %> </span>
+                        <img class="myImg" src="<%=data[i].imgSrc%>" alt="Это я" title="Глазик">
+                        <p class="university"> Студент <%= data[i].university %> </p>
+                    </div>
+
+                    <div class="section_2">
+                        <h3> Хочу учить фронтенд, потому что: </h3>
+                        <ul>
+                            <li> <%= data[i].info1 %> </li>
+                            <li> <%= data[i].info2 %> </li>
+                            <li> <%= data[i].info3 %> </li>
+                        </ul>
+                    </div>
+
+                    <div class="section_3">
+                        <h3> Мой контактный телефон: </h3>
+                        <p class="indent"><%= data[i].phone %></p>
+                        <h3> Мой профить Вконтакте: </h3>
+                        <p class="indent"><a href="<%= data[i].profile %>" target="_blank"> vk.com </a></p>
+                    </div>
+
+                    <div class="section_4">
+                        <h3> Мой фидбэк: </h3>
+                        <p class="indent"> <%= data[i].feedback %> </p>
+                    </div>
+                </div>
+                <% } %>
+
+            </script>
+        </div>
+
+    </body>
+    </html>
