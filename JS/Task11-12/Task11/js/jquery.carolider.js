@@ -4,6 +4,7 @@
 (function($){
     let currentValue = 3;
     let sliderLength;
+    let itemWidth;
 
     $.fn.carolider = function(config) {
 
@@ -11,6 +12,7 @@
         let def = {
             arrColor: 'black'
         }
+        itemWidth = $('.carolider li').outerWidth();
 
         $.extend(def, config);
 
@@ -32,47 +34,33 @@
 
     function leftBtn() {
         $('.carolider-left-arr span')
-            .addClass('arr-disabled')
             .click( function() {
                 if(currentValue == 3) {
-                    $(this).addClass('arr-disabled');
+                    let shiftValue = (sliderLength - 3) * itemWidth;  // 3 as quantity of visible imgs
+                    currentValue = sliderLength;
+                    $('.carolider ul').css('left', `-=${shiftValue}px`);
+
                     return this;
                 }
 
-            $('.carolider ul').css('left', '+=204');
+            $('.carolider ul').css('left', `+=${itemWidth}`);
             currentValue--;
-
-            btnCheck();
         });
     }
 
     function rightBtn() {
         $('.carolider-right-arr span').click( function() {
             if(currentValue == sliderLength) {
-                $(this).addClass('arr-disabled');
+                let shiftValue = (sliderLength - 3) * itemWidth;
+                currentValue = 3;
+                $('.carolider ul').css('left', `+=${shiftValue}px`);
+
                 return this;
             }
 
-            $('.carolider ul').css('left', '-=204px');
+            $('.carolider ul').css('left', `-=${itemWidth}`);
             currentValue++;
-
-            btnCheck();
         });
-    }
-
-    function btnCheck() {
-        if(currentValue == sliderLength) {
-            $('.carolider-right-arr span').addClass('arr-disabled');
-            return this;
-        } else {
-            if(currentValue == 3) {
-                $('.carolider-left-arr span').addClass('arr-disabled');
-                return this;
-            }
-        }
-
-        $('.carolider-right-arr span').removeClass('arr-disabled');
-        $('.carolider-left-arr span').removeClass('arr-disabled');
     }
 
 })(jQuery);
