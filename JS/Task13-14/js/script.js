@@ -3,10 +3,9 @@
 window.onload = function() {
 
     let html = document.querySelector('#test').innerHTML;
-    let content = JSON.parse(localStorage.getItem('testQuestions'));
-    let answers = JSON.parse(localStorage.getItem('testAnswers'));
+    let questions = JSON.parse(localStorage.getItem('testQuestions'));
 
-    document.querySelector('.testMenu').innerHTML = tmpl(html, { content: content });
+    document.querySelector('.testMenu').innerHTML = tmpl(html, { content: questions.questions });
 
     let checkboxes = document.querySelectorAll('[type=checkbox]');
     let submenus = document.querySelectorAll('.submenu');
@@ -50,9 +49,8 @@ window.onload = function() {
                     if(subItems[k].checked == true) {
                         checkedAnswers[i] = subItems[k].parentNode.innerText;
                         correctness[i] = false;
-                        // checkedAnswers.set(subItems[k].parentNode.innerText, 'false');
-
-                        if (subItems[k].parentNode.innerText == answers[i]) {
+                        
+                        if (k == questions.questions[i].correct) {
                             correctness[i] = true;
                             break;
                         }
@@ -135,7 +133,7 @@ window.onload = function() {
             }
 
             let obj = {
-                question: `${i+1}. ${content[i].quest} : `,
+                question: `${i+1}. ${questions.questions[i].title} : `,
                 correct: classAnsw,
                 answer: answersArr[i].answer
             };

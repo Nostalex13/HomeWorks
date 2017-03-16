@@ -1,32 +1,23 @@
 $(function() {
 
-    let obj = [
+    var test = {
+        questions: [
         {
-            quest: '1+1=X. X=?',
-            answer1: 'yes',
-            answer2: 'X=2.0',
-            answer3: 'X=2'
+            title: '1+1=X. X=?',
+            answers: ['yes', 'X=2.0', 'X=2'],
+            correct: 1,
         },
         {
-            quest: 'Any question?',
-            answer1: 'yes',
-            answer2: 'Les Paul',
-            answer3: '_'
+            title: 'Any question?',
+            answers: ['yes', 'Les Paul', '_'],
+            correct: 2,
         },
         {
-            quest: 'Lorem?',
-            answer1: 'dorem',
-            answer2: 'morem',
-            answer3: 'yes'
-        }
-    ];
+            title: 'Lorem?',
+            answers: ['dorem', 'morem', 'yes'],
+            correct: 2,
+        } ]
+    };
 
-    let answers = [
-        'X=2.0',
-        '_',
-        'yes'
-    ];
-
-    localStorage.setItem('testQuestions', JSON.stringify(obj));
-    localStorage.setItem('testAnswers', JSON.stringify(answers));
+    localStorage.setItem('testQuestions', JSON.stringify(test));
 });

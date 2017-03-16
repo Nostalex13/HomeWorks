@@ -13,7 +13,7 @@
     <script src="https:ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/template.js"></script>
     <!-- enable below first time ples -->
-    <!-- <script src="js/local.js"></script> -->
+    <script src="js/local.js"></script>
     <script src="js/script.js"></script>
 </head>
 <body>
@@ -26,11 +26,11 @@
             <script type="text/html" id="test">
                 <% for(let i = 0; i < content.length; i++) { %>
                     <li>
-                        <span><%= content[i].quest %></span>
+                        <span><%= content[i].title %></span>
                         <ul class="submenu">
-                            <li><label><input type="checkbox"><%= content[i].answer1 %></label></li>
-                            <li><label><input type="checkbox"><%= content[i].answer2 %></label></li>
-                            <li><label><input type="checkbox"><%= content[i].answer3 %></label></li>
+                            <% for(let k = 0; k < content[i].answers.length; k++) { %>
+                            <li><label><input type="checkbox"><%= content[i].answers[k] %></label></li>
+                            <% } %>
                         </ul>
                     </li>
                 <% } %>
