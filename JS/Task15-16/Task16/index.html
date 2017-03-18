@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https:ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <p class="header"> Тест по программированию </p>
+
+        <ol class="testMenu">
+            <script type="text/html" id="test">
+                <% for(let i = 0; i < content.length; i++) { %>
+                    <li>
+                        <span><%= content[i]._question %></span>
+                        <ul class="submenu">
+                            <% for(let k = 0; k < content[i]._answers.length; k++) { %>
+                            <li><label><input type="checkbox"><%= content[i]._answers[k] %></label></li>
+                            <% } %>
+                        </ul>
+                    </li>
+                <% } %>
+            </script>
+        </ol>
+        
+    </div>
+
+    <section class="modal">
+        <div class="modal-dialog">
+            <div class="modal-header"> Question editor v1.0 </div>
+
+            <form>
+                <div class="modal-content">
+                    <div class="question">
+                        <span> Enter question: </span>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="answers">
+                        <span> Enter answers below (max 5): </span>
+                        <input type="range" min="2" max="5" step="1" value="4">
+                        <span class="rangeVal"></span>
+
+                        <div class="answers_list"></div>
+                    </div>
+
+                    <div class="correctAnswer">
+                        <span> Enter index of correct answer: </span>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <input class="closeBtn" type="button" value="Close"></input>
+                    <input class="showBtn" type="button" value="Show questions"></input>
+                    <input class="postBtn" type="submit" value="Post question"></input>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+</body>
+</html>
