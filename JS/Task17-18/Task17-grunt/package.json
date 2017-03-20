@@ -1,0 +1,15 @@
+{
+  "name": "okay",
+  "version": "1.0.0",
+  "description": "Grunt zborshik",
+  "main": "script.js",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.2.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
