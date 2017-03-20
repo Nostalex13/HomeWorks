@@ -45,7 +45,7 @@ $(function() {
             console.log('TestRadio');
         }
 
-        let oldCheck = check;
+        let oldCheck = this.check;
         this.check = function(args) {
             oldCheck.call(this);
             console.log('Radio check');
