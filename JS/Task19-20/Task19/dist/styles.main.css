@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.page {
+  position: relative;
+  top: 0;
+  left: 0; }
+
+.wrapper--top-info {
+  height: 1010px;
+  background: #fff; }
+  .wrapper--top-info .top-info {
+    width: 1240px;
+    margin: 0 auto; }
+
+/*          Header          */
+.wrapper--services {
+  height: 500px;
+  background: #2a2d32; }
+  .wrapper--services .services {
+    width: 1240px;
+    margin: 0 auto; }
+
+.wrapper--news {
+  height: 545px;
+  background: #f7f7f7; }
+  .wrapper--news .news {
+    width: 1240px;
+    margin: 0 auto; }
+
+.wrapper--bottom-brands {
+  height: 240px;
+  background: #fff; }
+  .wrapper--bottom-brands .bottom-brands {
+    width: 1240px;
+    margin: 0 auto; }
+
+.wrapper--bottom-menus {
+  height: 325px;
+  background: #2a2d32; }
+  .wrapper--bottom-menus .bottom-menus {
+    width: 1240px;
+    margin: 0 auto; }
+
+.wrapper--footer-content {
+  height: 60px;
+  background: #35383c; }
+  .wrapper--footer-content .footer-content {
+    width: 1240px;
+    margin: 0 auto; }

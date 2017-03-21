@@ -1,0 +1,95 @@
+@mixin content {
+   width: $content;
+   margin: 0 auto;
+}
+
+@import 'variables';
+@import 'mixins';
+
+//             PAGE PROPERTIES
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.page {
+   position: relative;
+   top: 0;
+   left: 0;
+}
+
+//             TOP-INFO
+
+.wrapper--top-info {
+   height: 1010px;
+   background: #fff;
+
+   .top-info {
+      @include content;
+   }
+}
+
+/*          Header          */
+
+header {
+   
+}
+
+
+//             SERVICES
+
+.wrapper--services {
+   height: 500px;
+   background: #2a2d32;
+
+   .services {
+      @include content;
+   }
+}
+
+//             NEWS
+
+.wrapper--news {
+   height: 545px;
+   background: #f7f7f7;
+
+   .news {
+      @include content;
+   }
+}
+
+//             BOTTOM-BRANDS
+
+.wrapper--bottom-brands {
+   height: 240px;
+   background: #fff;
+
+   .bottom-brands {
+      @include content;
+   }
+}
+
+//             BOTTOM-MENUS
+
+.wrapper--bottom-menus {
+   height: 325px;
+   background: #2a2d32;
+
+   .bottom-menus {
+      @include content;
+   }
+}
+
+//             FOOTER-CONTENT
+
+.wrapper--footer-content {
+   height: 60px;
+   background: #35383c;
+
+   .footer-content {
+      @include content;
+   }
+}
+
+$content: 1240px;
