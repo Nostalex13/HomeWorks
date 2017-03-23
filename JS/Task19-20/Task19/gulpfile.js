@@ -12,13 +12,13 @@ var paths = {
 gulp.task('sass', function () {
    return gulp.src('app/styles/styles.main.scss')
    .pipe(sass().on('error', sass.logError))
-   .pipe(gulp.dest('dist/'));
+   .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
     .pipe(concat('script.main.js'))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('scss', function() {
