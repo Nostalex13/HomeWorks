@@ -10,8 +10,17 @@
 
 .page {
    position: relative;
+   // width: $content;
    top: 0;
    left: 0;
+
+   min-width: 1160px;
+}
+
+.clearfix::after {
+   content: '';
+   display: table;
+   clear: both;
 }
 
 //             TOP-INFO
@@ -27,21 +36,334 @@
 
 /*          Header          */
 
-header {
+.header {
+   margin-top: 30px;
 
+   &__icons {
+      float: right;
+      display: flex;
+
+      justify-content: space-between;
+      vertical-align: bottom;
+      width: 150px;
+      margin: 20px 3px 0 0;
+
+      list-style: none;
+   }
+
+   &__item {
+      display: inline-block;
+      height: 18px;
+      width: 18px;
+
+      background-position: 0 0;
+   }
+
+   &__link {
+      display: block;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__item:nth-child(1) {
+      background: url('dist/images/facebook-icon.png') no-repeat;
+   }
+
+   &__item:nth-child(2) {
+      background: url('dist/images/twitter-icon.png') no-repeat;
+   }
+
+   &__item:nth-child(3) {
+      background: url('dist/images/rss-icon.png') no-repeat;
+   }
+
+   &__item:nth-child(4) {
+      background: url('dist/images/linkedIn-icon.png') no-repeat;
+   }
+
+   &__item:nth-child(5) {
+      background: url('dist/images/skype-icon.png') no-repeat;
+   }
+
+   &__item:hover {
+      background-position: 0 -18px;
+   }
+}
+
+/*          Navigation menu          */
+
+.nav {
+   display: flex;
+
+   align-items: center;
+   justify-content: space-between;
+   height: 57px;
+   margin-top: 30px;
+
+   background: #2a2d32;
+
+   &__menu {
+      list-style: none;
+
+      color: #fff;
+      font-size: 15px;
+      @include UbuntuC;
+      text-transform: uppercase;
+   }
+
+   &__item {
+      float: left;
+      padding: 0 35px;
+      line-height: 57px;
+
+      border-right: 1px solid #181a1d;
+   }
+
+   &__item:hover {
+      cursor: pointer;
+      color: #f4b60d;
+   }
+
+   &__search {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+      width: 240px;
+      height: 40px;
+      margin-right: 10px;
+
+      background: #35383c;
+
+      border: 1px solid #181a1d;
+      box-sizing: border-box;
+   }
+
+   &__input-text {
+      margin: 5px 10px;
+      padding-left: 5px;
+
+      line-height: 30px;
+      color: #fff;
+
+      background: 0;
+      border: 0;
+   }
+
+   &__button {
+      width: 15px;
+      margin-right: 10px;
+
+      background: url('dist/images/search-icon.png') no-repeat;
+      border: 0;
+      opacity: .3;
+
+      transition: .2s;
+   }
+
+   &__button:hover {
+      cursor: pointer;
+      opacity: .9;
+   }
+}
+
+/*             Slider             */
+
+.j-wrapper {
+   margin: 50px auto;
+   position: relative;
+   width: $content;
+   height: 470px;
+}
+
+.jcarousel {
+   position: relative;
+   overflow: hidden;
+}
+
+.jcarousel ul {
+   position: relative;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.jcarousel li {
+   float: left;
+}
+
+.jcarousel img {
+   width: $content;
+   height: 470px;
+}
+
+/*             Pagination              */
+
+.jcarousel-pagination {
+   position: absolute;
+   width: inherit;
+   bottom: 15px;
+
+   text-align: center;
+
+   opacity: 0;
+   transition: .4s;
+}
+
+.jcarousel-pagination-visible {
+   opacity: 1;
+}
+
+.jcarousel-pagination a {
+   text-decoration: none;
+   display: inline-block;
+   margin-right: 10px;
+
+   width: 15px;
+   height: 15px;
+
+   font-size: 0;
+
+   background: #fff;
+
+   border: 3px solid #fff;
+   box-sizing: border-box;
+}
+
+.jcarousel-pagination a.active {
+   background: #001d1d;
+   border: 3px solid #fff;
+}
+
+/*       Features          */
+
+.features {
+   height: 260px;
+   margin-top: 75px;
+}
+
+.feature-item {
+   display: inline-block;
+   width: 380px;
+   height: inherit;
+   margin-left: 3px;
+
+   &__index {
+      float: left;
+      height: inherit;
+      width: 100px;
+
+      color: #e9e9ea;
+      font-size: 90px;
+      @include UbuntuM;
+      text-align: center;
+   }
+
+   &__info {
+      float: left;
+      width: 280px;
+      margin-top: 15px;
+      padding-left: 20px;
+
+      box-sizing: border-box;
+   }
+
+   &__name {
+      margin-top: 10px;
+
+      @include UbuntuM;
+      font-weight: bold;
+   }
+
+   &__content {
+      height: 60px;
+      width: 240px;
+      line-height: 20px;
+      margin: 10px 0;
+
+      color: #8a8a8a;
+      font-size: 13px;
+      @include Arial;
+
+      overflow: hidden;
+   }
+
+   &__readmore {
+      display: inline;
+      margin-top: 10px;
+
+      font-size: 14px;
+      @include UbuntuM;
+      font-weight: bold;
+   }
+
+   &__readmore:hover {
+      cursor: pointer;
+      color: #248cec;
+   }
+
+   &__readmore::after {
+      content: url('dist/images/arr-right.png');
+      margin-left: 5px;
+   }
 }
 
 
 //             SERVICES
 
 .wrapper--services {
-   height: 500px;
+   height: 480px;
    background: #2a2d32;
 
-   .services {
-      @include content;
+}
+
+.services {
+   padding-left: 10px;
+
+   @include content;
+
+   box-sizing: border-box;
+
+   &__name {
+      margin: 10px 0;
+      line-height: 90px;
+      color: #fff;
+      font-size: 20px;
+      @include UbuntuM;
+   }
+
+   &__figure {
+      position: relative;
+      display: inline-block;
+      margin-right: 24px;
+   }
+
+   &__figure:hover {
+      cursor: pointer;
+   }
+
+   &__caption {
+      margin-top: 30px;
+
+      color: #fff;
+      font-size: 14px;
+      @include UbuntuM;
+      text-align: center;
+   }
+
+   .caption-mask {
+      position: absolute;
+      display: inline;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      text-align: center;
+
+      background-color: rgba(36, 140, 236, .9);
    }
 }
+
 
 //             NEWS
 
@@ -49,40 +371,322 @@ header {
    height: 545px;
    background: #f7f7f7;
 
-   .news {
-      @include content;
+}
+
+.news {
+   @include content;
+   display: flex;
+   vertical-align: top;
+   padding: 30px 0 0 10px;
+
+   @include UbuntuM;
+   box-sizing: border-box;
+}
+
+/*       Latest       */
+
+.latest {
+   display: inline-block;
+   width: 570px;
+   padding-left: 10px;
+
+   box-sizing: border-box;
+
+   &__caption {
+      margin: 20px 0;
+      font-size: 24px;
+   }
+
+   &__item {
+      position: relative;
+      margin-top: 30px;
+   }
+
+   &__item::before {
+      position: absolute;
+      top: 15px;
+      left: -15px;
+   }
+
+   &__item--item1::before {
+      content: url('dist/images/Jan21.png');
+   }
+
+   &__item--item2::before {
+      content: url('dist/images/Jan23.png');
+   }
+
+   &__content {
+      display: inline-block;
+      width: 380px;
+      margin-left: 25px;
+   }
+
+   &__name {
+      display: inline-block;
+
+      font-size: 16px;
+   }
+
+   &__name:hover {
+      cursor: pointer;
+      color: #248cec;
+   }
+
+   &__link {
+      color: #0187f4;
+   }
+
+   &__link:hover {
+      cursor: pointer;
+   }
+
+   &__item-info {
+      display: inline-block;
+      margin-top: 7px;
+
+      color: #8a8a8a;
+      font-size: 14px;
+      @include Arial;
+   }
+
+   &__comment {
+      display: inline-block;
+      height: 80px;
+      width: 380px;
+      margin-top: 25px;
+
+      line-height: 20px;
+      color: #8a8a8a;
+      font-size: 14px;
+      @include Arial;
    }
 }
 
+/*       Banners:    */
+
+.banner {
+   display: inline-block;
+   width: 570px;
+
+   &__name {
+      padding: 20px 0;
+
+      font-size: 24px;
+   }
+}
+
+.accordion {
+   list-style: none;
+
+   &__item {
+
+   }
+
+   &__link {
+      display: inline-block;
+      width: 560px;
+      height: 37px;
+      margin: 3px 0;
+
+      line-height: 37px;
+
+      border: 1px solid #e8e8e8;
+
+      background: #fff;
+      transition: .2s;
+   }
+
+   &__link--active {
+      color: #fff;
+      background: #f4b60d;
+      border-color: #f4b60d;
+   }
+
+   &__link:hover {
+      cursor: pointer;
+   }
+
+   &__symbol {
+      float: left;
+      height: 37px;
+      padding: 0 13px;
+
+      line-height: inherit;
+
+      border-right: 1px solid #e8e8e8;
+      box-sizing: border-box;
+   }
+
+   &__symbol--active {
+      border-color: #f4b60d;
+   }
+
+   &__item-name {
+      display: block;
+      height: 37px;
+      margin-left: 36px;
+      padding-left: 15px;
+
+      line-height: inherit;
+      text-transform: uppercase;
+
+      border-left: 1px solid #e8e8e8;
+      box-sizing: border-box;
+   }
+
+   &__content {
+      display: none;
+      height: 100px;
+      margin: 15px 0 25px 37px;
+
+      color: #8a8a8a;
+      font-size: 14px;
+      @include Arial;
+      line-height: 20px;
+
+      overflow: hidden;
+   }
+}
 //             BOTTOM-BRANDS
 
-.wrapper--bottom-brands {
+.wrapper--brands {
    height: 240px;
    background: #fff;
 
-   .bottom-brands {
-      @include content;
-   }
 }
 
+.brands {
+   @include content;
+
+   padding: 86px 10px;
+
+   box-sizing: border-box;
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+
+      list-style: none;
+   }
+
+   &__link {
+      display: block;
+   }
+
+   &__link:hover {
+      cursor: pointer;
+   }
+}
 //             BOTTOM-MENUS
 
 .wrapper--bottom-menus {
    height: 325px;
    background: #2a2d32;
 
-   .bottom-menus {
-      @include content;
-   }
 }
 
+.bottom-menus {
+   @include content;
+   padding: 60px 10px;
+
+   box-sizing: border-box;
+
+   &__menu {
+      display: inline-block;
+      width: 280px;
+      padding-right: 20px;
+
+      list-style: none;
+
+      box-sizing: border-box;
+   }
+
+   &__caption {
+      margin-bottom: 35px;
+
+      color: #fff;
+      font-size: 16px;
+      @include UbuntuM;
+      text-transform: uppercase;
+   }
+
+   &__item {
+      border-bottom: 1px solid #393c40;
+      line-height: 35px;
+   }
+
+   &__item:last-child {
+      border: 0;
+   }
+
+   &__link {
+      color: #828385;
+      font-size: 14px;
+      @include Arial;
+      text-decoration: none;
+   }
+
+   &__link:hover {
+      cursor: pointer;
+      color: #248cec;
+   }
+}
 //             FOOTER-CONTENT
 
-.wrapper--footer-content {
+.wrapper--footer {
    height: 60px;
    background: #35383c;
 
-   .footer-content {
-      @include content;
+}
+
+.footer {
+   @include content;
+   padding-top: 25px;
+
+   color: #6f7073;
+   font-size: 14px;
+   @include Arial;
+
+   box-sizing: border-box;
+
+   &__address {
+      display: inline-block;
+      margin-left: 20px;
+   }
+
+   &__address::before {
+      content: url('dist/images/location.png');
+      position: relative;
+      top: 3px;
+      left: -5px;
+   }
+
+   &__phone {
+      display: inline-block;
+      margin-left: 30px;
+   }
+
+   &__phone::before {
+      content: url('dist/images/iPhone.png');
+      position: relative;
+      top: 3px;
+      left: -5px;
+   }
+
+   &__mail {
+      @extend &__phone;
+   }
+
+   &__mail::before {
+      content: url('dist/images/mail.png');
+      position: relative;
+      top: 1px;
+      left: -8px;
+   }
+
+   &__copyright {
+      float: right;
+      margin-right: 10px;
    }
 }

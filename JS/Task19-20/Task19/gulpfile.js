@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+var imagemin = require('gulp-imagemin');
 
 var paths = {
   scripts: 'app/js/*.js',
@@ -18,7 +18,6 @@ gulp.task('sass', function () {
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
     .pipe(concat('script.main.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('dist'));
 });
 
@@ -28,8 +27,14 @@ gulp.task('scss', function() {
     .pipe(gulp.dest('app/styles/'));
 });
 
+gulp.task('images', function() {
+   return gulp.src('app/img/**/*')
+      .pipe(imagemin())
+      .pipe(gulp.dest('dist/images'));
+});
 
-gulp.task('default', ['scss', 'scripts'], function() {
+gulp.task('default', ['scss', 'scripts', 'images'], function() {
    gulp.watch(['app/styles/*.scss', '!app/styles/*styles.main.scss'], ['scss']);
    gulp.watch('app/styles/styles.main.scss', ['sass']);
+   gulp.watch(paths.scripts, ['scripts']);
 });

@@ -2,3 +2,15 @@
    width: $content;
    margin: 0 auto;
 }
+
+@mixin UbuntuC {
+   font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+@mixin UbuntuM {
+   font-family: 'Ubuntu-Medium', sans-serif;
+}
+
+@mixin Arial {
+   font-family: 'Arial', sans-serif;
+}

@@ -6,9 +6,13 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Document</title>
 
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
    <link rel="stylesheet" href="dist/styles.main.css">
+   <link rel="stylesheet" href="dist/font-face.css">
 
    <script src="https:ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="dist/jquery.jcarousel.min.js"></script>
    <script src="dist/script.main.js"></script>
 </head>
 <body>
@@ -19,23 +23,82 @@
 
       <section class="wrapper--top-info">
          <div class="top-info">
-            <header>
+            <header class="header">
+               <ul class="header__icons">
+                  <li class="header__item"><a class="header__link" href=""></a></li>
+                  <li class="header__item"><a class="header__link" href=""></a></li>
+                  <li class="header__item"><a class="header__link" href=""></a></li>
+                  <li class="header__item"><a class="header__link" href=""></a></li>
+                  <li class="header__item"><a class="header__link" href=""></a></li>
+               </ul>
+
                <figure>
-                  <img src="app/img/logo.png" alt="">
+                  <img class="header__logo" src="dist/images/logo.png" alt="">
                </figure>
 
             </header>
 
-            <nav>
+            <nav class="nav">
+               <ul class="nav__menu">
+                  <li class="nav__item"><a class="nav__link"> home </a></li>
+                  <li class="nav__item"><a class="nav__link"> features </a></li>
+                  <li class="nav__item"><a class="nav__link"> services </a></li>
+                  <li class="nav__item"><a class="nav__link"> news </a></li>
+                  <li class="nav__item"><a class="nav__link"> shop </a></li>
+               </ul>
 
+               <div class="nav__search">
+                  <input class="nav__input-text" type="text" placeholder="Search...">
+                  <input class="nav__button" type="button">
+               </div>
             </nav>
 
-            <div class="carolider">
+            <div class="j-wrapper">
+               <div class="jcarousel">
+                  <ul>
+                     <li><img src="dist/images/slider/img4.jpg"></li>
+                     <li><img src="dist/images/slider/img3.jpg"></li>
+                     <li><img src="dist/images/slider/img2.jpg"></li>
+                  </ul>
+               </div>
 
+               <p class="jcarousel-pagination"></p>
             </div>
 
             <div class="features">
+               <div class="feature-item">
+                  <span class="feature-item__index"> 01 </span>
 
+                  <div class="feature-item__info">
+                     <img class="feature-item__img" src="dist/images/settings.png">
+                     <p class="feature-item__name"> Power Inside </p>
+                     <p class="feature-item__content">                        Cum sociis natoque penatibus et magnis dis parturient montesmus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia                        ptas sit aspernatur samomo enim ipsam voluptatem.
+                     </p>
+                     <a class="feature-item__readmore"> Read More </a>
+                  </div>
+               </div>
+
+               <div class="feature-item">
+                  <span class="feature-item__index"> 02 </span>
+
+                  <div class="feature-item__info">
+                     <img class="feature-item__img" src="dist/images/params.png">
+                     <p class="feature-item__name"> New Technologies </p>
+                     <p class="feature-item__content">                        Cum sociis natoque penatibus et magnis dis parturient montesmus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia                        ptas sit aspernatur samomo enim ipsam voluptatem.
+                     </p>
+                     <a class="feature-item__readmore"> Read More </a>
+                  </div>
+               </div>
+
+               <div class="feature-item">
+                  <span class="feature-item__index"> 03 </span>
+
+                  <div class="feature-item__info">
+                     <img class="feature-item__img" src="dist/images/truck.png">
+                     <p class="feature-item__name"> Fast Support </p>
+                     <p class="feature-item__content">                        Cum sociis natoque penatibus et magnis dis parturient montesmus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia                        ptas sit aspernatur samomo enim ipsam voluptatem.                     </p>                     <a class="feature-item__readmore"> Read More </a>
+                  </div>
+               </div>
             </div>
 
          </div>
@@ -45,7 +108,27 @@
 
       <section class="wrapper--services">
          <div class="services">
+            <p class="services__name"> Our Services </p>
 
+            <figure class="services__figure">
+               <img class="services__img" src="dist/images/schedule_services.png" alt="">
+               <figcaption class="services__caption"> Schedule Services </figcaption>
+            </figure>
+
+            <figure class="services__figure">
+               <img class="services__img" src="dist/images/preventive_maintence.png" alt="">
+               <figcaption class="services__caption"> Preventive Maintence </figcaption>
+            </figure>
+
+            <figure class="services__figure">
+               <img class="services__img" src="dist/images/tire_wheel.png" alt="">
+               <figcaption class="services__caption"> Tire & Wheel Services </figcaption>
+            </figure>
+
+            <figure class="services__figure">
+               <img class="services__img" src="dist/images/repair_service.png" alt="">
+               <figcaption class="services__caption"> Repair Services </figcaption>
+            </figure>
          </div>
       </section>
 
@@ -53,14 +136,99 @@
 
       <section class="wrapper--news">
          <div class="news">
+            <div class="latest">
+               <p class="latest__caption"> Latest News </p>
 
+               <div class="latest__item latest__item--item1">
+                  <img class="latest__img" src="dist/images/scheme.png" alt="">
+
+                  <div class="latest__content">
+                     <p class="latest__name"> Advanced Machinery Helps Improve Quality </p>
+                     <p class="latest__item-info"> by <a class="latest__link"> cmsmasters </a> Comments
+                        <a class="latest__link">(6)</a></p>
+                     <p class="latest__comment">
+                     Cum sociis natoque penatibus et magnis dis parturient ontesmus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur samomo enim ipsam voluptatem.</p>
+                  </div>
+               </div>
+
+               <div class="latest__item latest__item--item2">
+                  <img class="latest__img" src="dist/images/engineer.png" alt="">
+
+                  <div class="latest__content">
+                     <p class="latest__name"> Powerful Techniques for Advanced Service </p>
+                     <p class="latest__item-info"> by <a class="latest__link"> cmsmasters </a> Comments
+                        <a class="latest__link">(3)</a></p>
+                     <p class="latest__comment">
+                        Cum sociis natoque penatibus et magnis dis parturient ontesmus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur samomo enim ipsam voluptatem.</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="banner">
+               <p class="banner__name"> Banners Place </p>
+
+               <ul class="accordion">
+                  <li class="accordion__item">
+                     <a class="accordion__link">
+                        <span class="accordion__symbol"> + </span>
+                        <span class="accordion__item-name"> Accordion panel 1 </span>
+                     </a>
+                     <p class="accordion__content"> Cum sociis natoque penatibus et magnis dis parturient mus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur momo. Cum sociis natoque penatibus et magnis dis parturient ontesmus. Nemo enim ipsam voluptatem quia ptas sit aspernatur samomoPro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur
+                     samomo enim ipsam voluptatem. </p>
+                  </li>
+                  <li class="accordion__item">
+                     <a class="accordion__link">
+                        <span class="accordion__symbol"> + </span>
+                        <span class="accordion__item-name"> Accordion panel 2 </span>
+                     </a>
+                     <p class="accordion__content"> Cum sociis natoque penatibus et magnis dis parturient mus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur momo. Cum sociis natoque penatibus et magnis dis parturient ontesmus. Nemo enim ipsam voluptatem quia ptas sit aspernatur samomoPro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur
+                     samomo enim ipsam voluptatem. </p>
+                  </li>
+                  <li class="accordion__item">
+                     <a class="accordion__link">
+                        <span class="accordion__symbol"> + </span>
+                        <span class="accordion__item-name"> Accordion panel 3 </span>
+                     </a>
+                     <p class="accordion__content"> Cum sociis natoque penatibus et magnis dis parturient mus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur momo. Cum sociis natoque penatibus et magnis dis parturient ontesmus. Nemo enim ipsam voluptatem quia ptas sit aspernatur samomoPro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur
+                     samomo enim ipsam voluptatem. </p>
+                  </li>
+                  <li class="accordion__item">
+                     <a class="accordion__link">
+                        <span class="accordion__symbol"> + </span>
+                        <span class="accordion__item-name"> Accordion panel 4 </span>
+                     </a>
+                     <p class="accordion__content"> Cum sociis natoque penatibus et magnis dis parturient mus. Pro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur momo. Cum sociis natoque penatibus et magnis dis parturient ontesmus. Nemo enim ipsam voluptatem quia ptas sit aspernatur samomoPro vel nibh et elit mollis commodo et nec augueique Nemo enim ipsam voluptatem quia ptas sit aspernatur
+                     samomo enim ipsam voluptatem. </p>
+                  </li>
+               </ul>
+            </div>
          </div>
       </section>
 
       <!-- Bottom-brands section -->
 
-      <section class="wrapper--bottom-brands">
-         <div class="bottom-brands">
+      <section class="wrapper--brands">
+         <div class="brands">
+            <ul class="brands__list">
+               <li class="brands__item">
+                  <a class="brands__link"><img src="dist/images/rbp.png"></a>
+               </li>
+               <li class="brands__item">
+                  <a class="brands__link"><img src="dist/images/motoM.png"></a>
+               </li>
+               <li class="brands__item">
+                  <a class="brands__link"><img src="dist/images/crave.png"></a>
+               </li>
+               <li class="brands__item">
+                  <a class="brands__link"><img src="dist/images/atx.png"></a>
+               </li>
+               <li class="brands__item">
+                  <a class="brands__link"><img src="dist/images/cruiser.png"></a>
+               </li>
+               <li class="brands__item">
+                  <a class="brands__link"><img src="dist/images/gear.png"></a>
+               </li>
+            </ul>
 
          </div>
       </section>
@@ -69,16 +237,85 @@
 
       <section class="wrapper--bottom-menus">
          <div class="bottom-menus">
+            <ul class="bottom-menus__menu">
+               <p class="bottom-menus__caption"> Socials </p>
 
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Facebook </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Flickr </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Twitter </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Vimeo </a>
+               </li>
+            </ul>
+
+            <ul class="bottom-menus__menu">
+               <p class="bottom-menus__caption"> Links </p>
+
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> How to Write a Blog </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Create a Blog in 4 Steps </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> 15 Tips to Increase Traffic </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> 20 Blog Post Ideas </a>
+               </li>
+            </ul>
+
+            <ul class="bottom-menus__menu">
+               <p class="bottom-menus__caption"> Blogroll </p>
+
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Blogs Blog </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Roll Up Roll Up </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Blog Free </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Wordpress Blog </a>
+               </li>
+            </ul>
+
+            <ul class="bottom-menus__menu">
+               <p class="bottom-menus__caption"> About us </p>
+
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Agriculture </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Harvest</a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Company news </a>
+               </li>
+               <li class="bottom-menus__item">
+                  <a href="" class="bottom-menus__link"> Investor relations </a>
+               </li>
+            </ul>
          </div>
       </section>
 
       <!-- footer-content section -->
 
-      <section class="wrapper--footer-content">
-         <div class="footer-content">
-
-         </div>
+      <section class="wrapper--footer">
+         <footer class="footer">
+            <span class="footer__address"> BuildHomeLtd.  Street Name 123   23 45 Cityname </span>
+            <span class="footer__phone"> +123 900 123 456 </span>
+            <span class="footer__mail"> info@buildhome.web </span>
+            <span class="footer__copyright"> © 2014 Build Home </span>
+         </footer>
       </section>
 
    </div>
