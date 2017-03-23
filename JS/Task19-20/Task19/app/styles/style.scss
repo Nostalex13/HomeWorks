@@ -82,7 +82,7 @@
    }
 
    &__item:nth-child(5) {
-      background: url('dist/images/skype-icon.png') no-repeat;
+      background: url('images/skype-icon.png') no-repeat;
    }
 
    &__item:hover {
@@ -675,7 +675,8 @@
    }
 
    &__mail {
-      @extend &__phone;
+      display: inline-block;
+      margin-left: 30px;
    }
 
    &__mail::before {

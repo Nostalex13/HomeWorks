@@ -33,7 +33,7 @@ gulp.task('images', function() {
       .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('default', ['scss', 'scripts', 'images'], function() {
+gulp.task('default', ['scss', 'scripts', 'images', 'sass'], function() {
    gulp.watch(['app/styles/*.scss', '!app/styles/*styles.main.scss'], ['scss']);
    gulp.watch('app/styles/styles.main.scss', ['sass']);
    gulp.watch(paths.scripts, ['scripts']);

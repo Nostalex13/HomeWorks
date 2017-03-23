@@ -41,15 +41,15 @@
     width: 100%;
     height: 100%; }
   .header__item:nth-child(1) {
-    background: url("../app/img/facebook-icon.png") no-repeat; }
+    background: url("images/facebook-icon.png") no-repeat; }
   .header__item:nth-child(2) {
-    background: url("../app/img/twitter-icon.png") no-repeat; }
+    background: url("images/twitter-icon.png") no-repeat; }
   .header__item:nth-child(3) {
-    background: url("../app/img/rss-icon.png") no-repeat; }
+    background: url("images/rss-icon.png") no-repeat; }
   .header__item:nth-child(4) {
-    background: url("../app/img/linkedIn-icon.png") no-repeat; }
+    background: url("images/linkedIn-icon.png") no-repeat; }
   .header__item:nth-child(5) {
-    background: url("../app/img/skype-icon.png") no-repeat; }
+    background: url("images/skype-icon.png") no-repeat; }
   .header__item:hover {
     background-position: 0 -18px; }
 
@@ -95,7 +95,7 @@
   .nav__button {
     width: 15px;
     margin-right: 10px;
-    background: url("../app/img/search-icon.png") no-repeat;
+    background: url("images/search-icon.png") no-repeat;
     border: 0;
     opacity: .3;
     transition: .2s; }
@@ -201,7 +201,7 @@
     cursor: pointer;
     color: #248cec; }
   .feature-item__readmore::after {
-    content: url("../app/img/arr-right.png");
+    content: url("images/arr-right.png");
     margin-left: 5px; }
 
 .wrapper--services {
@@ -270,9 +270,9 @@
     top: 15px;
     left: -15px; }
   .latest__item--item1::before {
-    content: url("../app/img/Jan21.png"); }
+    content: url("images/Jan21.png"); }
   .latest__item--item2::before {
-    content: url("../app/img/Jan23.png"); }
+    content: url("images/Jan23.png"); }
   .latest__content {
     display: inline-block;
     width: 380px;
@@ -425,7 +425,7 @@
     display: inline-block;
     margin-left: 20px; }
   .footer__address::before {
-    content: url("../app/img/location.png");
+    content: url("images/location.png");
     position: relative;
     top: 3px;
     left: -5px; }
@@ -433,7 +433,7 @@
     display: inline-block;
     margin-left: 30px; }
   .footer__phone::before {
-    content: url("../app/img/iPhone.png");
+    content: url("images/iPhone.png");
     position: relative;
     top: 3px;
     left: -5px; }
@@ -441,7 +441,7 @@
     display: inline-block;
     margin-left: 30px; }
   .footer__mail::before {
-    content: url("../app/img/mail.png");
+    content: url("images/mail.png");
     position: relative;
     top: 1px;
     left: -8px; }
