@@ -65,7 +65,7 @@
     list-style: none;
     color: #fff;
     font-size: 15px;
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Ubuntu Condensed', 'Arial', sans-serif;
     text-transform: uppercase; }
   .nav__item {
     float: left;
@@ -170,7 +170,7 @@
     width: 100px;
     color: #e9e9ea;
     font-size: 90px;
-    font-family: 'Ubuntu-Medium', sans-serif;
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
     text-align: center; }
   .feature-item__info {
     float: left;
@@ -180,7 +180,7 @@
     box-sizing: border-box; }
   .feature-item__name {
     margin-top: 10px;
-    font-family: 'Ubuntu-Medium', sans-serif;
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
     font-weight: bold; }
   .feature-item__content {
     height: 60px;
@@ -195,7 +195,7 @@
     display: inline;
     margin-top: 10px;
     font-size: 14px;
-    font-family: 'Ubuntu-Medium', sans-serif;
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
     font-weight: bold; }
   .feature-item__readmore:hover {
     cursor: pointer;
@@ -218,7 +218,7 @@
     line-height: 90px;
     color: #fff;
     font-size: 20px;
-    font-family: 'Ubuntu-Medium', sans-serif; }
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif; }
   .services__figure {
     position: relative;
     display: inline-block;
@@ -229,7 +229,7 @@
     margin-top: 30px;
     color: #fff;
     font-size: 14px;
-    font-family: 'Ubuntu-Medium', sans-serif;
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
     text-align: center; }
   .services .caption-mask {
     position: absolute;
@@ -250,7 +250,7 @@
   display: flex;
   vertical-align: top;
   padding: 30px 0 0 10px;
-  font-family: 'Ubuntu-Medium', sans-serif;
+  font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
   box-sizing: border-box; }
 
 /*       Latest       */
@@ -393,7 +393,7 @@
     margin-bottom: 35px;
     color: #fff;
     font-size: 16px;
-    font-family: 'Ubuntu-Medium', sans-serif;
+    font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
     text-transform: uppercase; }
   .bottom-menus__item {
     border-bottom: 1px solid #393c40;

@@ -4,11 +4,11 @@
 }
 
 @mixin UbuntuC {
-   font-family: 'Ubuntu Condensed', sans-serif;
+   font-family: 'Ubuntu Condensed', 'Arial', sans-serif;
 }
 
 @mixin UbuntuM {
-   font-family: 'Ubuntu-Medium', sans-serif;
+   font-family: 'Ubuntu-Medium', 'Arial', sans-serif;
 }
 
 @mixin Arial {
