@@ -51,14 +51,17 @@ $(function() {
    /*          Friends        */
 
    let friendsArray = [];
+   // let friendsArray = new Set();
 
    _.forEach(dataJson, function(obj) {
       _.forEach(obj.friends, function(item) {
+         // friendsArray.add(item.name);
          friendsArray += item.name;
 
          friendsArray += ',';
       })
    });
+
 
    friendsArray = friendsArray.split(',');
    friendsArray = _.compact(friendsArray);
