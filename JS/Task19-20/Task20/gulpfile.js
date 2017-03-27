@@ -19,6 +19,8 @@ gulp.task('css', function() {
      .pipe(gulp.dest('dist/styles/'));
 });
 
-gulp.task('default', ['css', 'scripts'], function() {
-   gulp.watch(paths.scripts, ['scripts']);
-});
+// gulp.task('watch', function functionName() {
+//    gulp.watch(paths.scripts, ['scripts']);
+// });
+
+gulp.task('default', ['css', 'scripts']);

@@ -356,8 +356,9 @@
       display: inline;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 260px;
 
+      line-height: 260px;
       text-align: center;
 
       background-color: rgba(36, 140, 236, .9);
@@ -368,7 +369,6 @@
 //             NEWS
 
 .wrapper--news {
-   height: 545px;
    background: #f7f7f7;
 
 }
@@ -377,7 +377,7 @@
    @include content;
    display: flex;
    vertical-align: top;
-   padding: 30px 0 0 10px;
+   padding: 30px 0 60px 10px;
 
    @include UbuntuM;
    box-sizing: border-box;
@@ -510,8 +510,10 @@
    &__symbol {
       float: left;
       height: 37px;
+      width: 36px;
       padding: 0 13px;
 
+      text-align: center;
       line-height: inherit;
 
       border-right: 1px solid #e8e8e8;

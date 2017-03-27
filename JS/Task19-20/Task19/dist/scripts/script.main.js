@@ -27,7 +27,20 @@ $(function() {
       $('.jcarousel-pagination').removeClass('jcarousel-pagination-visible');
    });
 
-   $('.jcarousel').jcarousel();
+   $('.jcarousel')
+      .jcarousel({
+         wrap: 'circular',
+         animation: {
+           duration: 400,
+           easing: 'linear',
+           complete: function() {}
+       }
+      })
+      .jcarouselAutoscroll({
+            interval: 3000,
+            target: '+=1',
+            autostart: true
+        });
 
    /*          Pagination          */
 
@@ -45,8 +58,6 @@ $(function() {
     {
       let elem = $('<div class="caption-mask"><img src="dist/images/cross.png"></div>');
 
-      elem.css('line-height', $('.services__img').css('height'));
-
       $('.services__figure').hover(function() {
          $(this).children('.services__caption').css('color', '#f4b60d');
          $(this).prepend(elem);
@@ -62,21 +73,29 @@ $(function() {
 
       if ( !$(this).hasClass('accordion__link--active') ) {
 
-         $('.accordion__link').each( function() {
-            if ( $(this).hasClass('accordion__link--active') ) {
-               $(this)
-                  .removeClass('accordion__link--active')
-                  .children('.accordion__symbol').removeClass('accordion__symbol--active');
-
-               $(this).siblings('.accordion__content').slideUp(300);
-            }
-         });
+         // $('.accordion__link').each( function() {
+         //    if ( $(this).hasClass('accordion__link--active') ) {
+         //       $(this)
+         //          .removeClass('accordion__link--active')
+         //          .children('.accordion__symbol').removeClass('accordion__symbol--active');
+         //
+         //       $(this).siblings('.accordion__content').slideUp(300);
+         //    }
+         // });
 
          $(this)
             .addClass('accordion__link--active')
             .children('.accordion__symbol').addClass('accordion__symbol--active');
 
          $(this).siblings('.accordion__content').slideDown(300);
+         $(this).children('.accordion__symbol').text('-');
+      } else {
+         $(this)
+            .removeClass('accordion__link--active')
+            .children('.accordion__symbol').removeClass('accordion__symbol--active');
+
+         $(this).siblings('.accordion__content').slideUp(300);
+         $(this).children('.accordion__symbol').text('+');
       }
    });
 });
