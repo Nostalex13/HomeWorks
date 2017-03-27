@@ -1,0 +1,1 @@
+"use strict";function pow(o,r){var e=1;if(r>=0){if(r>0)for(var s=0;s<r;s++)e*=o}else{for(var t=r;t<0;t++)e*=o;e=1/e}return console.log("Your result:",e),e}try{module.exports=pow}catch(o){console.log("Exporting:",o.message)}
