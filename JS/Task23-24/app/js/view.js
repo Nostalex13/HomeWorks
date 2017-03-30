@@ -3,17 +3,34 @@ define(
    ['model', 'jquery', 'template'],
    function(Model) {
 
-      let data = {
-         name: 'Name'
-      };
+      function View(model) {
+         let self = this;
 
-      let compiled = tmpl( $('#test').html(), { data: data });
-      $('.wrapper').append(compiled);
+         function init() {
+            let item = $('#test').html();
+
+            $('.toDo__menu').append(item);
+            self.elements = {
+               input: $('.toDo__input'),
+               addBtn: $('.toDo__addBtn'),
+               editBtn: $('.toDo__editBtn'),
+               toDoMenu: $('.toDo__menu')
+            }
+            self.renderList(model.data);
+         }
+
+         self.renderList = function(data) {
+            let list = tmpl( $('#test').html(), { data: data });
+            self.elements.toDoMenu.html(list);
+         };
+
+         init();
+      }
 
       return {
-         check() {
-            console.log('View plugged!!1');
+         obj(model) {
+            return new View(model);
          }
-      };
+      }
    }
 );

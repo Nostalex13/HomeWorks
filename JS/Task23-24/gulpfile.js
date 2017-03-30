@@ -1,13 +1,10 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
-var uglify = require('gulp-uglify');
-var babel = require('gulp-babel');
 
 var paths = {
   scripts: 'app/js/*.js',
-  styles: 'app/css/*.css',
-  images: 'app/img/**'
+  styles: 'app/css/*.css'
 };
 
 gulp.task('scripts', function() {

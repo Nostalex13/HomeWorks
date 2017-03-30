@@ -3,9 +3,104 @@
    padding: 0;
 }
 
-.omg {
-   display: inline-block;
+.toDo {
+   width: 400px;
+   margin: 50px auto;
+   padding: 10px;
 
    font-size: 20px;
+   text-align: center;
    font-family: 'Montserrat', sans-serif;
+
+   border: 1px solid #ccc;
+   border-radius: 3px;
+}
+
+.toDo__menu {
+   padding: 5px;
+   padding-left: 30px;
+
+   text-align: left;
+   /*list-style: none;*/
+}
+
+.toDo__item {
+   margin: 5px 0;
+}
+
+.toDo__removeItem {
+   display: none;
+   margin-left: 5px;
+
+   color: #389083;
+   font-size: 12px;
+}
+
+.toDo__removeItem:hover {
+   cursor: pointer;
+}
+
+.toDo__form {
+   display: inline-block;
+}
+
+.toDo__input {
+   display: inline-table;
+   vertical-align: middle;
+   padding-left: 5px;
+   height: 30px;
+
+   line-height: 25px;
+   font-size: 14px;
+   font-family: 'Montserrat', sans-serif;
+
+   border-radius: 3px;
+   border: 1px solid #44948F;
+   box-sizing: border-box;
+}
+
+.toDo__input:focus {
+   box-shadow: 0 0 8px 0 rgba(255, 0, 0, 0.5);
+}
+
+.toDo__edit {
+   display: none;
+   margin-left: 5px;
+
+   color: #389083;
+   font-size: 12px;
+}
+
+.toDo__edit:hover {
+   cursor: pointer;
+}
+
+.toDo__addBtn,
+.toDo__editBtn {
+   display: inline-block;
+   width: 100px;
+   padding: 3px;
+   height: 30px;
+
+   font-size: 16px;
+   font-family: 'Montserrat', sans-serif;
+
+   background: linear-gradient(to bottom, #e5e5e5 0%,#adadad 100%);
+   border: 1px solid #44948F;
+   border-radius: 3px;
+   box-sizing: border-box;
+}
+
+.toDo__addBtn:active,
+.toDo__editBtn:active {
+   box-shadow: inset 0 0 10px 0 rgba(255, 0, 0, 0.5);
+}
+
+.toDo__editBtn {
+   display: none;
+}
+
+.editing {
+   color: #64BEB9;
+   font-style: italic;
 }
