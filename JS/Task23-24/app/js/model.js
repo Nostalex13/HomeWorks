@@ -2,22 +2,31 @@ define(
    'model',
    ['jquery'],
    function() {
-      function Model(data) {
+      function Model() {
          let self = this;
 
-         self.data = data;
+         self.data = 0;
+
+         function init() {
+            self.data = JSON.parse(localStorage.getItem('toDoList'));
+
+            if (!self.data) {
+               self.data = [];
+            }
+         }
 
          self.addItem = function(item) {
             if (item.length === 0 ) {
                return false;
             }
 
-            if (self.data.indexOf(item) >= 0) {
+            if (self.data.indexOf(item) != -1) {
                alert('The task is already in the list');
                return false;
             }
 
             self.data.push(item);
+            refreshLocal();
 
             return self.data;
          };
@@ -30,12 +39,13 @@ define(
             }
 
             self.data.splice(index, 1);
+            refreshLocal();
 
             return self.data;
          };
 
          self.editItem = function(newItem) {
-            if (self.data.indexOf(newItem) >= 0) {
+            if (self.data.indexOf(newItem) != -1) {
                alert('The task is already in the list');
                return false;
             }
@@ -43,14 +53,20 @@ define(
             let index = self.data.indexOf(oldItem);
 
             self.data[index] = newItem;
+            refreshLocal();
 
             return self.data;
          }
+
+         function refreshLocal() {
+            localStorage.setItem('toDoList', JSON.stringify(self.data));
+         }
+         init();
       }
 
       return {
-         obj(data) {
-            return new Model(data);
+         obj() {
+            return new Model();
          }
       }
    }

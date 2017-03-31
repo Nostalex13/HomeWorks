@@ -18,8 +18,7 @@ require(
       'template'
    ],
    function(model, view, controller, $, template) {
-      let data = ['Open', 'Take', 'Close'];
-      let modelObj = model.obj(data);
+      let modelObj = model.obj();
       let viewObj = view.obj(modelObj);
       let controllerObj = controller.obj(modelObj, viewObj);
    }
