@@ -26,6 +26,8 @@
 
 .toDo__item {
    margin: 5px 0;
+   
+   list-style-position: inside;
 }
 
 .toDo__removeItem {
