@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+
+   <link rel="stylesheet" href="dist/fonts/font-face.css">
+   <link rel="stylesheet" href="dist/styles/styles.main.css">
+
+   <!--[if lte IE 9]>
+   <link rel="stylesheet" href="dist/styles/IE/stylesIE.css" media="screen, projection">
+   <script src="dist/scripts/IE/scriptIE.js"></script>
+   <![endif]-->
+
+   <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+   <script src="dist/scripts/react/react.js"></script>
+   <script src="dist/scripts/react/react-dom.js"></script>
+   <script src="dist/scripts/react/babel.js"></script>
+   <script src="dist/scripts/script.main.js"></script>
+   <script type="text/babel" src="app/scripts/scriptBar.js"></script>
+</head>
+<body>
+
+   <div id="pagewrap">
+      <div class="wrapper wrapper--header">
+         <header class="header">
+            <div class="header__account">
+               <span class="header__logIn"> Log in </span>
+               <span class="header__signUp"> Sign up </span>
+            </div>
+
+            <img class="header__logo" src="dist/images/logo.png" title="URLAUBSGLÜCK" alt="LOGO here">
+
+            <div class="header__text">
+               <p class="header__caption"> share your holiday dreams </p>
+               <p> And find the perfect partner to fullfill it </p>
+
+               <button class="header__findBtn" type="button" name="button"> Find your holiday partner </button>
+            </div>
+
+         </header>
+      </div>
+
+      <div class="wrapper wrapper--main">
+         <main class="main">
+            <section class="sliders">
+               <p class="sliders__caption"> How Urlaubsglück works? </p>
+
+               <div class="slider">
+                  <ul class="slider__list">
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider1/howIt1.1.png" alt="">
+                     </li>
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider1/howIt1.2.png" alt="">
+                     </li>
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider1/howIt1.3.png" alt="">
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="slider">
+                  <ul class="slider__list">
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider2/howIt2.1.png" alt="">
+                     </li>
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider2/howIt2.2.png" alt="">
+                     </li>
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider2/howIt2.3.png" alt="">
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="slider">
+                  <ul class="slider__list">
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider3/howIt3.1.png" alt="">
+                     </li>
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider3/howIt3.2.png" alt="">
+                     </li>
+                     <li class="slider__item">
+                        <img class="slider__img" src="dist/images/sliders/slider3/howIt3.3.png" alt="">
+                     </li>
+                  </ul>
+               </div>
+            </section>
+
+            <section class="partners">
+               <p class="partners__caption"> Meet a partner for your best holiday </p>
+
+               <ul class="partners__list clearfix">
+                  <li class="partners__item">
+                     <figure class="partners__figure partners__figure--1">
+                        <img  class="partners__img" src="dist/images/partner1.png" alt="">
+                        <figcaption class="partners__name"> Bradley Hunter </figcaption>
+                     </figure>
+                     <p class="partners__info"> Based in Chicago. I love playing tennis and loud music. </p>
+                  </li>
+                  <li class="partners__item">
+                     <figure class="partners__figure partners__figure--2">
+                        <img  class="partners__img" src="dist/images/partner2.png" alt="">
+                        <figcaption class="partners__name"> Heather Walker </figcaption>
+                     </figure>
+                     <p class="partners__info"> I'm a happy person that loves cats and climbing on mountains.</p>
+                  </li>
+                  <li class="partners__item" >
+                     <figure class="partners__figure partners__figure--3">
+                        <img  class="partners__img" src="dist/images/partner3.png" alt="">
+                        <figcaption class="partners__name"> Lucas Marsha </figcaption>
+                     </figure>
+                     <p class="partners__info"> I get my inspiration from nature and objects around me. I have a passion to colours, typography and skateboards. </p>
+                  </li>
+                  <li class="partners__item">
+                     <figure class="partners__figure partners__figure--4">
+                        <img  class="partners__img" src="dist/images/partner4.png" alt="">
+                        <figcaption class="partners__name"> Bradley Hunter </figcaption>
+                     </figure>
+                     <p class="partners__info"> Based in Chicago. I love playing tennis and loud music. </p>
+                  </li>
+               </ul>
+
+               <button class="partners__otherBtn" type="button" name="button"> See other partners </button>
+            </section>
+
+            <div class="activity" id="activity">
+
+            </div>
+         </main>
+      </div>
+
+      <div class="wrapper wrapper-footer">
+         <footer class="footer">
+
+         </footer>
+      </div>
+   </div>
+
+</body>
+</html>
