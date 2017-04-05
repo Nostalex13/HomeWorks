@@ -8,16 +8,16 @@ var babel = require('gulp-babel');
 var uglifycss = require('gulp-uglifycss');
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/scripts/*.js', '!app/scripts/scriptBar.js'])
+  return gulp.src(['app/scripts/*.js', '!app/scripts/template.js'])
     .pipe(concat('script.main.js'))
     .pipe(babel({
       presets: ['es2015']
       }))
-    .pipe(uglify())
+   //  .pipe(uglify())
     .pipe(gulp.dest('dist/scripts/')),
-    /*         React          */
-    gulp.src('app/scripts/react/*.js')
-     .pipe(gulp.dest('dist/scripts/react')),
+    gulp.src('app/scripts/template.js')
+      // .pipe(uglify())
+      .pipe(gulp.dest('dist/scripts/')),
     /*          IE       */
     gulp.src('app/scripts/IE/scriptIE.js')
       .pipe(uglify())
