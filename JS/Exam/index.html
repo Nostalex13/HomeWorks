@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width">
    <title>Document</title>
 
    <link rel="stylesheet" href="dist/fonts/font-face.css">
@@ -24,6 +23,8 @@
    <div id="pagewrap">
       <div class="wrapper wrapper--header">
          <header class="header">
+            <div class="" id="root">
+            </div>
             <div class="header__account">
                <span class="header__logIn"> Log in </span>
                <span class="header__signUp"> Sign up </span>
@@ -33,7 +34,7 @@
 
             <div class="header__text">
                <p class="header__caption"> share your holiday dreams </p>
-               <p> And find the perfect partner to fullfill it </p>
+               <p class="header__subText"> And find the perfect partner to fullfill it </p>
 
                <button class="header__findBtn" type="button" name="button"> Find your holiday partner </button>
             </div>
@@ -43,48 +44,45 @@
 
       <div class="wrapper wrapper--main">
          <main class="main">
+            <p class="main__caption"> How Urlaubsglück works? </p>
             <section class="sliders">
-               <p class="sliders__caption"> How Urlaubsglück works? </p>
 
                <div class="slider">
+                  <div class="slider__text">
+                     <p class="slider__step"> Step 1 </p>
+                     <p class="slider__caption"> Sed leo enim, condimentum </p>
+                     <p class="slider__info"> Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis. </p>
+                  </div>
                   <ul class="slider__list">
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider1/howIt1.1.png" alt="">
-                     </li>
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider1/howIt1.2.png" alt="">
-                     </li>
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider1/howIt1.3.png" alt="">
-                     </li>
+                     <li class="slider__item"></li>
+                     <li class="slider__item"></li>
+                     <li class="slider__item"></li>
                   </ul>
                </div>
 
                <div class="slider">
+                  <div class="slider__text">
+                     <p class="slider__step"> Step 2 </p>
+                     <p class="slider__caption"> Morbi velit risus </p>
+                     <p class="slider__info"> Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est. </p>
+                  </div>
                   <ul class="slider__list">
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider2/howIt2.1.png" alt="">
-                     </li>
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider2/howIt2.2.png" alt="">
-                     </li>
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider2/howIt2.3.png" alt="">
-                     </li>
+                     <li class="slider__item"></li>
+                     <li class="slider__item"></li>
+                     <li class="slider__item"></li>
                   </ul>
                </div>
 
                <div class="slider">
+                  <div class="slider__text">
+                     <p class="slider__step"> Step 3 </p>
+                     <p class="slider__caption"> Sed leo enim, condimentum </p>
+                     <p class="slider__info"> Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis. </p>
+                  </div>
                   <ul class="slider__list">
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider3/howIt3.1.png" alt="">
-                     </li>
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider3/howIt3.2.png" alt="">
-                     </li>
-                     <li class="slider__item">
-                        <img class="slider__img" src="dist/images/sliders/slider3/howIt3.3.png" alt="">
-                     </li>
+                     <li class="slider__item"></li>
+                     <li class="slider__item"></li>
+                     <li class="slider__item"></li>
                   </ul>
                </div>
             </section>
@@ -92,7 +90,7 @@
             <section class="partners">
                <p class="partners__caption"> Meet a partner for your best holiday </p>
 
-               <ul class="partners__list clearfix">
+               <ul class="partners__list">
                   <li class="partners__item">
                      <figure class="partners__figure partners__figure--1">
                         <img  class="partners__img" src="dist/images/partner1.png" alt="">
@@ -123,7 +121,7 @@
                   </li>
                </ul>
 
-               <button class="partners__otherBtn" type="button" name="button"> See other partners </button>
+               <button class="partners__bottomBtn" type="button" name="button"> See other partners </button>
             </section>
 
             <div class="activity">
@@ -133,6 +131,7 @@
                   <div class="grid"></div>
 
                   <script type="text/html" id="grid">
+                     <div class="columnWidth"></div>
                      <% for (let i = 0; i < data.length; i++) { %>
                         <img class="grid__img" src="<%= data[i] %>" alt="">
                      <% } %>
@@ -142,7 +141,7 @@
                <section class="activity-search">
                   <div class="activity-search__text">
                      <p class="activity-search__caption"> Discover holiday activity ideas </p>
-                     <p> Hi! What are your holiday interests? </p>
+                     <p class="activity-search__subText"> Hi! What are your holiday interests? </p>
                   </div>
 
                   <form class="activity-search__form">
@@ -170,10 +169,9 @@
                </ul>
             </div>
 
-            <div class="footer__partners">
-               <span class="footer__caption"> Partners </span>
-               <img class="footer__partner" src="dist/images/footer-partners.png" alt="">
-            </div>
+            <span class="footer__caption"> Partners </span>
+            <img class="footer__partner" src="dist/images/footer-partners.png" alt="">
+
          </footer>
       </div>
    </div>

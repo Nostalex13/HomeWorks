@@ -16,7 +16,7 @@ gulp.task('scripts', function() {
    //  .pipe(uglify())
     .pipe(gulp.dest('dist/scripts/')),
     gulp.src('app/scripts/template.js')
-      // .pipe(uglify())
+      .pipe(uglify())
       .pipe(gulp.dest('dist/scripts/')),
     /*          IE       */
     gulp.src('app/scripts/IE/scriptIE.js')
@@ -25,13 +25,13 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('scss', function() {
-  return gulp.src(['app/styles/*.scss', 'app/styles/reset.css'])
+  return gulp.src(['app/styles/main.scss', 'app/styles/reset.css'])
     .pipe(concat('styles.main.scss'))
     .pipe(sass().on('error', sass.logError))
-    .pipe(uglifycss({
-      "maxLineLen": 80,
-      "uglyComments": true
-    }))
+   //  .pipe(uglifycss({
+   //    "maxLineLen": 80,
+   //    "uglyComments": true
+   //  }))
     .pipe(gulp.dest('dist/styles/')),
       /*          IE       */
       gulp.src('app/styles/IE/*.scss')
@@ -56,7 +56,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('watch', function() {
-   gulp.watch('app/scripts/*.js', ['scripts']);
+   gulp.watch('app/scripts/*.{js,jsx}', ['scripts']);
    gulp.watch('app/styles/*.scss', ['scss']);
 });
 

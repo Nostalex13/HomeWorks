@@ -10,27 +10,45 @@ window.onload = function() {
 
    let sliders = document.querySelectorAll('.slider');
 
-   for (let item of sliders) {
+   for (let i = 0; i < sliders.length; i++) {
       let arrowR = document.createElement('p')
       let arrowL = document.createElement('p')
       arrowR.classList.add('slider__arrowR');
       arrowL.classList.add('slider__arrowL');
 
-      item.append(arrowL);
-      item.append(arrowR);
+      sliders[i].append(arrowL);
+      sliders[i].append(arrowR);
 
-      new Slider(item);
+      new Slider(sliders[i], i+1);
    }
 
-   function Slider(sliderObj) {
+   function Slider(sliderObj, folderNum) {
       let self = this;
       this.currentValue = 1;
+      this.list = sliderObj.querySelector('ul');
       this.sliderLength = sliderObj.querySelectorAll('ul li').length;
       this.itemWidth = 300;
       this.currentPos = 0;
 
+      calculateWidth();
+      initImages();
       leftBtn();
       rightBtn();
+
+      function initImages() {
+         let dist = `dist/images/sliders/slider${folderNum}/`;
+
+         let items = self.list.querySelectorAll('li');
+         for (let i = 0; i < items.length; i++) {
+            let imgPath = dist + `howIt${folderNum}.${i + 1}.png`;
+            items[i].style.backgroundImage = `url(${imgPath})`;
+         }
+      }
+
+      function calculateWidth() {
+         let listWidth = self.sliderLength * self.itemWidth;
+         self.list.style.width = listWidth + 'px';
+      }
 
       function leftBtn() {
          let leftArr = sliderObj.querySelector('.slider__arrowL');
@@ -38,18 +56,16 @@ window.onload = function() {
             if(self.currentValue == 1) {
                self.currentValue = self.sliderLength;
 
-               let list = sliderObj.querySelector('ul');
                self.currentPos -= self.itemWidth * (self.sliderLength - 1);
 
-               list.style.left = self.currentPos + 'px';
+               self.list.style.left = self.currentPos + 'px';
 
                return this;
             }
 
-            let list = sliderObj.querySelector('ul');
             self.currentPos += self.itemWidth;
 
-            list.style.left = self.currentPos + 'px';
+            self.list.style.left = self.currentPos + 'px';
             self.currentValue--;
          });
       }
@@ -60,25 +76,29 @@ window.onload = function() {
             if(self.currentValue == self.sliderLength) {
                self.currentValue = 1;
 
-               let list = sliderObj.querySelector('ul');
                self.currentPos += self.itemWidth * (self.sliderLength - 1);
 
-               list.style.left = self.currentPos + 'px';
+               self.list.style.left = self.currentPos + 'px';
 
                return this;
             }
 
-            let list = sliderObj.querySelector('ul');
             self.currentPos -= self.itemWidth;
 
-            list.style.left = self.currentPos + 'px';
+            self.list.style.left = self.currentPos + 'px';
             self.currentValue++;
          });
       }
 
    }
-   /*       Images block      */
 
+   (function() {
+      let sections = ['Sport and Activity', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Games', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
+      let inputText = sections[Math.floor(Math.random()*sections.length)]; // рандомный выбор раздела
+
+      // searching('Les');
+      searching(inputText);
+   })();
    function update(data) {
       if (!ResultsCheck(data)) {
          return false;
@@ -98,8 +118,9 @@ window.onload = function() {
       imagesLoaded(grid, function() {
          let msnry = new Masonry( grid, {
             itemSelector: '.grid__img',
-            columnWidth: 300,
-            gutter: 20
+            columnWidth: '.columnWidth',
+            gutter: 20,
+            percentPosition: true
          });
       });
    }
@@ -140,8 +161,9 @@ window.onload = function() {
                addNoResult(grid);
                let msnry = new Masonry( grid, {
                   itemSelector: '.grid__img',
-                  columnWidth: 300,
-                  gutter: 20
+                  columnWidth: '.columnWidth',
+                  gutter: 20,
+                  percentPosition: true
                });
             } else {
                if (grid.childNodes.length != 1) {
@@ -203,14 +225,6 @@ window.onload = function() {
       }
    });
 
-   (function() {
-      let sections = ['Sport and Activity', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Games', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
-      let inputText = sections[Math.floor(Math.random()*sections.length)]; // рандомный выбор раздела
-
-      // searching();
-      searching(inputText);
-   })();
-
    function searchImgHandler() {
       let input = document.querySelector('.activity-search__input');
 
@@ -218,4 +232,5 @@ window.onload = function() {
          searching(input.value);
       }
    }
+
 };

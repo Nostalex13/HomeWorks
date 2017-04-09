@@ -33,48 +33,45 @@ window.onload = function () {
 
    var sliders = document.querySelectorAll('.slider');
 
-   var _iteratorNormalCompletion2 = true;
-   var _didIteratorError2 = false;
-   var _iteratorError2 = undefined;
+   for (var i = 0; i < sliders.length; i++) {
+      var arrowR = document.createElement('p');
+      var arrowL = document.createElement('p');
+      arrowR.classList.add('slider__arrowR');
+      arrowL.classList.add('slider__arrowL');
 
-   try {
-      for (var _iterator2 = sliders[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-         var _item = _step2.value;
+      sliders[i].append(arrowL);
+      sliders[i].append(arrowR);
 
-         var arrowR = document.createElement('p');
-         var arrowL = document.createElement('p');
-         arrowR.classList.add('slider__arrowR');
-         arrowL.classList.add('slider__arrowL');
-
-         _item.append(arrowL);
-         _item.append(arrowR);
-
-         new Slider(_item);
-      }
-   } catch (err) {
-      _didIteratorError2 = true;
-      _iteratorError2 = err;
-   } finally {
-      try {
-         if (!_iteratorNormalCompletion2 && _iterator2.return) {
-            _iterator2.return();
-         }
-      } finally {
-         if (_didIteratorError2) {
-            throw _iteratorError2;
-         }
-      }
+      new Slider(sliders[i], i + 1);
    }
 
-   function Slider(sliderObj) {
+   function Slider(sliderObj, folderNum) {
       var self = this;
       this.currentValue = 1;
+      this.list = sliderObj.querySelector('ul');
       this.sliderLength = sliderObj.querySelectorAll('ul li').length;
       this.itemWidth = 300;
       this.currentPos = 0;
 
+      calculateWidth();
+      initImages();
       leftBtn();
       rightBtn();
+
+      function initImages() {
+         var dist = 'dist/images/sliders/slider' + folderNum + '/';
+
+         var items = self.list.querySelectorAll('li');
+         for (var _i = 0; _i < items.length; _i++) {
+            var imgPath = dist + ('howIt' + folderNum + '.' + (_i + 1) + '.png');
+            items[_i].style.backgroundImage = 'url(' + imgPath + ')';
+         }
+      }
+
+      function calculateWidth() {
+         var listWidth = self.sliderLength * self.itemWidth;
+         self.list.style.width = listWidth + 'px';
+      }
 
       function leftBtn() {
          var leftArr = sliderObj.querySelector('.slider__arrowL');
@@ -82,18 +79,16 @@ window.onload = function () {
             if (self.currentValue == 1) {
                self.currentValue = self.sliderLength;
 
-               var _list = sliderObj.querySelector('ul');
                self.currentPos -= self.itemWidth * (self.sliderLength - 1);
 
-               _list.style.left = self.currentPos + 'px';
+               self.list.style.left = self.currentPos + 'px';
 
                return this;
             }
 
-            var list = sliderObj.querySelector('ul');
             self.currentPos += self.itemWidth;
 
-            list.style.left = self.currentPos + 'px';
+            self.list.style.left = self.currentPos + 'px';
             self.currentValue--;
          });
       }
@@ -104,24 +99,28 @@ window.onload = function () {
             if (self.currentValue == self.sliderLength) {
                self.currentValue = 1;
 
-               var _list2 = sliderObj.querySelector('ul');
                self.currentPos += self.itemWidth * (self.sliderLength - 1);
 
-               _list2.style.left = self.currentPos + 'px';
+               self.list.style.left = self.currentPos + 'px';
 
                return this;
             }
 
-            var list = sliderObj.querySelector('ul');
             self.currentPos -= self.itemWidth;
 
-            list.style.left = self.currentPos + 'px';
+            self.list.style.left = self.currentPos + 'px';
             self.currentValue++;
          });
       }
    }
-   /*       Images block      */
 
+   (function () {
+      var sections = ['Sport and Activity', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Games', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
+      var inputText = sections[Math.floor(Math.random() * sections.length)]; // рандомный выбор раздела
+
+      // searching('Les');
+      searching(inputText);
+   })();
    function update(data) {
       if (!ResultsCheck(data)) {
          return false;
@@ -141,8 +140,9 @@ window.onload = function () {
       imagesLoaded(grid, function () {
          var msnry = new Masonry(grid, {
             itemSelector: '.grid__img',
-            columnWidth: 300,
-            gutter: 20
+            columnWidth: '.columnWidth',
+            gutter: 20,
+            percentPosition: true
          });
       });
    }
@@ -182,8 +182,9 @@ window.onload = function () {
                addNoResult(grid);
                var msnry = new Masonry(grid, {
                   itemSelector: '.grid__img',
-                  columnWidth: 300,
-                  gutter: 20
+                  columnWidth: '.columnWidth',
+                  gutter: 20,
+                  percentPosition: true
                });
             } else {
                if (grid.childNodes.length != 1) {
@@ -242,14 +243,6 @@ window.onload = function () {
          searchImgHandler();
       }
    });
-
-   (function () {
-      var sections = ['Sport and Activity', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Games', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
-      var inputText = sections[Math.floor(Math.random() * sections.length)]; // рандомный выбор раздела
-
-      // searching();
-      searching(inputText);
-   })();
 
    function searchImgHandler() {
       var input = document.querySelector('.activity-search__input');
