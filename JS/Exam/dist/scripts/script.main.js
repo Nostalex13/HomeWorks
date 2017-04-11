@@ -114,6 +114,8 @@ window.onload = function () {
       }
    }
 
+   /*          Images bar & Masonry        */
+
    (function () {
       var sections = ['Sport and Activity', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Games', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
       var inputText = sections[Math.floor(Math.random() * sections.length)]; // рандомный выбор раздела

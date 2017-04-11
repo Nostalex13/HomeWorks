@@ -3,28 +3,27 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width">
-   <title>Document</title>
+   <title>Urlafddfswuck</title>
 
    <link rel="stylesheet" href="dist/fonts/font-face.css">
    <link rel="stylesheet" href="dist/styles/styles.main.css">
 
+   <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+   <script src="dist/scripts/ignore/masonry.js"></script>
+   <script src="dist/scripts/ignore/template.js"></script>
+   <script src="dist/scripts/script.main.js"></script>
+
    <!--[if lte IE 9]>
+   <script src="dist/scripts/ignore/masonry.js"></script>
    <link rel="stylesheet" href="dist/styles/IE/stylesIE.css" media="screen, projection">
    <script src="dist/scripts/IE/scriptIE.js"></script>
    <![endif]-->
-
-   <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-   <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
-   <script src="dist/scripts/template.js"></script>
-   <script src="dist/scripts/script.main.js"></script>
 </head>
 <body>
 
    <div id="pagewrap">
       <div class="wrapper wrapper--header">
          <header class="header">
-            <div class="" id="root">
-            </div>
             <div class="header__account">
                <span class="header__logIn"> Log in </span>
                <span class="header__signUp"> Sign up </span>
@@ -130,10 +129,10 @@
 
                   <div class="grid"></div>
 
-                  <script type="text/html" id="grid">
+                  <script type="text/html" id="grid" >
                      <div class="columnWidth"></div>
-                     <% for (let i = 0; i < data.length; i++) { %>
-                        <img class="grid__img" src="<%= data[i] %>" alt="">
+                     <% for (var i = 0; i < data.length; i++) { %>
+                        <img class="grid__img grid__img--<%= i + 1 %>" src="<%= data[i] %>" alt="">
                      <% } %>
                   </script>
                </section>

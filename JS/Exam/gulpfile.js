@@ -8,19 +8,17 @@ var babel = require('gulp-babel');
 var uglifycss = require('gulp-uglifycss');
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/scripts/*.js', '!app/scripts/template.js'])
+  return gulp.src(['app/scripts/**.js', '!app/scripts/ignore'])
     .pipe(concat('script.main.js'))
     .pipe(babel({
       presets: ['es2015']
       }))
    //  .pipe(uglify())
     .pipe(gulp.dest('dist/scripts/')),
-    gulp.src('app/scripts/template.js')
-      .pipe(uglify())
-      .pipe(gulp.dest('dist/scripts/')),
+    gulp.src('app/scripts/ignore/*.js')
+      .pipe(gulp.dest('dist/scripts/ignore/')),
     /*          IE       */
-    gulp.src('app/scripts/IE/scriptIE.js')
-      .pipe(uglify())
+    gulp.src('app/scripts/IE/*.js')
       .pipe(gulp.dest('dist/scripts/IE'))
 });
 
@@ -34,14 +32,16 @@ gulp.task('scss', function() {
    //  }))
     .pipe(gulp.dest('dist/styles/')),
       /*          IE       */
-      gulp.src('app/styles/IE/*.scss')
-        .pipe(concat('stylesIE.scss'))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(uglifycss({
-          "maxLineLen": 80,
-          "uglyComments": true
-        }))
-        .pipe(gulp.dest('dist/styles/IE/'));
+   gulp.src('app/styles/IE/*.scss')
+     .pipe(concat('stylesIE.scss'))
+     .pipe(sass().on('error', sass.logError))
+     .pipe(uglifycss({
+       "maxLineLen": 80,
+       "uglyComments": true
+     }))
+     .pipe(gulp.dest('dist/styles/IE/')),
+     gulp.src('app/styles/IE/PIE/**')
+       .pipe(gulp.dest('dist/styles/IE/PIE/'));
 });
 
 gulp.task('img', function() {
@@ -56,8 +56,8 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('watch', function() {
-   gulp.watch('app/scripts/*.{js,jsx}', ['scripts']);
-   gulp.watch('app/styles/*.scss', ['scss']);
+   gulp.watch('app/scripts/**/*.{js,jsx}', ['scripts']);
+   gulp.watch('app/styles/**/*.scss', ['scss']);
 });
 
 gulp.task('default', ['scss', 'scripts', 'fonts']);
