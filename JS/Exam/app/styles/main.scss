@@ -1,5 +1,6 @@
 @import "_variables";
 @import "_mixins";
+@import "reset";
 
 /*             PAGE PROPERTIES          */
 
@@ -54,7 +55,7 @@
    &__logIn {
       margin-right: 15px;
 
-      transition: .2s;
+      @include transition(.2s);
    }
 
    &__signUp {
@@ -62,16 +63,16 @@
       margin-right: 1px;
 
       border: 2px solid #fff;
-      border-radius: 20px;
+      @include border-radius(20px);
 
-      transition: .2s;
+      @include transition(.2s);
    }
 
    &__logIn:hover,
    &__signUp:hover {
       cursor: pointer;
       color: #63D414;
-      border-color: #63D414;
+      border-color: #63d414;
    }
 
    &__text {
@@ -99,7 +100,7 @@
       margin-top: 37px;
       padding: 0 24px;
 
-      background: #FF4E4E;
+      background: #ff4e4e;
 
       text-align: center;
       color: #fff;
@@ -107,15 +108,15 @@
       font-family: $MontB;
 
       border: 0;
-      border-radius: 20px;
+      @include border-radius(20px);
       box-sizing: border-box;
 
-      transition: .2s;
+      @include transition(.2s);
    }
 
    &__findBtn:hover {
       cursor: pointer;
-      color: #63D414;
+      color: #63d414;
    }
 }
 
@@ -143,6 +144,7 @@
 .sliders {
    display: flex;
    justify-content: space-between;
+   @include content;
 }
 
 .slider {
@@ -151,7 +153,7 @@
    height: 400px;
    margin-top: 36px;
 
-   border-radius: 3px;
+   @include border-radius(3px);
    box-sizing: border-box;
 
    overflow: hidden;
@@ -164,7 +166,7 @@
 
       list-style: none;
 
-      transition: .4s;
+      @include transition(.4s);
    }
 
    &__item {
@@ -174,6 +176,9 @@
 
       background-position: 50% 0;
       background-size: 100%;
+
+      -webkit-box-shadow: inset 0px -200px 144px -85px rgba(0,0,0,0.45);
+      -moz-box-shadow: inset 0px -200px 144px -85px rgba(0,0,0,0.45);
       box-shadow: inset 0px -200px 144px -85px rgba(0,0,0,0.45);
    }
 
@@ -200,10 +205,10 @@
       text-transform: uppercase;
       letter-spacing: 1.6px;
 
-      background: #FF4E4E;
+      background: #ff4e4e;
 
       border: 0;
-      border-radius: 20px;
+      @include border-radius(20px);
       box-sizing: border-box;
    }
 
@@ -237,9 +242,8 @@
       height: 55px;
       width: 30px;
 
-      opacity: .5;
-      -moz-opacity: .5;
-      transition: .2s;
+      @include opacity(.5);
+      @include transition(.2s);
       z-index: 1;
    }
 
@@ -251,7 +255,7 @@
    &__arrowL:hover,
    &__arrowR:hover {
       cursor: pointer;
-      opacity: 1;
+      @include opacity(.5);
    }
 
 }
@@ -263,6 +267,7 @@
 /*       Partners       */
 
 .partners {
+   @include content;
    margin-top: 98px;
 
    text-align: center;
@@ -340,7 +345,7 @@
       margin-top: 32px;
 
       border: 2px solid #ff4e50;
-      border-radius: 20px;
+      @include border-radius(20px);
 
       color: #ff4e50;
       font-size: 14px;
@@ -348,7 +353,7 @@
 
       background: 0;
 
-      transition: .2s;
+      @include transition(.2s);
    }
 
    &__bottomBtn:hover {
@@ -373,6 +378,7 @@
 }
 
 .grid {
+   @include content;
    margin-top: 16px;
 
    list-style: none;
@@ -382,7 +388,7 @@
       width: 31.9%;
       padding-top: 20px;
 
-      border-radius: 4px;
+      @include border-radius(4px);
    }
 
    &__img:nth-of-type(5) {
@@ -443,17 +449,22 @@
    }
 
    &__input {
+      display: inline-block;
       height: 40px;
       width: 240px;
       padding: 9px 0 9px 15px;
       margin-right: 6px;
+      vertical-align: middle;
 
       font-size: 14px;
       font-family: $RobotoL;
       line-height: 40px;
 
-      border: 1px solid #cccccc;
-      border-radius: 5px;
+      border: 1px solid #ccc;
+      @include border-radius(5px);
+
+      -webkit-box-shadow: 0 1px 0 0 rgb(238, 238, 238);
+      -moz-box-shadow: 0 1px 0 0 rgb(238, 238, 238);
       box-shadow: 0 1px 0 0 rgb(238, 238, 238);
       box-sizing: border-box;
    }
@@ -470,9 +481,9 @@
       font-family: $MontB;
 
       border: 0;
-      border-radius: 20px;
+      @include border-radius(20px);
 
-      transition: .2s;
+      @include transition(.2s);
    }
 
    &__btn:hover {
@@ -491,19 +502,20 @@
    margin-bottom: 20px;
 
    &__caption {
+      display: inline-block;
       font-size: 14px;
       color: #000;
       font-family: $MontB;
    }
 
    &__logo {
-      display: inline-table;
+      display: inline-block;
       vertical-align: top;
       margin-right: 10%;
    }
 
    &__company {
-      display: inline-table;
+      display: inline-block;
       vertical-align: top;
       margin-right: 9.36%;
    }
@@ -519,6 +531,14 @@
 
       font-size: 14px;
       font-family: $RobotoL;
+   }
+
+   &__link {
+      @include transition(.2s);
+   }
+
+   &__link:hover {
+      color: #4abbc2;
    }
 
    &__partner {

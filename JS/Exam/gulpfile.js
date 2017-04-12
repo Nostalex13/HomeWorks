@@ -8,12 +8,12 @@ var babel = require('gulp-babel');
 var uglifycss = require('gulp-uglifycss');
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/scripts/**.js', '!app/scripts/ignore'])
+  return gulp.src(['app/scripts/*.js', '!app/scripts/ignore'])
     .pipe(concat('script.main.js'))
     .pipe(babel({
       presets: ['es2015']
       }))
-   //  .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('dist/scripts/')),
     gulp.src('app/scripts/ignore/*.js')
       .pipe(gulp.dest('dist/scripts/ignore/')),
@@ -23,13 +23,12 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('scss', function() {
-  return gulp.src(['app/styles/main.scss', 'app/styles/reset.css'])
-    .pipe(concat('styles.main.scss'))
+  return gulp.src('app/styles/main.scss')
     .pipe(sass().on('error', sass.logError))
-   //  .pipe(uglifycss({
-   //    "maxLineLen": 80,
-   //    "uglyComments": true
-   //  }))
+    .pipe(uglifycss({
+      "maxLineLen": 80,
+      "uglyComments": true
+    }))
     .pipe(gulp.dest('dist/styles/')),
       /*          IE       */
    gulp.src('app/styles/IE/*.scss')

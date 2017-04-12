@@ -1,9 +1,10 @@
 window.onload = function() {
 
-   for (let item of document.querySelectorAll('a')) {
-      item.addEventListener('click', function(e) {
-         e.preventDefault();
-      });
+   var anchors = document.querySelectorAll('a');
+   for (var i = 0; i < anchors.length; i++) {
+      anchors[i].onclick = function() {
+         return false;
+      };
    }
 
    /*          Slider         */
@@ -16,8 +17,8 @@ window.onload = function() {
       arrowR.classList.add('slider__arrowR');
       arrowL.classList.add('slider__arrowL');
 
-      sliders[i].append(arrowL);
-      sliders[i].append(arrowR);
+      sliders[i].appendChild(arrowL);
+      sliders[i].appendChild(arrowR);
 
       new Slider(sliders[i], i+1);
    }

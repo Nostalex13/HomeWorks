@@ -11,3 +11,21 @@
 
    box-sizing: border-box;
 }
+
+@mixin opacity($val) {
+   -webkit-opacity: $val;
+   -moz-opacity: $val;
+   opacity: $val;
+}
+
+@mixin transition($val)  {
+   -webkit-transition: $val;
+   -moz-transition: $val;
+   transition: $val;
+}
+
+@mixin border-radius($val)  {
+   -webkit-border-radius: $val;
+   -moz-border-radius: $val;
+   border-radius: $val;
+}

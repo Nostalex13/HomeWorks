@@ -11,12 +11,12 @@
 
    /*       Slider       */
 
+   .sliders {
+      width: 100%;
+   }
+
    .slider {
       width: 31.5%;
-
-      &__list {
-         // width: imgWigth(31.5);
-      }
    }
 
    .slider__arrowR {
@@ -43,6 +43,10 @@
    }
 
    /*       Activities       */
+
+   .grid {
+      width: 100%;
+   }
 
    .grid__img {
       width: 31.49%;
