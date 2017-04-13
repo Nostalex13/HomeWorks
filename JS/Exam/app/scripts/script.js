@@ -129,6 +129,7 @@ window.onload = function() {
          });
       });
       gridHover();
+
    }
 
    function gridHover() {
