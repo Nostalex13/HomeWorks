@@ -128,6 +128,19 @@ window.onload = function() {
          columnWidth: 300,
          gutter: 20
       });
+      gridHover();
+   }
+
+   function gridHover() {
+      var gridImages = document.querySelectorAll('.grid__mask');
+      for (var i = 0; i < gridImages.length; i++) {
+         gridImages[i].parentNode.attachEvent('onmouseenter', function() {
+            document.querySelector('.grid__info').style.display = 'none';
+         });
+         gridImages[i].parentNode.attachEvent('onmouseleave', function() {
+            document.querySelector('.grid__info').style.display = 'inline-block';
+         });
+      }
    }
 
    function ResultsCheck(data) {

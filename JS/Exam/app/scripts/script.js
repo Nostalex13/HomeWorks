@@ -96,12 +96,12 @@ window.onload = function() {
    /*          Images bar & Masonry        */
 
    (function() {
-      let sections = ['Sport and Activity', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Games', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
+      let sections = ['Marshal', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Fender', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
       let inputText = sections[Math.floor(Math.random()*sections.length)]; // рандомный выбор раздела
 
-      // searching('Les');
       searching(inputText);
    })();
+
    function update(data) {
       if (!ResultsCheck(data)) {
          return false;
@@ -111,9 +111,11 @@ window.onload = function() {
       let html = document.getElementById('grid').innerHTML;
 
       let links = data.hits.map(function(item) {
-         return item.webformatURL;
+         return {
+            link: item.webformatURL,
+            word: item.user
+         };
       });
-      // console.log(data.hits);
 
       let compiled = tmpl(html, { data: links });
       grid.innerHTML = compiled;
@@ -126,6 +128,21 @@ window.onload = function() {
             percentPosition: true
          });
       });
+      gridHover();
+   }
+
+   function gridHover() {
+      let gridImages = document.querySelectorAll('.grid__mask');
+      for (let i = 0; i < gridImages.length; i++) {
+         gridImages[i].parentNode.addEventListener('mouseenter', function() {
+            this.querySelector('.grid__mask').style.display = 'none';
+            this.querySelector('.grid__info').style.display = 'none';
+         });
+         gridImages[i].parentNode.addEventListener('mouseleave', function() {
+            this.querySelector('.grid__mask').style.display = 'inline-block';
+            this.querySelector('.grid__info').style.display = 'inline-block';
+         });
+      }
    }
 
    function ResultsCheck(data) {
@@ -162,11 +179,13 @@ window.onload = function() {
             if (grid.childNodes.length > 1) {
                removeNoResult(grid);
                addNoResult(grid);
-               let msnry = new Masonry( grid, {
-                  itemSelector: '.grid__img',
-                  columnWidth: '.columnWidth',
-                  gutter: 20,
-                  percentPosition: true
+               imagesLoaded(grid, function() {
+                  let msnry = new Masonry( grid, {
+                     itemSelector: '.grid__img',
+                     columnWidth: '.columnWidth',
+                     gutter: 20,
+                     percentPosition: true
+                  });
                });
             } else {
                if (grid.childNodes.length != 1) {
@@ -220,7 +239,7 @@ window.onload = function() {
       xmlhttp.send(null);
    }
 
-   document.querySelector('.activity-search__btn').addEventListener('click', searchImgHandler);
+   document.querySelector('.activity-search__btn').addEventListener('onclick', searchImgHandler);
    document.querySelector('.activity-search__input').addEventListener('keydown', function(e) {
       if (e.keyCode == 13) {
          e.preventDefault();
