@@ -97,7 +97,7 @@ window.onload = function() {
 
    (function() {
       let sections = ['Marshal', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Fender', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
-      let inputText = sections[Math.floor(Math.random()*sections.length)]; // рандомный выбор раздела
+      let inputText = sections[ Math.floor( Math.random()*sections.length ) ]; // magic
 
       searching(inputText);
    })();
@@ -129,7 +129,6 @@ window.onload = function() {
          });
       });
       gridHover();
-
    }
 
    function gridHover() {
@@ -139,9 +138,32 @@ window.onload = function() {
             this.querySelector('.grid__mask').style.display = 'none';
             this.querySelector('.grid__info').style.display = 'none';
          });
+
          gridImages[i].parentNode.addEventListener('mouseleave', function() {
             this.querySelector('.grid__mask').style.display = 'inline-block';
             this.querySelector('.grid__info').style.display = 'inline-block';
+         });
+
+         gridImages[i].parentNode.addEventListener('click', function() {
+            let imgSrc = this.getAttribute('data-src');
+            let html = document.getElementById('mask').innerHTML;
+            let page = document.getElementById('pagewrap');
+
+            let maskWrapper = document.createElement('div');
+            maskWrapper.classList.add('mask-wrapper');
+
+            let compiled = tmpl(html, { data: imgSrc });
+            maskWrapper.innerHTML = compiled;
+
+            page.appendChild(maskWrapper);
+
+            maskWrapper.addEventListener('click', function(e) {
+               if (e.target.tagName == 'IMG') {
+                  return false;
+               } else {
+                  page.removeChild(this);
+               }
+            });
          });
       }
    }
@@ -240,7 +262,7 @@ window.onload = function() {
       xmlhttp.send(null);
    }
 
-   document.querySelector('.activity-search__btn').addEventListener('onclick', searchImgHandler);
+   document.querySelector('.activity-search__btn').addEventListener('click', searchImgHandler);
    document.querySelector('.activity-search__input').addEventListener('keydown', function(e) {
       if (e.keyCode == 13) {
          e.preventDefault();

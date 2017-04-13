@@ -98,7 +98,7 @@ window.onload = function () {
 
    (function () {
       var sections = ['Marshal', 'Wellnes and Health', 'Extreme  Sports and Expeditions', 'Fender', 'Culture and Edution', 'Les Paul', 'Relaxation', 'Travelling'];
-      var inputText = sections[Math.floor(Math.random() * sections.length)]; // рандомный выбор раздела
+      var inputText = sections[Math.floor(Math.random() * sections.length)]; // magic
 
       searching(inputText);
    })();
@@ -139,9 +139,32 @@ window.onload = function () {
             this.querySelector('.grid__mask').style.display = 'none';
             this.querySelector('.grid__info').style.display = 'none';
          });
+
          gridImages[_i3].parentNode.addEventListener('mouseleave', function () {
             this.querySelector('.grid__mask').style.display = 'inline-block';
             this.querySelector('.grid__info').style.display = 'inline-block';
+         });
+
+         gridImages[_i3].parentNode.addEventListener('click', function () {
+            var imgSrc = this.getAttribute('data-src');
+            var html = document.getElementById('mask').innerHTML;
+            var page = document.getElementById('pagewrap');
+
+            var maskWrapper = document.createElement('div');
+            maskWrapper.classList.add('mask-wrapper');
+
+            var compiled = tmpl(html, { data: imgSrc });
+            maskWrapper.innerHTML = compiled;
+
+            page.appendChild(maskWrapper);
+
+            maskWrapper.addEventListener('click', function (e) {
+               if (e.target.tagName == 'IMG') {
+                  return false;
+               } else {
+                  page.removeChild(this);
+               }
+            });
          });
       }
    }
@@ -237,7 +260,7 @@ window.onload = function () {
       xmlhttp.send(null);
    }
 
-   document.querySelector('.activity-search__btn').addEventListener('onclick', searchImgHandler);
+   document.querySelector('.activity-search__btn').addEventListener('click', searchImgHandler);
    document.querySelector('.activity-search__input').addEventListener('keydown', function (e) {
       if (e.keyCode == 13) {
          e.preventDefault();

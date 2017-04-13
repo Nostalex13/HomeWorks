@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width">
    <title>Urlafddfswuck</title>
+
+   <link rel="icon" type="image/vnd.microsoft.icon" href="dist/images/favi.ico">
 
    <link rel="stylesheet" href="dist/fonts/font-face.css">
    <link rel="stylesheet" href="dist/styles/main.css">
@@ -132,7 +134,7 @@
                   <script type="text/html" id="grid" >
                      <div class="columnWidth"></div>
                      <% for (var i = 0; i < data.length; i++) { %>
-                        <div class="grid__img grid__img--<%= i + 1 %>" style="background-image: url(<%= data[i].link %>)">
+                        <div class="grid__img grid__img--<%= i + 1 %>" style="background-image: url(<%= data[i].link %>)" data-src="<%= data[i].link %>">
                            <div class="grid__mask"></div>
                            <span class="grid__info"> <%= data[i].word %> </span>
                         </div>
@@ -176,6 +178,10 @@
 
          </footer>
       </div>
+      <script type="text/html" id="mask" >
+         <div class="mask"></div>
+         <img class="img--mask" src="<%= data %>">
+      </script>
    </div>
 
 </body>

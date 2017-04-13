@@ -68,11 +68,14 @@
       @include transition(.2s);
    }
 
-   &__logIn:hover,
-   &__signUp:hover {
+   &__logIn:hover {
       cursor: pointer;
-      color: #63D414;
-      border-color: #63d414;
+
+      color: #ff4e4e;
+   }
+
+   &__signUp:hover {
+      @include btnHover;
    }
 
    &__text {
@@ -111,12 +114,11 @@
       @include border-radius(20px);
       box-sizing: border-box;
 
-      @include transition(.2s);
+      @include transition(.1s);
    }
 
    &__findBtn:hover {
-      cursor: pointer;
-      color: #63d414;
+      @include btnHover;
    }
 }
 
@@ -438,6 +440,66 @@
       @include opacity(.4);
       z-index: 0;
    }
+
+}
+
+.mask-wrapper {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+
+   text-align: center;
+
+   z-index: 9;
+}
+
+.mask-wrapper::after {
+   content: '';
+   display: inline-block;
+   height: 100%;
+
+   vertical-align: middle;
+}
+
+.mask {
+   @extend .grid__mask;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1;
+}
+
+.img--mask {
+   position: relative;
+   display: inline-block;
+   vertical-align: middle;
+   max-width: 95%;
+
+   background-repeat: no-repeat;
+   background-color: #4F7572;
+
+   border: 5px solid #947E7E;
+
+   opacity: 1;
+   z-index: 2;
+}
+
+.img--mask::before {
+   content: 'X';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 20px;
+   height: 20px;
+
+   font-size: 20px;
+   line-height: 20px;
+   text-align: center;
+
+   border: 2px solid #000;
+   border-radius: 20px;
 }
 
 .columnWidth {
@@ -452,18 +514,19 @@
    text-align: center;
 }
 
-.img-mask {
-   position: absolute;
-   display: inline;
-   top: 0;
-   left: 0;
-   width: 300px;
-
-   line-height: 310px;
-   text-align: center;
-
-   background-color: rgba(36, 140, 236, .9);
-}
+//    wtf???
+// .img-mask {
+//    position: absolute;
+//    display: inline;
+//    top: 0;
+//    left: 0;
+//    width: 300px;
+//
+//    line-height: 310px;
+//    text-align: center;
+//
+//    background-color: rgba(36, 140, 236, .9);
+// }
 
 .activity-search {
    height: 180px;
@@ -511,7 +574,7 @@
 
    &__btn {
       height: 40px;
-      padding: 0 24px;
+      width: 160px;
 
       background: #FF4E4E;
 
@@ -522,13 +585,13 @@
 
       border: 0;
       @include border-radius(20px);
+      box-sizing: border-box;
 
-      @include transition(.2s);
+      @include transition(.1s);
    }
 
    &__btn:hover {
-      cursor: pointer;
-      color: #63D414;
+      @include btnHover;
    }
 }
 
@@ -578,7 +641,7 @@
    }
 
    &__link:hover {
-      color: #4abbc2;
+      color: #ff4e4e;
    }
 
    &__partner {
