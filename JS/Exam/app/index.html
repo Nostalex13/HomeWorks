@@ -3,22 +3,17 @@
 <head profile="http://www.w3.org/2005/10/profile">
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width">
-   <title>Urlafddfswuck</title>
+   <title>Urlafddfswtzck</title>
 
-   <link rel="icon" type="image/vnd.microsoft.icon" href="dist/images/favi.ico">
+   <link rel="icon" type="image/vnd.microsoft.icon" href="images/favi.ico">
 
-   <link rel="stylesheet" href="dist/fonts/font-face.css">
-   <link rel="stylesheet" href="dist/styles/main.css">
-
-   <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-   <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
-   <script src="dist/scripts/ignore/template.js"></script>
-   <script src="dist/scripts/script.main.js"></script>
+   <link rel="stylesheet" href="styles/main.css">
+   <!--[if lte IE 9]>
+      <link rel="stylesheet" href="styles/IE/stylesIE.css" media="screen, projection">
+   <![endif]-->
 
    <!--[if lte IE 9]>
-   <script src="https://unpkg.com/masonry-layout@3.2/dist/masonry.pkgd.min.js"></script>
-   <link rel="stylesheet" href="dist/styles/IE/stylesIE.css" media="screen, projection">
-   <script src="dist/scripts/IE/scriptIE.js"></script>
+      <script src="scripts/IE/shiv5.js"></script>
    <![endif]-->
 </head>
 <body>
@@ -31,7 +26,7 @@
                <span class="header__signUp"> Sign up </span>
             </div>
 
-            <img class="header__logo" src="dist/images/logo.png" title="URLAUBSGLÜCK" alt="LOGO here">
+            <img class="header__logo" src="images/logo.png" title="URLAUBSGLÜCK" alt="LOGO here">
 
             <div class="header__text">
                <p class="header__caption"> share your holiday dreams </p>
@@ -54,11 +49,11 @@
                      <p class="slider__caption"> Sed leo enim, condimentum </p>
                      <p class="slider__info"> Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis. </p>
                   </div>
-                  <ul class="slider__list">
-                     <li class="slider__item"></li>
-                     <li class="slider__item"></li>
-                     <li class="slider__item"></li>
-                  </ul>
+                  <div class="slider__list">
+                     <img class="slider__item">
+                     <img class="slider__item">
+                     <img class="slider__item">
+                  </div>
                </div>
 
                <div class="slider">
@@ -67,26 +62,24 @@
                      <p class="slider__caption"> Morbi velit risus </p>
                      <p class="slider__info"> Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est. </p>
                   </div>
-                  <ul class="slider__list">
-                     <li class="slider__item"></li>
-                     <li class="slider__item"></li>
-                     <li class="slider__item"></li>
-                  </ul>
+                  <div class="slider__list">
+                     <img class="slider__item">
+                     <img class="slider__item">
+                     <img class="slider__item">
+                  </div>
                </div>
 
-               
-               
                <div class="slider">
                   <div class="slider__text">
                      <p class="slider__step"> Step 3 </p>
                      <p class="slider__caption"> Sed leo enim, condimentum </p>
                      <p class="slider__info"> Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis. </p>
                   </div>
-                  <ul class="slider__list">
-                     <li class="slider__item"></li>
-                     <li class="slider__item"></li>
-                     <li class="slider__item"></li>
-                  </ul>
+                  <div class="slider__list">
+                     <img class="slider__item">
+                     <img class="slider__item">
+                     <img class="slider__item">
+                  </div>
                </div>
             </section>
 
@@ -96,28 +89,28 @@
                <ul class="partners__list">
                   <li class="partners__item">
                      <figure class="partners__figure partners__figure--1">
-                        <img  class="partners__img" src="dist/images/partner1.png" alt="">
+                        <img  class="partners__img" src="images/partner1.png" alt="face">
                         <figcaption class="partners__name"> Bradley Hunter </figcaption>
                      </figure>
                      <p class="partners__info"> Based in Chicago. I love playing tennis and loud music. </p>
                   </li>
                   <li class="partners__item">
                      <figure class="partners__figure partners__figure--2">
-                        <img  class="partners__img" src="dist/images/partner2.png" alt="">
+                        <img  class="partners__img" src="images/partner2.png" alt="face">
                         <figcaption class="partners__name"> Heather Walker </figcaption>
                      </figure>
                      <p class="partners__info"> I'm a happy person that loves cats and climbing on mountains.</p>
                   </li>
                   <li class="partners__item" >
                      <figure class="partners__figure partners__figure--3">
-                        <img  class="partners__img" src="dist/images/partner3.png" alt="">
+                        <img  class="partners__img" src="images/partner3.png" alt="face">
                         <figcaption class="partners__name"> Lucas Marsha </figcaption>
                      </figure>
                      <p class="partners__info"> I get my inspiration from nature and objects around me. I have a passion to colours, typography and skateboards. </p>
                   </li>
                   <li class="partners__item">
                      <figure class="partners__figure partners__figure--4">
-                        <img  class="partners__img" src="dist/images/partner4.png" alt="">
+                        <img  class="partners__img" src="images/partner4.png" alt="face">
                         <figcaption class="partners__name"> Bradley Hunter </figcaption>
                      </figure>
                      <p class="partners__info"> Based in Chicago. I love playing tennis and loud music. </p>
@@ -161,9 +154,9 @@
 
          </div>
 
-         <div class="wrapper wrapper-footer">
+         <div class="wrapper wrapper--footer">
             <footer class="footer">
-               <img class="footer__logo" src="dist/images/footer-logo.png" alt="" class="footer__logo">
+               <img class="footer__logo" src="images/footer-logo.png" alt="" class="footer__logo">
 
                <div class="footer__company">
                   <span class="footer__caption"> Company </span>
@@ -176,7 +169,7 @@
                </div>
 
                <span class="footer__caption"> Partners </span>
-               <img class="footer__partner" src="dist/images/footer-partners.png" alt="">
+               <img class="footer__partner" src="images/footer-partners.png" alt="">
 
             </footer>
          </div>
@@ -187,5 +180,11 @@
          </script>
       </div>
 
-   </body>
-   </html>
+      <script src="scripts/vendor.js"></script>
+      <script src="scripts/script.main.js"></script>
+      <!--[if lte IE 9]>
+         <script src="scripts/IE/shiv5.js"></script>
+         <script src="scripts/IE/scriptIE.js"></script>
+      <![endif]-->
+</body>
+</html>

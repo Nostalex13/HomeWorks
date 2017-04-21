@@ -8,15 +8,17 @@ var babel = require('gulp-babel');
 var uglifycss = require('gulp-uglifycss');
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/scripts/*.js', '!app/scripts/ignore'])
+  return gulp.src('app/scripts/*.js')
     .pipe(concat('script.main.js'))
     .pipe(babel({
       presets: ['es2015']
       }))
-   //  .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('dist/scripts/')),
+    /*      Frameworks     */
     gulp.src('app/scripts/ignore/*.js')
-      .pipe(gulp.dest('dist/scripts/ignore/')),
+     .pipe(concat('vendor.js'))
+     .pipe(gulp.dest('dist/scripts/')),
     /*          IE       */
     gulp.src('app/scripts/IE/*.js')
       .pipe(gulp.dest('dist/scripts/IE'))
@@ -50,13 +52,20 @@ gulp.task('img', function() {
 });
 
 gulp.task('fonts', function() {
-   return gulp.src('app/fonts/*')
+   return gulp.src('app/fonts/**')
       .pipe(gulp.dest('dist/fonts/'));
+});
+
+gulp.task('html', function() {
+   return gulp.src('app/*.html')
+      .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('watch', function() {
    gulp.watch('app/scripts/**/*.{js,jsx}', ['scripts']);
    gulp.watch('app/styles/**/*.scss', ['scss']);
+   gulp.watch('app/*.html', ['html']);
 });
 
-gulp.task('default', ['scss', 'scripts', 'fonts', 'img']);
+gulp.task('default', ['scss', 'scripts', 'fonts', 'html']);
+gulp.task('all', ['scss', 'scripts', 'fonts', 'html', 'img', 'watch']);

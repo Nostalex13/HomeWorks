@@ -1,47 +1,47 @@
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url("Montserrat-Bold.eot?#iefix") format("embedded-opentype"),
-    url("Montserrat-Bold.ttf") format("truetype");
-},
+    src: url("../fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Montserrat-Bold.ttf") format("truetype");
+}
 
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url("Montserrat-Regular.eot?#iefix") format("embedded-opentype"),
-    url("Montserrat-Regular.ttf") format("truetype");
+    src: url("../fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Montserrat-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Roboto-Regular';
-    src: url("Roboto-Regular.eot?#iefix") format("embedded-opentype"),
-    url("Roboto-Regular.ttf") format("truetype");
+    src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Roboto-Bold';
-    src: url("Roboto-Bold.eot?#iefix") format("embedded-opentype"),
-    url("Roboto-Bold.ttf") format("truetype");
+    src: url("../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Roboto-Bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'MyriadProBold';
-    src: url("MyriadProBold.eot?#iefix") format("embedded-opentype"),
-    url("MyriadProBold.ttf") format("truetype");
+    src: url("../fonts/MyriadProBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MyriadProBold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'MyriadProRegular';
-    src: url("MyriadProRegular.eot?#iefix") format("embedded-opentype"),
-    url("MyriadProRegular.ttf") format("truetype");
+    src: url("../fonts/MyriadProRegular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MyriadProRegular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'MyriadProItalic';
-    src: url("MyriadProItalic.eot?#iefix") format("embedded-opentype"),
-    url("MyriadProItalic.ttf") format("truetype");
+    src: url("../fonts/MyriadProItalic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MyriadProItalic.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'Roboto-Light';
-    src: url("Roboto-Light.eot?#iefix") format("embedded-opentype"),
-    url("Roboto-Light.ttf") format("truetype");
+    src: url("../fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Roboto-Light.ttf") format("truetype");
 }

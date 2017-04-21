@@ -1,7 +1,8 @@
+
 window.onload = function() {
 
-   var anchors = document.querySelectorAll('a');
-   for (var i = 0; i < anchors.length; i++) {
+   let anchors = document.querySelectorAll('a');
+   for (let i = 0; i < anchors.length; i++) {
       anchors[i].onclick = function() {
          return false;
       };
@@ -26,8 +27,8 @@ window.onload = function() {
    function Slider(sliderObj, folderNum) {
       let self = this;
       this.currentValue = 1;
-      this.list = sliderObj.querySelector('ul');
-      this.sliderLength = sliderObj.querySelectorAll('ul li').length;
+      this.list = sliderObj.querySelector('.slider__list');
+      this.sliderLength = sliderObj.querySelectorAll('.slider__item').length;
       this.itemWidth = 300;
       this.currentPos = 0;
 
@@ -37,12 +38,12 @@ window.onload = function() {
       rightBtn();
 
       function initImages() {
-         let dist = `dist/images/sliders/slider${folderNum}/`;
+         let dist = `images/sliders/slider${folderNum}/`;
 
-         let items = self.list.querySelectorAll('li');
+         let items = self.list.querySelectorAll('.slider__item');
          for (let i = 0; i < items.length; i++) {
             let imgPath = dist + `howIt${folderNum}.${i + 1}.png`;
-            items[i].style.backgroundImage = `url(${imgPath})`;
+            items[i].src = imgPath;
          }
       }
 
@@ -102,6 +103,41 @@ window.onload = function() {
       searching(inputText);
    })();
 
+   document.querySelector('.activity-search__btn').addEventListener('click', searchImgHandler);
+   document.querySelector('.activity-search__input').addEventListener('keydown', function(e) {
+      if (e.keyCode == 13) {
+         e.preventDefault();
+         searchImgHandler();
+      }
+   });
+
+   function searchImgHandler() {
+      let input = document.querySelector('.activity-search__input');
+
+      if (input.value) {
+         searching(input.value);
+      }
+   }
+
+   function searching(query) {
+      let xmlhttp = getXmlHttp();
+      let perPage = 7; // quantity of results
+
+      xmlhttp.open('POST',
+      `https://pixabay.com/api/?key=4845683-933d895de826e8c128c7c84b3&per_page=${perPage}&q=${query}`,
+      true);
+      xmlhttp.onreadystatechange = function() {
+         if (xmlhttp.readyState == 4) {
+            if(xmlhttp.status == 200) {
+               update(JSON.parse(xmlhttp.responseText));
+            } else {
+               console.log('No access bla bla. Slow down please');
+            }
+         }
+      };
+      xmlhttp.send(null);
+   }
+
    function update(data) {
       if (!ResultsCheck(data)) {
          return false;
@@ -120,52 +156,13 @@ window.onload = function() {
       let compiled = tmpl(html, { data: links });
       grid.innerHTML = compiled;
 
-      imagesLoaded(grid, function() {
-         let msnry = new Masonry( grid, {
-            itemSelector: '.grid__img',
-            columnWidth: '.columnWidth',
-            gutter: 20,
-            percentPosition: true
-         });
+      let msnry = new Masonry( grid, {
+         itemSelector: '.grid__img',
+         columnWidth: '.columnWidth',
+         gutter: 20,
+         percentPosition: true
       });
       gridHover();
-   }
-
-   function gridHover() {
-      let gridImages = document.querySelectorAll('.grid__mask');
-      for (let i = 0; i < gridImages.length; i++) {
-         gridImages[i].parentNode.addEventListener('mouseenter', function() {
-            this.querySelector('.grid__mask').style.display = 'none';
-            this.querySelector('.grid__info').style.display = 'none';
-         });
-
-         gridImages[i].parentNode.addEventListener('mouseleave', function() {
-            this.querySelector('.grid__mask').style.display = 'inline-block';
-            this.querySelector('.grid__info').style.display = 'inline-block';
-         });
-
-         gridImages[i].parentNode.addEventListener('click', function() {
-            let imgSrc = this.getAttribute('data-src');
-            let html = document.getElementById('mask').innerHTML;
-            let page = document.getElementById('pagewrap');
-
-            let maskWrapper = document.createElement('div');
-            maskWrapper.classList.add('mask-wrapper');
-
-            let compiled = tmpl(html, { data: imgSrc });
-            maskWrapper.innerHTML = compiled;
-
-            page.appendChild(maskWrapper);
-
-            maskWrapper.addEventListener('click', function(e) {
-               if (e.target.tagName == 'IMG') {
-                  return false;
-               } else {
-                  page.removeChild(this);
-               }
-            });
-         });
-      }
    }
 
    function ResultsCheck(data) {
@@ -202,15 +199,14 @@ window.onload = function() {
             if (grid.childNodes.length > 1) {
                removeNoResult(grid);
                addNoResult(grid);
-               imagesLoaded(grid, function() {
-                  let msnry = new Masonry( grid, {
-                     itemSelector: '.grid__img',
-                     columnWidth: '.columnWidth',
-                     gutter: 20,
-                     percentPosition: true
-                  });
+               let msnry = new Masonry( grid, {
+                  itemSelector: '.grid__img',
+                  columnWidth: '.columnWidth',
+                  gutter: 20,
+                  percentPosition: true
                });
             } else {
+
                if (grid.childNodes.length != 1) {
                   addNoResult(grid);
                }
@@ -243,39 +239,42 @@ window.onload = function() {
       return xmlhttp;
    }
 
-   function searching(query) {
-      let xmlhttp = getXmlHttp();
-      let perPage = 7; // quantity of results
+   function gridHover() {
+      let gridImages = document.querySelectorAll('.grid__mask');
+      for (let i = 0; i < gridImages.length; i++) {
+         gridImages[i].parentNode.addEventListener('mouseenter', function() {
+            this.querySelector('.grid__mask').style.display = 'none';
+            this.querySelector('.grid__info').style.display = 'none';
+         });
 
-      xmlhttp.open('POST',
-      `https://pixabay.com/api/?key=4845683-933d895de826e8c128c7c84b3&per_page=${perPage}&q=${query}`,
-      true);
-      xmlhttp.onreadystatechange = function() {
-         if (xmlhttp.readyState == 4) {
-            if(xmlhttp.status == 200) {
-               update(JSON.parse(xmlhttp.responseText));
-            } else {
-               console.log('No access bla bla. Slow down please');
-            }
-         }
-      };
-      xmlhttp.send(null);
-   }
+         gridImages[i].parentNode.addEventListener('mouseleave', function() {
+            this.querySelector('.grid__mask').style.display = 'inline-block';
+            this.querySelector('.grid__info').style.display = 'inline-block';
+         });
 
-   document.querySelector('.activity-search__btn').addEventListener('click', searchImgHandler);
-   document.querySelector('.activity-search__input').addEventListener('keydown', function(e) {
-      if (e.keyCode == 13) {
-         e.preventDefault();
-         searchImgHandler();
+         /*       Fancy box (kinda)    */
+
+         gridImages[i].parentNode.addEventListener('click', function() {
+            let imgSrc = this.getAttribute('data-src');
+            let html = document.getElementById('mask').innerHTML;
+            let page = document.getElementById('pagewrap');
+
+            let maskWrapper = document.createElement('div');
+            maskWrapper.classList.add('mask-wrapper');
+
+            let compiled = tmpl(html, { data: imgSrc });
+            maskWrapper.innerHTML = compiled;
+
+            page.appendChild(maskWrapper);
+
+            maskWrapper.addEventListener('click', function(e) {
+               if (e.target.tagName == 'IMG') {
+                  return false;
+               } else {
+                  page.removeChild(this);
+               }
+            });
+         });
       }
-   });
-
-   function searchImgHandler() {
-      let input = document.querySelector('.activity-search__input');
-
-      if (input.value) {
-         searching(input.value);
-      }
    }
-
 };

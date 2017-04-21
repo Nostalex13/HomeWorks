@@ -1,12 +1,3 @@
-document.createElement('header');
-document.createElement('nav');
-document.createElement('main');
-document.createElement('section');
-document.createElement('article');
-document.createElement('aside');
-document.createElement('footer');
-document.createElement('figure');
-document.createElement('figcaption');
 
 window.onload = function() {
    var anchors = document.querySelectorAll('a');
@@ -33,8 +24,8 @@ window.onload = function() {
    function Slider(sliderObj, folderNum) {
       var self = this;
       this.currentValue = 1;
-      this.list = sliderObj.querySelector('ul');
-      this.sliderLength = sliderObj.querySelectorAll('ul li').length;
+      this.list = sliderObj.querySelector('.slider__list');
+      this.sliderLength = sliderObj.querySelectorAll('.slider__item').length;
       this.itemWidth = 300;
       this.currentPos = 0;
 
@@ -44,12 +35,12 @@ window.onload = function() {
       rightBtn();
 
       function initImages() {
-         var dist = 'dist/images/sliders/slider' + folderNum + '/';
+         var dist = 'images/sliders/slider' + folderNum + '/';
 
-         var items = self.list.querySelectorAll('li');
+         var items = self.list.querySelectorAll('.slider__item');
          for (var i = 0; i < items.length; i++) {
             var imgPath = dist + 'howIt' + folderNum + '.' + (i + 1) + '.png';
-            items[i].style.backgroundImage = 'url(' + imgPath + ')';
+            items[i].src = imgPath;
          }
       }
 
@@ -108,6 +99,59 @@ window.onload = function() {
       searching(inputText);
    })();
 
+   document.querySelector('.activity-search__btn').attachEvent('onclick', searchImgHandler);
+   document.querySelector('.activity-search__input').onkeydown = function(event) {
+      event = event || window.event;
+      if (event.keyCode == 13) {
+         searchImgHandler();
+         return false;
+      }
+   };
+
+   function searchImgHandler() {
+      var input = document.querySelector('.activity-search__input');
+
+      if (input.value) {
+         searching(input.value);
+      }
+   }
+
+   function searching(query) {
+      var xmlhttp = getXmlHttp();
+      var perPage = 7; // quantity of results
+
+      xmlhttp.open('POST',
+      'https://pixabay.com/api/?key=4845683-933d895de826e8c128c7c84b3&per_page=' + perPage + '&q=' + query,
+      true);
+      xmlhttp.onreadystatechange = function() {
+         if (xmlhttp.readyState == 4) {
+            if(xmlhttp.status == 200) {
+               update(JSON.parse(xmlhttp.responseText));
+            } else {
+               console.log('No access bla bla. Slow down please');
+            }
+         }
+      };
+      xmlhttp.send(null);
+   }
+
+   function getXmlHttp() {
+      var xmlhttp;
+      try {
+         xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (e) {
+         try {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+         } catch (E) {
+            xmlhttp = false;
+         }
+      }
+      if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+         xmlhttp = new XMLHttpRequest();
+      }
+      return xmlhttp;
+   }
+
    function update(data) {
       if (!ResultsCheck(data)) {
          return false;
@@ -134,45 +178,6 @@ window.onload = function() {
       });
       gridHover();
    }
-
-   function gridHover() {
-      var gridImages = document.querySelectorAll('.grid__mask');
-      for (var i = 0; i < gridImages.length; i++) {
-         gridImages[i].parentNode.attachEvent('onmouseenter', function(e) {
-            e.srcElement.querySelector('.grid__mask').style.display = 'none';
-            e.srcElement.querySelector('.grid__info').style.display = 'none';
-         });
-
-         gridImages[i].parentNode.attachEvent('onmouseleave', function(e) {
-            e.srcElement.querySelector('.grid__mask').style.display = 'inline-block';
-            e.srcElement.querySelector('.grid__info').style.display = 'inline-block';
-         });
-
-         gridImages[i].parentNode.attachEvent('onclick', function(e) {
-            var imgSrc = e.srcElement.getAttribute('data-src');
-            var html = document.getElementById('mask').innerHTML;
-            var page = document.getElementById('pagewrap');
-
-            var maskWrapper = document.createElement('div');
-            maskWrapper.className += 'mask-wrapper';
-
-            var compiled = tmpl(html, { data: imgSrc });
-            maskWrapper.innerHTML = compiled;
-
-            page.appendChild(maskWrapper);
-
-            maskWrapper.attachEvent('onclick', function(e) {
-               if (e.srcElement.tagName == 'IMG') {
-                  return false;
-               } else {
-                  var zaebalo = document.getElementById('pagewrap');
-                  zaebalo.removeChild( document.querySelector('.mask-wrapper') );
-               }
-            });
-         });
-      }
-   }
-
 
    function ResultsCheck(data) {
 
@@ -229,57 +234,41 @@ window.onload = function() {
       return checking(data);
    }
 
-   function getXmlHttp() {
-      var xmlhttp;
-      try {
-         xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-      } catch (e) {
-         try {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-         } catch (E) {
-            xmlhttp = false;
-         }
-      }
-      if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
-         xmlhttp = new XMLHttpRequest();
-      }
-      return xmlhttp;
-   }
+   function gridHover() {
+      var gridImages = document.querySelectorAll('.grid__mask');
+      for (var i = 0; i < gridImages.length; i++) {
+         gridImages[i].parentNode.attachEvent('onmouseenter', function(e) {
+            e.srcElement.querySelector('.grid__mask').style.display = 'none';
+            e.srcElement.querySelector('.grid__info').style.display = 'none';
+         });
 
-   function searching(query) {
-      var xmlhttp = getXmlHttp();
-      var perPage = 7; // quantity of results
+         gridImages[i].parentNode.attachEvent('onmouseleave', function(e) {
+            e.srcElement.querySelector('.grid__mask').style.display = 'inline-block';
+            e.srcElement.querySelector('.grid__info').style.display = 'inline-block';
+         });
 
-      xmlhttp.open('POST',
-      'https://pixabay.com/api/?key=4845683-933d895de826e8c128c7c84b3&per_page=' + perPage + '&q=' + query,
-      true);
-      xmlhttp.onreadystatechange = function() {
-         if (xmlhttp.readyState == 4) {
-            if(xmlhttp.status == 200) {
-               update(JSON.parse(xmlhttp.responseText));
-            } else {
-               console.log('No access bla bla. Slow down please');
-            }
-         }
-      };
-      xmlhttp.send(null);
-   }
+         gridImages[i].parentNode.attachEvent('onclick', function(e) {
+            var imgSrc = e.srcElement.getAttribute('data-src');
+            var html = document.getElementById('mask').innerHTML;
+            var page = document.getElementById('pagewrap');
 
-   document.querySelector('.activity-search__btn').attachEvent('onclick', searchImgHandler);
-   document.querySelector('.activity-search__input').onkeydown = function(event) {
-      event = event || window.event;
-      if (event.keyCode == 13) {
-         searchImgHandler();
-         return false;
-      }
-   };
+            var maskWrapper = document.createElement('div');
+            maskWrapper.className += 'mask-wrapper';
 
-   function searchImgHandler() {
-      var input = document.querySelector('.activity-search__input');
+            var compiled = tmpl(html, { data: imgSrc });
+            maskWrapper.innerHTML = compiled;
 
-      if (input.value) {
-         searching(input.value);
+            page.appendChild(maskWrapper);
+
+            maskWrapper.attachEvent('onclick', function(e) {
+               if (e.srcElement.tagName == 'IMG') {
+                  return false;
+               } else {
+                  var rem = document.getElementById('pagewrap');
+                  rem.removeChild( document.querySelector('.mask-wrapper') );
+               }
+            });
+         });
       }
    }
-
 };
