@@ -1,5 +1,5 @@
 window.onload = function() {
-   if (process.env.NODE_ENV == 'development') {
+   if (process.env.NODE_ENV == 'dev') {
       console.log('Dev Mode');
    }
    console.log('I`m script1');

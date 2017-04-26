@@ -9,6 +9,7 @@
   "author": "@Nostalex",
   "license": "ISC",
   "devDependencies": {
+    "babel-loader": "^7.0.0",
     "webpack": "^2.4.1"
   }
 }

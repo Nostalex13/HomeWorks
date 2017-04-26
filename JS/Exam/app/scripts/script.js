@@ -8,6 +8,23 @@ window.onload = function() {
       };
    }
 
+   /*          Button scroll          */
+
+   let findBtn = document.querySelector('.header__findBtn');
+   findBtn.addEventListener('click', function(e) {
+      let xPos = 0;
+      let yPos = 0;
+
+      let targetElem = document.querySelector('.partners');
+
+      while (targetElem != null) {
+         xPos += targetElem.offsetLeft;
+         yPos += targetElem.offsetTop;
+         targetElem = targetElem.offsetParent;
+      }
+      window.scrollTo(xPos, yPos);
+   });
+
    /*          Slider         */
 
    let sliders = document.querySelectorAll('.slider');

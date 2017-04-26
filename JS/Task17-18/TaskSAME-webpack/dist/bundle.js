@@ -85,7 +85,7 @@ exports.funct = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 window.onload = function() {
-   if (true) {
+   if (false) {
       console.log('Dev Mode');
    }
    console.log('I`m script1');

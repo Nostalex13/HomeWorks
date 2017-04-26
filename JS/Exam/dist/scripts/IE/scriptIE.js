@@ -7,6 +7,23 @@ window.onload = function() {
       });
    }
 
+   /*          Scroll         */
+
+   var findBtn = document.querySelector('.header__findBtn');
+   findBtn.attachEvent('onclick', function(e) {
+      var xPos = 0;
+      var yPos = 0;
+
+      var targetElem = document.querySelector('.partners');
+
+      while (targetElem != null) {
+         xPos += targetElem.offsetLeft;
+         yPos += targetElem.offsetTop;
+         targetElem = targetElem.offsetParent;
+      }
+      window.scrollTo(xPos, yPos);
+   });
+
    var sliders = document.querySelectorAll('.slider');
 
    for (var i = 0; i < sliders.length; i++) {
