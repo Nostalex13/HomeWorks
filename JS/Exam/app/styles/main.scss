@@ -123,6 +123,121 @@
    }
 }
 
+.logIn-window {
+   position: fixed;
+   display: none;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+
+   text-align: center;
+
+   z-index: 99;
+
+   &__mask {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      background-color: #000;
+
+      @include opacity(.4);
+      z-index: 1;
+   }
+
+   &__caption {
+      margin-bottom: 20px;
+
+      color: #fff;
+      font-size: 20px;
+      font-family: $MontB;
+   }
+
+   &__content {
+      position: relative;
+      display: inline-block;
+      height: 250px;
+      width: 350px;
+
+      background-color: rgba(189, 157, 157, 0.9);
+
+      vertical-align: middle;
+
+      @include border-radius(5px);
+      border: 2px solid #7A3939;
+
+      z-index: 99;
+   }
+
+   &__content::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+
+      vertical-align: middle;
+   }
+
+   &__form {
+      display: inline-block;
+      width: 80%;
+      margin: 10px auto;
+
+      vertical-align: middle;
+   }
+
+   &__emailField {
+      display: inline-block;
+      width: 80%;
+      height: 22px;
+      margin: 3px 0;
+      padding-left: 5px;
+
+      font-size: 16px;
+      font-family: $MyriadR;
+
+      @include border-radius(3px);
+      border: 1px solid #ccc;
+   }
+
+   &__passField {
+      @extend .logIn-window__emailField;
+   }
+
+   &__logInBtn {
+      width: 100px;
+      margin-top: 10px;
+      padding: 5px;
+
+      color: #fff;
+      font-size: 14px;
+      font-family: $MontB;
+
+      background: #693F3F;
+
+      @include border-radius(3px);
+      border: 0;
+   }
+
+   &__logInBtn:hover {
+      cursor: pointer;
+   }
+
+   &__cancelBtn {
+      @extend .logIn-window__logInBtn;
+   }
+}
+
+.logIn-window::before {
+   content: '';
+   display: inline-block;
+   height: 100%;
+
+   vertical-align: middle;
+}
+
 /*             MAIN             */
 
 .wrapper--main {
@@ -477,7 +592,7 @@
    max-width: 95%;
 
    background-repeat: no-repeat;
-   background-color: #4F7572;
+   background-color: #754F4F;
 
    border: 5px solid #947E7E;
 

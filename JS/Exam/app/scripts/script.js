@@ -8,6 +8,20 @@ window.onload = function() {
       };
    }
 
+   /*          LogIn window         */
+
+   document.querySelector('.header__logIn').addEventListener('click', function(e) {
+      document.querySelector('.logIn-window').style.display = 'block';
+   });
+
+   document.querySelector('.logIn-window__logInBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+   });
+
+   document.querySelector('.logIn-window__cancelBtn').addEventListener('click', function(e) {
+      document.querySelector('.logIn-window').style.display = 'none';
+   });
+
    /*          Button scroll          */
 
    let findBtn = document.querySelector('.header__findBtn');
