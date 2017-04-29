@@ -185,6 +185,9 @@
       width: 80%;
       margin: 10px auto;
 
+      color: #342D2D;
+      font-family: $MyriadR;
+
       vertical-align: middle;
    }
 
@@ -227,6 +230,17 @@
 
    &__cancelBtn {
       @extend .logIn-window__logInBtn;
+   }
+
+   &__subText {
+      margin-top: 10px;
+   }
+
+   &__signUp {
+      color: #711eca;
+      text-decoration: underline;
+
+      cursor: pointer;
    }
 }
 
@@ -600,22 +614,6 @@
    z-index: 2;
 }
 
-.img--mask::before {
-   content: 'X';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 20px;
-   height: 20px;
-
-   font-size: 20px;
-   line-height: 20px;
-   text-align: center;
-
-   border: 2px solid #000;
-   border-radius: 20px;
-}
-
 .columnWidth {
    width: 31.9%;
 }
@@ -627,20 +625,6 @@
    font-family: $MontB;
    text-align: center;
 }
-
-//    wtf???
-// .img-mask {
-//    position: absolute;
-//    display: inline;
-//    top: 0;
-//    left: 0;
-//    width: 300px;
-//
-//    line-height: 310px;
-//    text-align: center;
-//
-//    background-color: rgba(36, 140, 236, .9);
-// }
 
 .activity-search {
    height: 180px;

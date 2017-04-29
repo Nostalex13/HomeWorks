@@ -24,6 +24,10 @@ summary {
    min-width: 940px;
 }
 
+.placehold {
+   color: #ccc;
+}
+
 /*       Header       */
 
 
@@ -49,6 +53,52 @@ summary {
       behavior: url('styles/IE/PIE/PIE.htc');
    }
 }
+
+.logIn-window {
+
+   &__mask {
+      filter: alpha(opacity=40);
+   }
+
+   &__caption {
+      font-family: $MontB;
+   }
+
+   &__content {
+      background-color: rgb(189, 157, 157);
+   }
+
+   &__content:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+
+      vertical-align: middle;
+   }
+
+   &__emailField {
+      font-family: $MyriadR;
+
+      border-radius: 3px;
+      behavior: url('styles/IE/PIE/PIE.htc');
+   }
+
+   &__logInBtn {
+      font-family: $MontB;
+
+      border-radius: 3px;
+      behavior: url('styles/IE/PIE/PIE.htc');
+   }
+}
+
+.logIn-window:before {
+   content: '';
+   display: inline-block;
+   height: 100%;
+
+   vertical-align: middle;
+}
+
 
 /*          MAIN          */
 
@@ -185,6 +235,9 @@ summary {
    &__input {
       vertical-align: middle;
       padding: 0 0 9px 15px;
+
+      border-radius: 5px;
+      behavior: url('styles/IE/PIE/PIE.htc');
    }
 
    &__btn {

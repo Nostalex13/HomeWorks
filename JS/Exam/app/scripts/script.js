@@ -12,6 +12,7 @@ window.onload = function() {
 
    document.querySelector('.header__logIn').addEventListener('click', function(e) {
       document.querySelector('.logIn-window').style.display = 'block';
+      window.addEventListener('keydown', cancelHandler);
    });
 
    document.querySelector('.logIn-window__logInBtn').addEventListener('click', function(e) {
@@ -20,7 +21,15 @@ window.onload = function() {
 
    document.querySelector('.logIn-window__cancelBtn').addEventListener('click', function(e) {
       document.querySelector('.logIn-window').style.display = 'none';
+      window.removeEventListener('keydown', cancelHandler);
    });
+
+   let cancelHandler = function(e) {
+      if (e.keyCode == 27) {
+         e.preventDefault();
+         document.querySelector('.logIn-window').style.display = 'none';
+      }
+   }
 
    /*          Button scroll          */
 

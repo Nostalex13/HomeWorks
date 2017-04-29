@@ -7,6 +7,62 @@ window.onload = function() {
       });
    }
 
+   /*          Placeholders         */
+
+   var input = document.getElementsByTagName('input'); // get all text fields
+   var cls = "placehold"; // set name of the class
+
+   if (input) { // if fields found
+      for (var i=0; i < input.length; i++) {
+         var t = input[i];
+         var txt = t.getAttribute("placeholder") || 0;
+
+         if (txt.length > 0) { // if placeholder found
+            t.className = t.value.length == 0 ? t.className + " " + cls : t.className; // add class
+            t.value = t.value.length > 0 ? t.value : txt; // if no value found
+
+            t.onfocus = function() { // on focus
+               this.className = this.className.replace(cls);
+               this.value = this.value == this.getAttribute("placeholder") ? "" : this.value;
+            }
+
+            t.onblur = function() { // on focus out
+               if (this.value.length == 0) {
+                  this.value = this.getAttribute("placeholder");
+                  this.className = this.className+" "+cls; // add class
+               }
+            }
+         }
+      }
+   }
+
+   /*          LogIn window         */
+
+   document.querySelector('.header__logIn').attachEvent('onclick', function(e) {
+      document.querySelector('.logIn-window').style.display = 'block';
+      console.log(window);
+      document.querySelector('body').attachEvent('onkeydown', function(event) {
+         event = event || window.event;
+         cancelHandler(event);
+      });
+   });
+
+   document.querySelector('.logIn-window__logInBtn').attachEvent('onclick', function() {
+      return false;
+   });
+
+   document.querySelector('.logIn-window__cancelBtn').attachEvent('onclick', function() {
+      document.querySelector('.logIn-window').style.display = 'none';
+      document.querySelector('body').detachEvent('onkeydown', cancelHandler);
+   });
+
+   var cancelHandler = function(event) {
+      if (event.keyCode == 27) {
+         document.querySelector('.logIn-window').style.display = 'none';
+         return false;
+      }
+   };
+
    /*          Scroll         */
 
    var findBtn = document.querySelector('.header__findBtn');
@@ -117,13 +173,13 @@ window.onload = function() {
    })();
 
    document.querySelector('.activity-search__btn').attachEvent('onclick', searchImgHandler);
-   document.querySelector('.activity-search__input').onkeydown = function(event) {
+   document.querySelector('.activity-search__input').attachEvent('onkeydown', function(event) {
       event = event || window.event;
       if (event.keyCode == 13) {
          searchImgHandler();
          return false;
       }
-   };
+   });
 
    function searchImgHandler() {
       var input = document.querySelector('.activity-search__input');
@@ -250,6 +306,8 @@ window.onload = function() {
       }
       return checking(data);
    }
+
+   /*          Fancy box         */
 
    function gridHover() {
       var gridImages = document.querySelectorAll('.grid__mask');
