@@ -41,18 +41,45 @@
 
          <!-- Hidden -->
 
-         <div class="logIn-window">
-            <div class="logIn-window__mask"></div>
-            <div class="logIn-window__content">
-               <form class="logIn-window__form">
-                  <input class="logIn-window__emailField" type="text" value="" placeholder="Email">
-                  <input class="logIn-window__passField" type="password" value="" placeholder="Password">
+         <div class="header-window header-window--logIn">
+            <div class="header-window__mask header-window__mask--logIn"></div>
+            <div class="header-window__content header-window__content--logIn">
+               <form class="header-window__form header-window__form--logIn">
 
-                  <input class="logIn-window__logInBtn" type="submit" value="LogIn">
-                  <input class="logIn-window__cancelBtn" type="button" value="Cancel">
+                  <img class="header-window__logo header-window__logo--logIn" src="images/logo.png" title="URLAUBSGLÜCK">
 
-                  <p class="logIn-window__subText"> Don`t have an account? </p>
-                  <a class="logIn-window__signUp"> Sign Up </a>
+                  <input class="header-window__field header-window__emailField--logIn" type="text" value="" placeholder="Email">
+                  <input class="header-window__field header-window__passwField--logIn" type="password" value="" placeholder="Password">
+
+                  <input class="header-window__btn header-window__logInBtn" type="submit" value="LogIn">
+                  <input class="header-window__btn header-window__cancelBtn--logIn" type="button" value="Cancel">
+
+                  <p class="header-window__subText"> Don`t have an account? </p>
+                  <a class="header-window__signUp"> Sign Up </a>
+
+               </form>
+            </div>
+         </div>
+
+         <div class="header-window header-window--signUp">
+            <div class="header-window__mask header-window__mask--signUp"></div>
+            <div class="header-window__content header-window__content--signUp">
+               <form class="header-window__form header-window__form--signUp">
+
+                  <img class="header-window__logo header-window__logo--signUp" src="images/logo.png" title="URLAUBSGLÜCK">
+
+                  <input class="header-window__field header-window__nameField" type="text" placeholder="Name">
+                  <input class="header-window__field header-window__loginField" type="text" placeholder="Login">
+
+                  <input class="header-window__field header-window__emailField--signUp" type="text" placeholder="Email">
+                  <input class="header-window__field header-window__passwField--signUp" type="password" placeholder="Password">
+                  <input class="header-window__field header-window__confirmPasswField--signUp" type="password" placeholder="Confirm Password">
+
+                  <input class="header-window__btn header-window__signUpBtn--signUp"
+                  type="submit" value="SignUp">
+                  <input class="header-window__btn header-window__cancelBtn--signUp"
+                  type="button" value="Cancel">
+
                </form>
             </div>
          </div>

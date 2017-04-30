@@ -123,7 +123,9 @@
    }
 }
 
-.logIn-window {
+/*          LOG IN & SIGN UP WINDOWS           */
+
+.header-window {
    position: fixed;
    display: none;
    height: 100%;
@@ -148,19 +150,9 @@
       z-index: 1;
    }
 
-   &__caption {
-      margin-bottom: 20px;
-
-      color: #fff;
-      font-size: 20px;
-      font-family: $MontB;
-   }
-
    &__content {
       position: relative;
       display: inline-block;
-      height: 250px;
-      width: 350px;
 
       background-color: rgba(189, 157, 157, 0.9);
 
@@ -181,17 +173,14 @@
    }
 
    &__form {
-      display: inline-block;
-      width: 80%;
-      margin: 10px auto;
-
-      color: #342D2D;
-      font-family: $MyriadR;
-
-      vertical-align: middle;
+      padding: 15px 0;
    }
 
-   &__emailField {
+   &__logo {
+      margin-bottom: 20px;
+   }
+
+   &__field {
       display: inline-block;
       width: 80%;
       height: 22px;
@@ -205,13 +194,8 @@
       border: 1px solid #ccc;
    }
 
-   &__passField {
-      @extend .logIn-window__emailField;
-   }
-
-   &__logInBtn {
+   &__btn {
       width: 100px;
-      margin-top: 10px;
       padding: 5px;
 
       color: #fff;
@@ -224,12 +208,51 @@
       border: 0;
    }
 
-   &__logInBtn:hover {
+   &__btn:hover {
       cursor: pointer;
    }
+}
 
-   &__cancelBtn {
-      @extend .logIn-window__logInBtn;
+.header-window::before {
+   content: '';
+   display: inline-block;
+   height: 100%;
+
+   vertical-align: middle;
+}
+
+/*          LogIn Section       */
+
+.header-window {
+
+   &__content--logIn {
+      width: 350px;
+   }
+
+   &__form--logIn {
+      display: inline-block;
+      width: 80%;
+      margin: 10px auto;
+
+      color: #342D2D;
+      font-family: $MyriadR;
+
+      vertical-align: middle;
+   }
+
+   &__logInBtn {
+      width: 100px;
+      margin: 15px 5px 0;
+      padding: 5px;
+
+      color: #fff;
+      font-size: 14px;
+      font-family: $MontB;
+
+      background: #693F3F;
+
+      @include border-radius(3px);
+      border: 0;
    }
 
    &__subText {
@@ -237,6 +260,8 @@
    }
 
    &__signUp {
+      margin-bottom: 5px;
+
       color: #711eca;
       text-decoration: underline;
 
@@ -244,12 +269,47 @@
    }
 }
 
-.logIn-window::before {
-   content: '';
-   display: inline-block;
-   height: 100%;
+/*          SignUp Section       */
 
-   vertical-align: middle;
+.header-window {
+
+   &__content--signUp {
+      width: 350px;
+   }
+
+   &__form--signUp {
+      display: inline-block;
+      width: 80%;
+      margin: 10px auto;
+
+      color: #342D2D;
+      font-family: $MyriadR;
+
+      vertical-align: middle;
+   }
+
+   &__loginField {
+      margin-bottom: 15px;
+   }
+
+   &__signUpBtn {
+      width: 100px;
+      margin: 15px 5px 0;
+      padding: 5px;
+
+      color: #fff;
+      font-size: 14px;
+      font-family: $MontB;
+
+      background: #693F3F;
+
+      @include border-radius(3px);
+      border: 0;
+   }
+
+   &__cancelBtn--signUp {
+      @extend .header-window__signUpBtn;
+   }
 }
 
 /*             MAIN             */

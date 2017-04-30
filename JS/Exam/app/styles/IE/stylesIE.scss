@@ -54,14 +54,12 @@ summary {
    }
 }
 
-.logIn-window {
+/*             LOG IN & SIGN UP WINDOWS             */
+
+.header-window {
 
    &__mask {
       filter: alpha(opacity=40);
-   }
-
-   &__caption {
-      font-family: $MontB;
    }
 
    &__content {
@@ -76,14 +74,14 @@ summary {
       vertical-align: middle;
    }
 
-   &__emailField {
+   &__field {
       font-family: $MyriadR;
 
       border-radius: 3px;
       behavior: url('styles/IE/PIE/PIE.htc');
    }
 
-   &__logInBtn {
+   &__btn {
       font-family: $MontB;
 
       border-radius: 3px;
@@ -91,7 +89,7 @@ summary {
    }
 }
 
-.logIn-window:before {
+.header-window:before {
    content: '';
    display: inline-block;
    height: 100%;

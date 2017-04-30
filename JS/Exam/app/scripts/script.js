@@ -10,26 +10,73 @@ window.onload = function() {
 
    /*          LogIn window         */
 
-   document.querySelector('.header__logIn').addEventListener('click', function(e) {
-      document.querySelector('.logIn-window').style.display = 'block';
-      window.addEventListener('keydown', cancelHandler);
-   });
+   (function() {
+      document.querySelector('.header__logIn').addEventListener('click', function(e) {
+         document.querySelector('.header-window--logIn').style.display = 'block';
+         window.addEventListener('keydown', cancelHandler);
 
-   document.querySelector('.logIn-window__logInBtn').addEventListener('click', function(e) {
-      e.preventDefault();
-   });
+         document.querySelector('.header-window--logIn').addEventListener('click', function(e) {
+            if (e.target.classList.contains('header-window__mask')) {
+               hideLogIn();
+            }
+         });
+      });
 
-   document.querySelector('.logIn-window__cancelBtn').addEventListener('click', function(e) {
-      document.querySelector('.logIn-window').style.display = 'none';
-      window.removeEventListener('keydown', cancelHandler);
-   });
-
-   let cancelHandler = function(e) {
-      if (e.keyCode == 27) {
+      document.querySelector('.header-window__logInBtn').addEventListener('click', function(e) {
          e.preventDefault();
-         document.querySelector('.logIn-window').style.display = 'none';
+      });
+
+      document.querySelector('.header-window__cancelBtn--logIn').addEventListener('click', function(e) {
+         hideLogIn();
+         window.removeEventListener('keydown', cancelHandler);
+      });
+
+      let cancelHandler = function(e) {
+         if (e.keyCode == 27) {
+            e.preventDefault();
+            hideLogIn();
+         }
       }
-   }
+
+      let hideLogIn = function() {
+         document.querySelector('.header-window--logIn').style.display = 'none';
+      };
+   })();
+
+   /*          SignUp window         */
+
+   (function() {
+      document.querySelector('.header__signUp').addEventListener('click', function(e) {
+         document.querySelector('.header-window--signUp').style.display = 'block';
+         window.addEventListener('keydown', cancelHandler);
+
+         document.querySelector('.header-window--signUp').addEventListener('click', function(e) {
+            if (e.target.classList.contains('header-window__mask--signUp')) {
+               hideSignUp();
+            }
+         });
+      });
+
+      document.querySelector('.header-window__signUpBtn--signUp').addEventListener('click', function(e) {
+         e.preventDefault();
+      });
+
+      document.querySelector('.header-window__cancelBtn--signUp').addEventListener('click', function(e) {
+         hideSignUp();
+         window.removeEventListener('keydown', cancelHandler);
+      });
+
+      let cancelHandler = function(e) {
+         if (e.keyCode == 27) {
+            e.preventDefault();
+            hideSignUp();
+         }
+      }
+
+      let hideSignUp = function() {
+         document.querySelector('.header-window--signUp').style.display = 'none';
+      };
+   })();
 
    /*          Button scroll          */
 

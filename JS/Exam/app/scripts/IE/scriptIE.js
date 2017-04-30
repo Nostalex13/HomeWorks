@@ -38,30 +38,81 @@ window.onload = function() {
 
    /*          LogIn window         */
 
-   document.querySelector('.header__logIn').attachEvent('onclick', function(e) {
-      document.querySelector('.logIn-window').style.display = 'block';
-      console.log(window);
-      document.querySelector('body').attachEvent('onkeydown', function(event) {
-         event = event || window.event;
-         cancelHandler(event);
+   (function() {
+      document.querySelector('.header__logIn').attachEvent('onclick', function(e) {
+         document.querySelector('.header-window--logIn').style.display = 'block';
+         document.querySelector('body').attachEvent('onkeydown', function(e) {
+            e = e || window.event;
+            cancelHandler(e);
+         });
+         document.querySelector('.header-window--logIn').attachEvent('onclick', function(e) {
+            e = e || window.event;
+            var logInWindow = document.querySelector('.header-window__content--logIn');
+            if (!e.srcElement.className.indexOf('header-window__mask')) {
+               hideLogIn();
+            }
+         });
       });
-   });
 
-   document.querySelector('.logIn-window__logInBtn').attachEvent('onclick', function() {
-      return false;
-   });
-
-   document.querySelector('.logIn-window__cancelBtn').attachEvent('onclick', function() {
-      document.querySelector('.logIn-window').style.display = 'none';
-      document.querySelector('body').detachEvent('onkeydown', cancelHandler);
-   });
-
-   var cancelHandler = function(event) {
-      if (event.keyCode == 27) {
-         document.querySelector('.logIn-window').style.display = 'none';
+      document.querySelector('.header-window__logInBtn').attachEvent('onclick', function() {
          return false;
-      }
-   };
+      });
+
+      document.querySelector('.header-window__cancelBtn--logIn').attachEvent('onclick', function() {
+         hideLogIn();
+         document.querySelector('body').detachEvent('onkeydown', cancelHandler);
+      });
+
+      var cancelHandler = function(event) {
+         if (event.keyCode == 27) {
+            hideLogIn();
+            return false;
+         }
+      };
+
+      var hideLogIn = function() {
+         document.querySelector('.header-window--logIn').style.display = 'none';
+      };
+   })();
+
+   /*          SignUp window         */
+
+   (function() {
+      document.querySelector('.header__signUp').attachEvent('onclick', function(e) {
+         document.querySelector('.header-window--signUp').style.display = 'block';
+         document.querySelector('body').attachEvent('onkeydown', function(e) {
+            e = e || window.event;
+            cancelHandler(e);
+         });
+         document.querySelector('.header-window--signUp').attachEvent('onclick', function(e) {
+            e = e || window.event;
+            var logInWindow = document.querySelector('.header-window__content--signUp');
+            if (!e.srcElement.className.indexOf('header-window__mask')) {
+               hideSignUp();
+            }
+         });
+      });
+
+      document.querySelector('.header-window__signUpBtn--signUp').attachEvent('onclick', function() {
+         return false;
+      });
+
+      document.querySelector('.header-window__cancelBtn--signUp').attachEvent('onclick', function() {
+         hideSignUp();
+         document.querySelector('body').detachEvent('onkeydown', cancelHandler);
+      });
+
+      var cancelHandler = function(event) {
+         if (event.keyCode == 27) {
+            hideSignUp();
+            return false;
+         }
+      };
+
+      var hideSignUp = function() {
+         document.querySelector('.header-window--signUp').style.display = 'none';
+      };
+   })();
 
    /*          Scroll         */
 
