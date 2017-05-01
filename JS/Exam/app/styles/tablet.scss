@@ -204,9 +204,17 @@
       }
    }
 
-   .logIn-window__content {
-      width: 290px;
+   .header-window {
+
+      &__content {
+         width: 290px;
+      }
+
+      &__btn {
+         width: 90px;
+      }
    }
+
 
    /*       Slider       */
 

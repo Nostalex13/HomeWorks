@@ -54,6 +54,11 @@ window.onload = function() {
          });
       });
 
+      document.querySelector('.header-window__signUp').attachEvent('onclick', function() {
+         hideLogIn();
+         document.querySelector('.header__signUp').click();
+      });
+
       document.querySelector('.header-window__logInBtn').attachEvent('onclick', function() {
          return false;
       });
@@ -116,8 +121,7 @@ window.onload = function() {
 
    /*          Scroll         */
 
-   var findBtn = document.querySelector('.header__findBtn');
-   findBtn.attachEvent('onclick', function(e) {
+   document.querySelector('.header__findBtn').attachEvent('onclick', function(e) {
       var xPos = 0;
       var yPos = 0;
 

@@ -80,7 +80,7 @@
    }
 
    &__text {
-      width: 490px;
+      width: 500px;
       margin: 146px auto 0;
 
       color: #fff;
@@ -195,8 +195,10 @@
    }
 
    &__btn {
+      display: inline-block;
       width: 100px;
       padding: 5px;
+      margin: 0 2px;
 
       color: #fff;
       font-size: 14px;
@@ -242,7 +244,7 @@
 
    &__logInBtn {
       width: 100px;
-      margin: 15px 5px 0;
+      margin-top: 15px;
       padding: 5px;
 
       color: #fff;
@@ -294,7 +296,7 @@
 
    &__signUpBtn {
       width: 100px;
-      margin: 15px 5px 0;
+      margin-top: 15px;
       padding: 5px;
 
       color: #fff;
